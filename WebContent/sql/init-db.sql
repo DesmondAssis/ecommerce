@@ -116,8 +116,8 @@ create table ec_saleStatics (
 	id bigint not null primary key,
 	saleDate datetime not null,
 	goodId  bigint not null,
-	subClass bigint not null,
-	mainClass bigint not null,
+	subClass varchar(75) not null,
+	mainClass varchar(75) not null,
 	saleNum int not null, /*sale number*/
 	saleAmount int not null /*amount*/
 ) engine InnoDB;
