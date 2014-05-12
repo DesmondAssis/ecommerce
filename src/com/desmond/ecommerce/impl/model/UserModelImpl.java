@@ -27,6 +27,32 @@ public class UserModelImpl extends BaseModelImpl implements UserModel{
 	private String creditId;
 	private String tel;
 	
+	public UserModelImpl() {
+		super();
+	}
+	public UserModelImpl(long id) {
+		super(id);
+	}
+	public UserModelImpl(long id, String name, String password, String reallyName,
+			String identity, String postcode, String email, String address,
+			String phone, String question, String answer, Date registDate,
+			String creditId, String tel) {
+		super(id);
+		this.name = name;
+		this.password = password;
+		this.reallyName = reallyName;
+		this.identity = identity;
+		this.postcode = postcode;
+		this.email = email;
+		this.address = address;
+		this.phone = phone;
+		this.question = question;
+		this.answer = answer;
+		this.registDate = registDate;
+		this.creditId = creditId;
+		this.tel = tel;
+	}
+	
 	public String getName() {
 		return name;
 	}
