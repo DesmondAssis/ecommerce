@@ -1,7 +1,7 @@
 package com.desmond.ecommerce.impl.model;
 
 import com.desmond.ecommerce.impl.model.base.BaseModelImpl;
-import com.desmond.ecommerce.service.model.Admin;
+import com.desmond.ecommerce.interf.model.Admin;
 
 /**
  * 

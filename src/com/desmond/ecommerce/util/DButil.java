@@ -123,6 +123,20 @@ public class DButil {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public static void close(Connection conn, PreparedStatement pstmt) {
+		try {
+			
+			if(pstmt!=null){
+				pstmt.close();
+			}
+			if (conn != null) {
+				conn.close();
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}	
 }
 

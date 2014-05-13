@@ -1,6 +1,6 @@
 package com.desmond.ecommerce.impl.model.base;
 
-import com.desmond.ecommerce.service.model.base.BaseModel;
+import com.desmond.ecommerce.interf.model.base.BaseModel;
 
 public class BaseModelImpl implements BaseModel{
 

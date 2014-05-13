@@ -3,7 +3,7 @@ package com.desmond.ecommerce.impl.model;
 import java.util.List;
 
 import com.desmond.ecommerce.impl.model.base.BaseModelImpl;
-import com.desmond.ecommerce.service.model.GoodsModel;
+import com.desmond.ecommerce.interf.model.GoodsModel;
 
 /**
  * 

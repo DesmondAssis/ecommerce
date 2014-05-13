@@ -2,10 +2,10 @@ package com.desmond.ecommerce.bean;
 
 import java.util.List;
 
-import com.desmond.ecommerce.service.model.CommentModel;
-import com.desmond.ecommerce.service.model.GoodsModel;
-import com.desmond.ecommerce.service.model.InfoModel;
-import com.desmond.ecommerce.service.model.OrderModel;
+import com.desmond.ecommerce.interf.model.CommentModel;
+import com.desmond.ecommerce.interf.model.GoodsModel;
+import com.desmond.ecommerce.interf.model.InfoModel;
+import com.desmond.ecommerce.interf.model.OrderModel;
 
 /**
  * 

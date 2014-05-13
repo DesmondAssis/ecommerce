@@ -4,8 +4,8 @@ import java.sql.Date;
 import java.util.List;
 
 import com.desmond.ecommerce.impl.model.base.BaseModelImpl;
-import com.desmond.ecommerce.service.model.BuyersModel;
-import com.desmond.ecommerce.service.model.OrderModel;
+import com.desmond.ecommerce.interf.model.BuyersModel;
+import com.desmond.ecommerce.interf.model.OrderModel;
 
 /**
  * 

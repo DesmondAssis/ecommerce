@@ -3,7 +3,7 @@ package com.desmond.ecommerce.impl.model;
 import java.sql.Date;
 
 import com.desmond.ecommerce.impl.model.base.BaseModelImpl;
-import com.desmond.ecommerce.service.model.UserModel;
+import com.desmond.ecommerce.interf.model.UserModel;
 
 /**
  * 
