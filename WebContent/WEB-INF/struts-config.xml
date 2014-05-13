@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources />
+  <form-beans >
+
+  	<form-bean name="adminForm" type="com.miaomiao.form.AdminForm">
+  	</form-bean>
+  	<form-bean name="goodsForm" type="com.miaomiao.form.GoodsForm">
+  	</form-bean>
+  	<form-bean name="userForm" type="com.miaomiao.form.UserForm">
+  	</form-bean>
+  	<form-bean name="buyersForm" type="com.miaomiao.form.BuyersForm">
+  	</form-bean>
+  	<form-bean name="classForm" type="com.miaomiao.form.ClassManageForm">
+  	</form-bean>
+  	<form-bean name="businessForm" type="com.miaomiao.form.QueryBusinessForm">
+  	</form-bean>
+     <!-- 订单 -->
+    <form-bean name="orderForm" type="com.miaomiao.form.OrderForm">
+    </form-bean>
+    <!-- 资讯 -->
+    <form-bean name="infoForm" type="com.miaomiao.form.InfoForm">
+    </form-bean>
+    <!-- 评论 -->
+    <form-bean name="comentForm" type="com.miaomiao.form.CommentForm">
+    </form-bean>
+    
+    <form-bean name="updateForm" type="com.miaomiao.form.UpdateForm">
+    </form-bean>
+  </form-beans>
+ 
+ 
+  <global-exceptions />
+  <global-forwards>
+    <forward name="infoMess" path="/LiXiaoChuan/bg-infoMess.jsp"/>
+    <forward name="error" path="/LiXiaoChuan/bg-error.jsp"/>
+    <forward name="error1" path="/LiXiaoChuan/fg-error.jsp"/>
+  </global-forwards>
+  
+  <action-mappings >
+  
+  <action path="/UpdateAction"
+  		  parameter="service"
+  		  attribute="updateForm"
+  		  input="/LiWei/UpdateAction.jsp"
+  		  name="updateForm"
+  		  type="com.miaomiao.controller.UpdateAction">
+  		  <forward name="classupdate" path="/LiWei/bg-kindsmanage.jsp"></forward>
+  </action>
+  <action path="/QueryBusinessAction"
+  		  parameter="service"
+  		  attribute="businessForm"
+  		  input="/LiWei/querybusiness.jsp"
+  		  name="businessForm"
+  		  type="com.miaomiao.controller.QueryBusinessAction">
+  		  <forward name="querySuccess" path="/LiWei/querybusiness.jsp"></forward>
+  </action>
+  <action path="/BuyersAction"
+  		  parameter="service"
+  		  attribute="buyersForm" 
+  		  input="/index.jsp"
+  		  name="buyersForm"
+  		  type="com.miaomiao.controller.BuyersAction">
+  		  <forward name="buyerSuccess" path="/LiWei/buyer.jsp"></forward>
+  </action>
+  <action path="/ClassManageAction"
+  		  parameter="service"
+  		  attribute="ClassManageForm"
+  		  input="/LiWei/bg-kindsmanage.jsp"
+  		  name="classForm"
+  		  type="com.miaomiao.controller.ClassManageAction">
+  		  <forward name="addBigKind" path="/LiWei/bg-kindsmanage0.jsp"></forward>
+  		  <forward name="addSmallKind" path="/LiWei/bg-kindsmanage1.jsp"></forward>
+  		  <forward name="queryBigKind" path="/LiWei/bg-kindsmanage2.jsp"></forward>
+  		  <forward name="querySmallKind" path="/LiWei/bg-kindsmanage3.jsp"></forward>
+  		  <forward name="getClass" path="/LiWei/classupdate.jsp"></forward>
+  </action>
+  <!-- 资讯新闻管理 -->
+  <action path="/info" 
+          type="com.miaomiao.controller.InfoAction"
+          validate="false" 
+          parameter="method"  
+          name="infoForm"  
+          scope="request">
+			<forward name="info_query" path="/LiXiaoChuan/bg-infoSelect.jsp"/>
+			<forward name="info_Content" path="/LiXiaoChuan/bg-infoContent.jsp"/>
+			<forward name="info_update" path="/LiXiaoChuan/bg-infoUpdate.jsp"/>
+			
+			<forward name="afficheContent" path="/LiXiaoChuan/bg-afficheContent.jsp"/>
+			<forward name="afficheAdd" path="/LiXiaoChuan/bg-afficheAdd.jsp"/>
+  </action>
+  
+  <!-- 订单管理-李晓川 -->
+  <action path="/order" 
+          type="com.miaomiao.controller.OrderAction"
+          validate="false" 
+          parameter="method"  
+          name="orderForm"  
+          scope="request">
+			<forward name="query_admin" path="/LiXiaoChuan/bg-orderSelect.jsp"/>
+			<forward name="query_orderContent" path="/LiXiaoChuan/bg-orderContent.jsp"/>
+			
+ </action>
+  
+  
+  <!-- 订单管理-张影 -->
+  <action path="/orderAction" 
+          parameter="service"
+          attribute="orderForm" 
+          input="/index.jsp"
+          name="orderForm"
+          scope="session"
+          type="com.miaomiao.controller.OrderAction">
+          <forward name="listmessage" path="/ZhangYing/listmessage.jsp"></forward>
+          <forward name="createordersuccess" path="/ZhangYing/createordersuccess.jsp"></forward>
+          <forward name="pmessage" path="/ZhangYing/pmessage.jsp"></forward>
+          <forward name="psuccess" path="/ZhangYing/psuccess.jsp"></forward>
+          <forward name="listquery" path="/ZhangYing/listquery.jsp"></forward>
+          <forward name="dmessage" path="/ZhangYing/dmessage.jsp"></forward>
+          <forward name="printsuccess" path="/ZhangYing/printsuccess.jsp"></forward>
+  </action>
+  
+   <!-- 浏览商品模块 -->
+     <!-- 浏览商品模块 -->
+     <!-- 浏览商品 -->
+  <action path="/lookgoods" 
+          type="com.miaomiao.controller.LookGoodsAction"
+          validate="false" 
+          parameter="method"  
+          name="goodsForm"  
+          scope="request">
+			
+			<forward name="query_goods" path="/LiXiaoChuan/fg-goodsSelect.jsp"/>
+			<forward name="query_Cotenet" path="/LiXiaoChuan/fg-goodsContent.jsp"/>
+  </action>
+  
+   <!-- 发布评论 -->
+  <action path="/comment" 
+          type="com.miaomiao.controller.CommentSAction"
+          validate="false" 
+          parameter="method"  
+          name="comentForm"  
+          scope="request">
+			
+			
+			<forward name="afficheContent" path="/LiXiaoChuan/bg-afficheContent.jsp"/>
+			<forward name="afficheAdd" path="/LiXiaoChuan/bg-afficheAdd.jsp"/>
+  </action>
+  
+  
+  
+  <action parameter="method"
+          attribute="adminForm"
+          input="/back/bg-land.jsp"
+          name="adminForm"
+          path="/adminAction"
+          scope="request"
+          type="com.miaomiao.controller.AdminAction">
+          <forward name="loginSuccess" path="/back/bg-index.jsp" ></forward>
+          <forward name="loginFailed" path="/back/bg-land.jsp" ></forward>  
+  </action>
+  <action parameter="method"
+          attribute="goodForm"
+          input="/back/bg-index.jsp"
+          name="goodsForm"
+          path="/goodsAction"
+          scope="request"
+          type="com.miaomiao.controller.GoodsAction">
+          <forward name="loginSuccess" path="/back/bg-index.jsp" ></forward> 
+  </action>
+  <action parameter="method"
+          attribute="userForm"
+          input="/index.jsp"
+          name="userForm"
+          path="/userAction" 
+          scope="request"
+          type="com.miaomiao.controller.UserAction">
+          <forward name="loginSuccess" path="/PiMeng/loginSuccess.jsp" ></forward>
+           
+  </action>
+  
+   
+  </action-mappings>
+   <!-- 过滤所有资源的编码方式 -->
+  <controller processorClass="com.miaomiao.utils.SelfRequestProcessor" />
+  <message-resources parameter="com.miaomiao.struts.ApplicationResources" />
+</struts-config>
+
