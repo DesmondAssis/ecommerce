@@ -3,6 +3,7 @@ package com.desmond.ecommerce.impl.service;
 import com.desmond.ecommerce.impl.dao.UserDaoImpl;
 import com.desmond.ecommerce.interf.dao.UserDao;
 import com.desmond.ecommerce.interf.model.UserModel;
+import com.desmond.ecommerce.interf.service.UserService;
 
 /**
  * 
@@ -10,7 +11,7 @@ import com.desmond.ecommerce.interf.model.UserModel;
  * @date 13 May 2014 20:56:09
  * @version 1.0 #UserLocalServiceImpl
  */
-public class UserLocalServiceImpl {
+public class UserLocalServiceImpl implements UserService{
 
 	/**
 	 * register a new user.
