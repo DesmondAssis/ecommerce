@@ -9,7 +9,7 @@ import com.desmond.ecommerce.interf.model.base.BaseModel;
  * @date 6 May 2014 07:20:39
  * @version 1.0 #Admin
  */
-public interface Admin extends BaseModel {
+public interface AdminModel extends BaseModel {
 
 	/**
 	 * Returns the name of this Admin.

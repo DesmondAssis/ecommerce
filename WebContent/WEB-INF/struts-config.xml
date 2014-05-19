@@ -7,6 +7,7 @@
 	<!-- forms -->
 	<form-beans>
 		<form-bean name="userForm" type="com.desmond.ecommerce.form.UserForm" />
+		<form-bean name="adminForm" type="com.desmond.ecommerce.form.AdminForm" />
 	</form-beans>
 
 	<!-- exception -->
@@ -14,9 +15,9 @@
 
 	<!-- forwards -->
 	<global-forwards>
-		<forward name="infoMess" path="/LiXiaoChuan/bg-infoMess.jsp" />
-		<forward name="error" path="/LiXiaoChuan/bg-error.jsp" />
-		<forward name="error1" path="/LiXiaoChuan/fg-error.jsp" />
+		<forward name="infoMess" path="/jsp/info/bg-infoMess.jsp" />
+		<forward name="bg-error" path="/jsp/info/bg-error.jsp" />
+		<forward name="fg-error" path="/jsp/info/fg-error.jsp" />
 	</global-forwards>
 
 	<!-- mappings -->
@@ -30,7 +31,19 @@
 				type="com.desmond.ecommerce.controller.UserAction">
 			<forward name="loginSuccess" path="/PiMeng/loginSuccess.jsp"></forward>
 		</action>
+		
+		<action parameter="method"
+          attribute="adminForm"
+          input="/back/bg-land.jsp"
+          name="adminForm"
+          path="/adminAction"
+          scope="request"
+          type="com.desmond.ecommerce.controller.AdminAction">
+          <forward name="adminLoginSuccess" path="/jsp/back/bg-index.jsp" ></forward>
+          <forward name="adminLoginFailed" path="/jsp/back/bg-land.jsp" ></forward>  
+  	</action>
 	</action-mappings>
+	
 	
 	<!-- encoding-->
 	<!--

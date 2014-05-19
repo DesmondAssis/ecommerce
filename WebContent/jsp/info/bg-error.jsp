@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=utf-8" import="java.util.*"%>
-<%@ page import="com.miaomiao.bean.InfoMess"%>
+<%@ page import="com.desmond.ecommerce.bean.InfoMessBean"%>
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html"%>
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic"%>
 <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean"%>
@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 %>
 <html>
    <head>
-     <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
      <title>电子商城的后台</title>
      <link href="css/css.css" rel="stylesheet" type="text/css">
      

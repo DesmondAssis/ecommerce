@@ -1,0 +1,1 @@
+1. in jsp, tag include V.S. jsp:include, when use them, will exist duplicate tag "page"?

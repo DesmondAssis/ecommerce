@@ -1,7 +1,7 @@
 package com.desmond.ecommerce.impl.model;
 
 import com.desmond.ecommerce.impl.model.base.BaseModelImpl;
-import com.desmond.ecommerce.interf.model.Admin;
+import com.desmond.ecommerce.interf.model.AdminModel;
 
 /**
  * 
@@ -10,7 +10,7 @@ import com.desmond.ecommerce.interf.model.Admin;
  * @version 1.0
  * #AdminModel
  */
-public class AdminModelImpl extends BaseModelImpl implements Admin{
+public class AdminModelImpl extends BaseModelImpl implements AdminModel{
 	private String name;
 	private String password;
 	private String email;

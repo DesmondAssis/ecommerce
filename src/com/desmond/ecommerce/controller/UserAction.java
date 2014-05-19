@@ -111,7 +111,7 @@ public class UserAction extends DispatchAction {
 			HttpServletRequest request, HttpServletResponse response) {
 		UserForm uf = (UserForm) form;
 		ActionForward forward = null;
-		String forwardPage = ""; // Ĭ��Ϊʧ��ҳ��
+		String forwardPage = "";
 		boolean isSuccess = false;
 		UserService us = new UserLocalServiceImpl();
 
@@ -185,7 +185,7 @@ public class UserAction extends DispatchAction {
 			HttpServletRequest request, HttpServletResponse response) {
 		UserForm uf = (UserForm) form;
 		ActionForward forward = null;
-		String forwardPage = ""; // Ĭ��Ϊʧ��ҳ��
+		String forwardPage = "";
 		boolean isSuccess = false;
 		UserService us = new UserLocalServiceImpl();
 		isSuccess = us.changePassword(uf.getName(), uf.getAnswer(), uf.getNewPwd());
