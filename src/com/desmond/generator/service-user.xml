@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<desmond-builder package-path="com.desmond.user">
+	<author>Presley</author>
+	<namespace>ec</namespace>
+	
+	<entity name="User">
+        <!-- PK fields -->
+		<column name="userId" type="long" primary="true" autoIncrement="true"/>
+		
+		<!-- Audit fields -->
+
+		<column name="createdDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Foreign Key fields -->
+		
+		<!-- Other fields -->
+		<column name="name" type="String" />
+		<column name="password" type="String" />
+		<column name="reallyName" type="String" />
+		<column name="identity" type="String" />
+		<column name="postcode" type="String" />
+		<column name="email" type="String" />
+		<column name="address" type="String" />
+		<column name="phone" type="String" />
+		<column name="question" type="String" />
+		<column name="answer" type="String" />
+		
+		<!-- Order -->
+		
+		<!-- Finder methods
+		<finder name="StatsGameId" return-type="Collection">
+			<finder-column name="statsGameId" />
+		</finder>
+		
+		<finder name="ScheduleId" return-type="Collection">
+			<finder-column name="scheduleId" />
+		</finder>
+		
+		<finder name="Sport" return-type="Collection">
+			<finder-column name="sport" />
+		</finder>
+		
+		<finder name="Date" return-type="Collection">
+			<finder-column name="date" />
+		</finder> -->
+    </entity>
+</desmond-builder>

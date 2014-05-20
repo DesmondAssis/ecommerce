@@ -10,7 +10,7 @@ use ecommerce;
 */
 /*table: order information*/
 create table ec_order (
-	id bigint not null primary key,
+	id bigint not null primary key AUTO_INCREMENT,
 	status int not null,
 	time_ datetime not null,
 	userId bigint not null,
@@ -26,7 +26,7 @@ create table ec_order (
 
 /*table: order goods*/
 create table ec_order_goods (
-	id bigint not null primary key,
+	id bigint not null primary key AUTO_INCREMENT,
 	orderId bigint not null, /*the ID of order*/
 	orderGoodGid bigint not null, /*the ID of the good*/
 	orderGoodNum bigint not null, /*the number of the good*/
@@ -35,7 +35,7 @@ create table ec_order_goods (
 
 /*table: user*/
 create table ec_user (
-	id bigint not null primary key,
+	id bigint not null primary key AUTO_INCREMENT,
 	name varchar(75) not null unique, /*user name*/
 	password varchar(75) not null, 
 	reallyName varchar(75) not null, 
@@ -51,7 +51,7 @@ create table ec_user (
 
 /*table: admin*/
 create table ec_admin (
-	id bigint not null primary key,
+	id bigint not null primary key AUTO_INCREMENT,
 	name varchar(75) not null unique, /*admin's name*/
 	password varchar(75) not null,
 	email varchar(75) not null
@@ -59,7 +59,7 @@ create table ec_admin (
 
 /*table: goods*/
 create table ec_goods (
-	id bigint not null primary key,
+	id bigint not null primary key AUTO_INCREMENT,
 	name varchar(75) not null unique, /*goods' name*/
 	mainclass varchar(75) not null, /*the primary class*/
 	subclass varchar(75) not null, /*the sub class*/
@@ -72,7 +72,7 @@ create table ec_goods (
 
 /*table: cart*/
 create table ec_cart (
-	id bigint not null primary key,
+	id bigint not null primary key AUTO_INCREMENT,
 	sessionId varchar(75) not null,
 	goodId bigint not null, /*good's ID*/
 	goodNum int null,
@@ -81,20 +81,20 @@ create table ec_cart (
 
 /*table: main class*/
 create table ec_main_class (
-	id bigint not null primary key,
+	id bigint not null primary key AUTO_INCREMENT,
 	name varchar(75) not null unique
 ) engine InnoDB;
 
 /*table: sub class*/
 create table ec_sub_class (
-	id bigint not null primary key,
+	id bigint not null primary key AUTO_INCREMENT,
 	name varchar(75) not null unique,
 	parentClass bigint not null
 ) engine InnoDB;
 
 /*table: comment*/
 create table ec_comment (
-	id bigint not null primary key,
+	id bigint not null primary key AUTO_INCREMENT,
 	userId bigint not null,
 	commentDate datetime not null,
 	commentCotent varchar(75) null,
@@ -103,7 +103,7 @@ create table ec_comment (
 
 /*table: info*/
 create table ec_info (
-	id bigint not null primary key,
+	id bigint not null primary key AUTO_INCREMENT,
 	title varchar(75) not null unique,
 	content varchar(75) not null,
 	status int not null, /*0-draft, 1-published*/
@@ -113,7 +113,7 @@ create table ec_info (
 
 /*table: sale statics*/
 create table ec_saleStatics (
-	id bigint not null primary key,
+	id bigint not null primary key AUTO_INCREMENT,
 	saleDate datetime not null,
 	goodId  bigint not null,
 	subClass varchar(75) not null,
@@ -124,7 +124,7 @@ create table ec_saleStatics (
 
 /*table: order history*/
 create table ec_order_history (
-	id bigint not null primary key,
+	id bigint not null primary key AUTO_INCREMENT,
 	orderId bigint not null, /*order ID*/
 	modifiedDate  datetime not null,
 	modifiedReason bigint not null, /*the reason why modify it*/
@@ -133,7 +133,7 @@ create table ec_order_history (
 
 /*table: admin_authority*/
 create table ec_admin_authority (
-	id bigint not null primary key,
+	id bigint not null primary key AUTO_INCREMENT,
 	adminId bigint not null,
 	authorityId int not null
 ) engine InnoDB;

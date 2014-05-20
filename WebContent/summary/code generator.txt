@@ -1,0 +1,7 @@
+1. ${packageName}
+2. ${model}
+3. ${modelImpl}
+4. ${dao}
+5. ${daoImpl
+6. ${model_variable}
+7. 
