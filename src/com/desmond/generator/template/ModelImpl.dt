@@ -1,0 +1,9 @@
+package ${packageName};
+
+${imports}
+import com.desmond.ecommerce.base.model.impl.BaseModelImpl;
+
+public class ${modelImpl} extends BaseModelImpl implements ${model}{
+	${privateFields}
+	${setterAndGetter}
+}

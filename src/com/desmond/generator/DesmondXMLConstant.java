@@ -11,4 +11,6 @@ public interface DesmondXMLConstant {
 	String TYPE = "type";
 	String PRIMARY = "primary";
 	String AUTO_INCREMENT = "autoIncrement";
+	String NOT_NULL = "not-null";
+	String UNIQUE = "unique";
 }

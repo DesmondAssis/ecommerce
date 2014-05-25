@@ -1,4 +1,4 @@
-package com.desmond.ecommerce.util;
+package com.desmond.ecommerce.util.db;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

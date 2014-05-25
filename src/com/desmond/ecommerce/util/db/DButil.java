@@ -1,4 +1,4 @@
-package com.desmond.ecommerce.util;
+package com.desmond.ecommerce.util.db;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -15,8 +15,8 @@ public class DButil {
 	private static String user = "root";
 	private static String pwd = "root";
 	private static String driverClass = "com.mysql.jdbc.Driver";
-	private static Connection conn=null;
-	
+	private static Connection conn = null;
+
 	private static Logger log = Logger.getLogger(UserDaoImpl.class.getName());
 
 	public static Connection getConnection() {
@@ -32,13 +32,12 @@ public class DButil {
 		return conn;
 	}
 
-
 	public static void close(PreparedStatement pstmt, ResultSet rs) {
 		try {
-			if(rs !=null){
+			if (rs != null) {
 				rs.close();
 			}
-			if(pstmt !=null){
+			if (pstmt != null) {
 				pstmt.close();
 			}
 			if (conn != null) {
@@ -49,72 +48,64 @@ public class DButil {
 			e.printStackTrace();
 		}
 	}
-  public static void close(){
-	  try {
+
+	public static void close() {
+		try {
 			if (conn != null) {
 				conn.close();
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-  }
+	}
 
 	public String getUrl() {
 		return url;
 	}
 
-
 	public void setUrl(String url) {
 		this.url = url;
 	}
-
 
 	public String getUser() {
 		return user;
 	}
 
-
 	public void setUser(String user) {
 		this.user = user;
 	}
-
 
 	public String getPwd() {
 		return pwd;
 	}
 
-
 	public void setPwd(String pwd) {
 		this.pwd = pwd;
 	}
-
 
 	public String getDriverClass() {
 		return driverClass;
 	}
 
-
 	public void setDriverClass(String driverClass) {
 		DButil.driverClass = driverClass;
 	}
-
 
 	public Connection getConn() {
 		return conn;
 	}
 
-
 	public void setConn(Connection conn) {
 		this.conn = conn;
 	}
 
-
-	public static void close(Connection conn, PreparedStatement pstmt,ResultSet rs) {
-		try {	
-			if(rs!=null){
+	public static void close(Connection conn, PreparedStatement pstmt,
+			ResultSet rs) {
+		try {
+			if (rs != null) {
 				rs.close();
 			}
-			if(pstmt!=null){
+			if (pstmt != null) {
 				pstmt.close();
 			}
 			if (conn != null) {
@@ -124,11 +115,11 @@ public class DButil {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public static void close(Connection conn, PreparedStatement pstmt) {
 		try {
-			
-			if(pstmt!=null){
+
+			if (pstmt != null) {
 				pstmt.close();
 			}
 			if (conn != null) {
@@ -137,9 +128,5 @@ public class DButil {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-	}	
+	}
 }
-
-
-	
-

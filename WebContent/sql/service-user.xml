@@ -4,7 +4,7 @@
 	<namespace>ec</namespace>
 	
 	<entity name="User" tableName="ec_user">
-        <!-- PK fields -->
+        <!-- PK fields -->w
 		<column name="id" type="long" primary="true" autoIncrement="true"/>
 		
 		<!-- Audit fields -->

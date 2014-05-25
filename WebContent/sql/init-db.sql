@@ -138,5 +138,10 @@ create table ec_admin_authority (
 	authorityId int not null
 ) engine InnoDB;
 
+create table ec_counter (
+	name varchar(75) not null primary key,
+	currentId bigint(20)
+) engine InnoDB;
+
 /*insert statements*/
 insert into ec_admin values(1, 'test', 'test', 'test@desmond.com');

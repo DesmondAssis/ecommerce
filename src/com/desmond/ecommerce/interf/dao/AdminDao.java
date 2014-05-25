@@ -24,7 +24,7 @@ import com.desmond.ecommerce.util.DButil;
  */
 public interface AdminDao {
 	
-	public int regist(String name, String pwd, String email);
+	public int c(String name, String pwd, String email);
 	
 	public AdminModel login(String name,String pwd);
 		

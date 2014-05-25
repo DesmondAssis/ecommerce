@@ -11,13 +11,17 @@ import org.apache.log4j.Logger;
 import com.desmond.ecommerce.impl.model.UserModelImpl;
 import com.desmond.ecommerce.interf.dao.UserDao;
 import com.desmond.ecommerce.interf.model.UserModel;
-import com.desmond.ecommerce.util.DButil;
+import com.desmond.ecommerce.util.db.Counter;
+import com.desmond.ecommerce.util.db.DButil;
+import com.desmond.user.User;
 
-public class UserDaoImpl implements UserDao{
+public class UserDaoImpl{
 	
-	public int regist(UserModel user) {
+	public int add(UserModel user) {
 		int update = 0;
 		Connection conn = DButil.getConnection();
+		long nextPrimaryKey = Counter.getPrimaryKey(User.class.getName(), conn);
+		
 		PreparedStatement ps = null;
 		String sql="insert into ec_user values(?,?,?,?,?,?,?,?,?,?,?,?)";
 		ResultSet rs = null;
@@ -58,43 +62,6 @@ public class UserDaoImpl implements UserDao{
 		}
 		
 		return update;
-	}
-	
-	public UserModel login(String username, String pwd){
-		UserModel user = null;
-		Connection conn=DButil.getConnection();
-		PreparedStatement ps=null;
-		String sql="select *  from ec_user where name=? and password=?";
-		ResultSet rs=null;
-		try {
-			ps=conn.prepareStatement(sql);
-			ps.setString(1, username);
-			ps.setString(2, pwd);
-			rs=ps.executeQuery();
-			if(rs.next()){
-				user = new UserModelImpl(
-						rs.getLong(1),
-						rs.getString("name"),
-						rs.getString("password"),
-						rs.getString("reallyName"),
-						rs.getString("identity"),
-						rs.getString("postcode"),
-						rs.getString("email"),
-						rs.getString("address"),
-						rs.getString("phone"),
-						rs.getString("question"),
-						rs.getString("answer"),
-						rs.getDate("registDate"),
-						null, null);
-			}
-			
-		} catch (SQLException e) {
-			logger.error(e);
-		}finally{
-			DButil.close(conn, ps, rs);
-		}
-		
-		return user;
 	}
 	
 	public int update(UserModel ub){
@@ -140,17 +107,39 @@ public class UserDaoImpl implements UserDao{
 		return update;
 	}
 	
-	public int modifyPwd(int userId,String newPwd){
+	public int fetchByPrimaryKey(UserModel ub){
 		int update=0;
 		Connection conn=DButil.getConnection();
 		PreparedStatement ps=null;
-		String sql="update ec_user set password=? where id=?";
+		String sql="update ec_user set name=?,"
+				+ "password=?,"
+				+ "reallyName=?,"
+				+ "identity=?,"
+				+ "postcode=?,"
+				+ "email=?,"
+				+ "address=?,"
+				+ "phone=?,"
+				+ "question=?,"
+				+ "answer=?,"
+				+ "registTime=?"
+				+ " where user_id=?";
 		try {
 			ps=conn.prepareStatement(sql);
-			ps.setString(1, newPwd);
-			ps.setInt(2, userId);	
+			ps.setString(1, ub.getName());
+			ps.setString(2, ub.getPassword());
+			ps.setString(3, ub.getReallyName());
+			ps.setString(4, ub.getIdentity());
 			
-			update=ps.executeUpdate();
+			ps.setString(5, ub.getPostcode());
+			ps.setString(6, ub.getEmail());		
+			ps.setString(7, ub.getAddress());
+			ps.setString(8, ub.getPhone());
+			ps.setString(9, ub.getQuestion());
+			ps.setString(10, ub.getAnswer());
+			ps.setDate(11, ub.getRegistDate());
+			ps.setLong(12, ub.getPrimaryKey());	
+			
+			update=ps.executeUpdate();		
 			logger.debug(String.format("DML: s%, affect %d row.", sql, update));
 		} catch (SQLException e) {
 			logger.error(e);
@@ -161,43 +150,47 @@ public class UserDaoImpl implements UserDao{
 		return update;
 	}
 	
-	public int getPwd(String userName,String answer,String newPwd){
+	public int delete(UserModel ub){
 		int update=0;
 		Connection conn=DButil.getConnection();
 		PreparedStatement ps=null;
-		ResultSet rs=null;
-		String sql="select answer from ec_user where name=?";	
-		String sql2="update ec_user set password=? where name=?";
-		String user_answser="";
+		String sql="update ec_user set name=?,"
+				+ "password=?,"
+				+ "reallyName=?,"
+				+ "identity=?,"
+				+ "postcode=?,"
+				+ "email=?,"
+				+ "address=?,"
+				+ "phone=?,"
+				+ "question=?,"
+				+ "answer=?,"
+				+ "registTime=?"
+				+ " where user_id=?";
 		try {
 			ps=conn.prepareStatement(sql);
-			ps.setString(1,userName);
-			rs=ps.executeQuery();
-			if(rs.next()){
-				if(answer.equals(rs.getString("user_answer")));
-				ps=conn.prepareStatement(sql2);
-				ps.setString(1,newPwd);
-				ps.setString(2,userName);
-				update=ps.executeUpdate();	
-			}
-						
+			ps.setString(1, ub.getName());
+			ps.setString(2, ub.getPassword());
+			ps.setString(3, ub.getReallyName());
+			ps.setString(4, ub.getIdentity());
+			
+			ps.setString(5, ub.getPostcode());
+			ps.setString(6, ub.getEmail());		
+			ps.setString(7, ub.getAddress());
+			ps.setString(8, ub.getPhone());
+			ps.setString(9, ub.getQuestion());
+			ps.setString(10, ub.getAnswer());
+			ps.setDate(11, ub.getRegistDate());
+			ps.setLong(12, ub.getPrimaryKey());	
+			
+			update=ps.executeUpdate();		
+			logger.debug(String.format("DML: s%, affect %d row.", sql, update));
 		} catch (SQLException e) {
 			logger.error(e);
 		}finally{
-			DButil.close(conn, ps, rs);
+			DButil.close(conn, ps);
 		}
 		
 		return update;
 	}
 	
-	private static Logger logger = Logger.getLogger(UserDaoImpl.class.getName());
-	
-	public static void main(String[] args) {
-		UserModel user = new UserModelImpl(1, "desmond", "test", "Li",
-				"43042822324", "12345", "desmond@desmond.com", "Shanghai",
-				"13120547998", "what's your girl friend's name?", "Alina", new Date(new java.util.Date().getTime()),
-				"cId", "tel");
-		logger.error("sss");
-		new UserDaoImpl().regist(user);
-	}
 }

@@ -1,0 +1,8 @@
+package ${packageName};
+
+${imports}
+import com.desmond.ecommerce.base.model.intf.BaseModel;
+
+public interface ${model} extends BaseModel{
+	${setterAndGetter}
+}

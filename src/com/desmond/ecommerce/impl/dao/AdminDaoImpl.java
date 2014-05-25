@@ -13,7 +13,7 @@ import org.apache.log4j.Logger;
 import com.desmond.ecommerce.impl.model.AdminModelImpl;
 import com.desmond.ecommerce.interf.dao.AdminDao;
 import com.desmond.ecommerce.interf.model.AdminModel;
-import com.desmond.ecommerce.util.DButil;
+import com.desmond.ecommerce.util.db.DButil;
 
 
 /**
