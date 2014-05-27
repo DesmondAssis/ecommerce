@@ -7,6 +7,10 @@ public class Entity {
 	private String tableName;
 	List<Column> columns;
 
+	public Entity() {
+		super();
+	}
+
 	public Entity(String name, String tableName, List<Column> columns) {
 		super();
 		this.name = name;
@@ -68,4 +72,24 @@ public class Entity {
 		this.columns = columns;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		StringBuilder resultSb = new StringBuilder(
+				"Entity [name=" + name + ", tableName=" + tableName
+				+ ", columns" + ":\n");
+		
+		if(this.getColumns() != null) {
+			for(Column column : this.getColumns()){
+				resultSb.append("\t-------")
+						.append(column.toString())
+						.append("\n");
+			}
+		}
+		
+		return resultSb.toString();
+	}
+	
 }

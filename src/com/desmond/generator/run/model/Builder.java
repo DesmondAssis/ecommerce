@@ -7,6 +7,10 @@ public class Builder {
 	private String author;
 	private String nameSpace;
 	private List<Entity> entities;
+	
+	public Builder() {
+		super();
+	}
 
 	public Builder(String packateName, String author, String nameSpace, List<Entity> entities) {
 		super();
@@ -88,4 +92,25 @@ public class Builder {
 	public void setEntities(List<Entity> entities) {
 		this.entities = entities;
 	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		StringBuilder resultSb = new StringBuilder(
+				"Builder [packateName=" + packateName + ", author=" + author
+				+ ", nameSpace=" + nameSpace + ", entities"  +":\n");
+		
+		if(this.getEntities() != null) {
+			for(Entity entity : this.getEntities()){
+				resultSb.append("-------")
+						.append(entity.toString())
+						.append("\n");
+			}
+		}
+		
+		return resultSb.toString();
+	}
+	
 }

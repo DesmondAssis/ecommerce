@@ -600,3 +600,683 @@ java.sql.SQLException: Column count doesn't match value count at row 1
 	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:1485)
 	at com.desmond.user.impl.UserDaoImpl.add(UserDaoImpl.java:42)
 	at com.desmond.user.impl.UserDaoImpl.main(UserDaoImpl.java:154)
+INFO main com.desmond.generator.run.TestRun - fileName: com/desmond/generator/template/Model.dt
+INFO main com.desmond.generator.run.TestRun - fileName: com/desmond/generator/template/ModelImpl.dt
+INFO main com.desmond.generator.run.TestRun - fileName: 
+INFO main com.desmond.generator.run.TestRun - fileName: 
+INFO main com.desmond.generator.run.TestRun - 
+INFO main com.desmond.generator.run.TestRun - fileName: com/desmond/generator/template/Model.dt
+INFO main com.desmond.generator.run.TestRun - fileName: com/desmond/generator/template/ModelImpl.dt
+INFO main com.desmond.generator.run.TestRun - fileName: 
+INFO main com.desmond.generator.run.TestRun - fileName: 
+INFO main com.desmond.generator.run.TestRun - 
+INFO main com.desmond.generator.run.TestRun - Builder [packateName=com.desmond.user, author=Presley, nameSpace=ec, entities=[Entity [name=null, tableName=null, columns=[Column [name=id, type=long, isPrimary=true, isAutoIncrement=true, isUnique=false, isNotNull=false], Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=name, type=String, isPrimary=false, isAutoIncrement=false, isUnique=true, isNotNull=true], Column [name=password, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=reallyName, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=identity, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=postcode, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=email, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=address, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=phone, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=question, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=answer, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]]]:
+------->Column [name=id, type=long, isPrimary=true, isAutoIncrement=true, isUnique=false, isNotNull=false]
+------->Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+------->Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+------->Column [name=name, type=String, isPrimary=false, isAutoIncrement=false, isUnique=true, isNotNull=true]
+------->Column [name=password, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+------->Column [name=reallyName, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+------->Column [name=identity, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+------->Column [name=postcode, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+------->Column [name=email, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+------->Column [name=address, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+------->Column [name=phone, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+------->Column [name=question, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+------->Column [name=answer, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+]:
+------->Entity [name=null, tableName=null, columns=[Column [name=id, type=long, isPrimary=true, isAutoIncrement=true, isUnique=false, isNotNull=false], Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=name, type=String, isPrimary=false, isAutoIncrement=false, isUnique=true, isNotNull=true], Column [name=password, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=reallyName, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=identity, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=postcode, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=email, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=address, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=phone, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=question, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=answer, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]]]:
+------->Column [name=id, type=long, isPrimary=true, isAutoIncrement=true, isUnique=false, isNotNull=false]
+------->Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+------->Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+------->Column [name=name, type=String, isPrimary=false, isAutoIncrement=false, isUnique=true, isNotNull=true]
+------->Column [name=password, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+------->Column [name=reallyName, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+------->Column [name=identity, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+------->Column [name=postcode, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+------->Column [name=email, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+------->Column [name=address, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+------->Column [name=phone, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+------->Column [name=question, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+------->Column [name=answer, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+
+
+INFO main com.desmond.generator.run.TestRun - fileName: com/desmond/generator/template/Model.dt
+INFO main com.desmond.generator.run.TestRun - fileName: com/desmond/generator/template/ModelImpl.dt
+INFO main com.desmond.generator.run.TestRun - fileName: 
+INFO main com.desmond.generator.run.TestRun - fileName: 
+INFO main com.desmond.generator.run.TestRun - 
+INFO main com.desmond.generator.run.TestRun - Builder [packateName=com.desmond.user, author=Presley, nameSpace=ec, entities:
+------->Entity [name=null, tableName=null, columns=]:
+------->Column [name=id, type=long, isPrimary=true, isAutoIncrement=true, isUnique=false, isNotNull=false]
+------->Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+------->Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+------->Column [name=name, type=String, isPrimary=false, isAutoIncrement=false, isUnique=true, isNotNull=true]
+------->Column [name=password, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+------->Column [name=reallyName, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+------->Column [name=identity, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+------->Column [name=postcode, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+------->Column [name=email, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+------->Column [name=address, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+------->Column [name=phone, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+------->Column [name=question, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+------->Column [name=answer, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+
+
+INFO main com.desmond.generator.run.TestRun - fileName: com/desmond/generator/template/Model.dt
+INFO main com.desmond.generator.run.TestRun - fileName: com/desmond/generator/template/ModelImpl.dt
+INFO main com.desmond.generator.run.TestRun - fileName: 
+INFO main com.desmond.generator.run.TestRun - fileName: 
+INFO main com.desmond.generator.run.TestRun - 
+INFO main com.desmond.generator.run.TestRun - Builder [packateName=com.desmond.user, author=Presley, nameSpace=ec, entities:
+------->Entity [name=null, tableName=null, columns=]:
+	------->Column [name=id, type=long, isPrimary=true, isAutoIncrement=true, isUnique=false, isNotNull=false]
+	------->Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	------->Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	------->Column [name=name, type=String, isPrimary=false, isAutoIncrement=false, isUnique=true, isNotNull=true]
+	------->Column [name=password, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	------->Column [name=reallyName, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	------->Column [name=identity, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	------->Column [name=postcode, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	------->Column [name=email, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	------->Column [name=address, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	------->Column [name=phone, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	------->Column [name=question, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	------->Column [name=answer, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+
+
+INFO main com.desmond.generator.run.TestRun - fileName: com/desmond/generator/template/Model.dt
+INFO main com.desmond.generator.run.TestRun - fileName: com/desmond/generator/template/ModelImpl.dt
+INFO main com.desmond.generator.run.TestRun - fileName: 
+INFO main com.desmond.generator.run.TestRun - fileName: 
+INFO main com.desmond.generator.run.TestRun - 
+INFO main com.desmond.generator.run.TestRun - Builder [packateName=com.desmond.user, author=Presley, nameSpace=ec, entities:
+------->Entity [name=null, tableName=null, columns:
+	------->Column [name=id, type=long, isPrimary=true, isAutoIncrement=true, isUnique=false, isNotNull=false]
+	------->Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	------->Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	------->Column [name=name, type=String, isPrimary=false, isAutoIncrement=false, isUnique=true, isNotNull=true]
+	------->Column [name=password, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	------->Column [name=reallyName, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	------->Column [name=identity, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	------->Column [name=postcode, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	------->Column [name=email, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	------->Column [name=address, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	------->Column [name=phone, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	------->Column [name=question, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	------->Column [name=answer, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+
+
+INFO main com.desmond.generator.run.TestRun - fileName: com/desmond/generator/template/Model.dt
+INFO main com.desmond.generator.run.TestRun - fileName: com/desmond/generator/template/ModelImpl.dt
+INFO main com.desmond.generator.run.TestRun - fileName: 
+INFO main com.desmond.generator.run.TestRun - fileName: 
+INFO main com.desmond.generator.run.TestRun - 
+INFO main com.desmond.generator.run.TestRun - Builder [packateName=com.desmond.user, author=Presley, nameSpace=ec, entities:
+-------Entity [name=null, tableName=null, columns:
+	-------Column [name=id, type=long, isPrimary=true, isAutoIncrement=true, isUnique=false, isNotNull=false]
+	-------Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=name, type=String, isPrimary=false, isAutoIncrement=false, isUnique=true, isNotNull=true]
+	-------Column [name=password, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=reallyName, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=identity, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=postcode, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=email, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=address, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=phone, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=question, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=answer, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+
+
+INFO main com.desmond.generator.run.TestRun - fileName: com/desmond/generator/template/Model.dt
+INFO main com.desmond.generator.run.TestRun - fileName: com/desmond/generator/template/ModelImpl.dt
+INFO main com.desmond.generator.run.TestRun - fileName: 
+INFO main com.desmond.generator.run.TestRun - fileName: 
+INFO main com.desmond.generator.run.TestRun - 
+INFO main com.desmond.generator.run.TestRun - Builder [packateName=com.desmond.user, author=Presley, nameSpace=ec, entities:
+-------Entity [name=User, tableName=ec_user, columns:
+	-------Column [name=id, type=long, isPrimary=true, isAutoIncrement=true, isUnique=false, isNotNull=false]
+	-------Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=name, type=String, isPrimary=false, isAutoIncrement=false, isUnique=true, isNotNull=true]
+	-------Column [name=password, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=reallyName, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=identity, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=postcode, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=email, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=address, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=phone, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=question, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=answer, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+
+
+INFO main com.desmond.generator.run.TestRun - package com.desmond.user.intf;
+
+import java.sql.Time;
+
+import com.desmond.ecommerce.base.model.intf.BaseModel;
+
+public interface User extends BaseModel{
+		public long getId();
+	public void setId(long id);
+	public Time getCreatedDate();
+	public void setCreatedDate(Time createdDate);
+	public Time getModifiedDate();
+	public void setModifiedDate(Time modifiedDate);
+	public String getName();
+	public void setName(String name);
+	public String getPassword();
+	public void setPassword(String password);
+	public String getReallyName();
+	public void setReallyName(String reallyName);
+	public String getIdentity();
+	public void setIdentity(String identity);
+	public String getPostcode();
+	public void setPostcode(String postcode);
+	public String getEmail();
+	public void setEmail(String email);
+	public String getAddress();
+	public void setAddress(String address);
+	public String getPhone();
+	public void setPhone(String phone);
+	public String getQuestion();
+	public void setQuestion(String question);
+	public String getAnswer();
+	public void setAnswer(String answer);
+
+}
+
+INFO main com.desmond.generator.run.TestRun - package com.desmond.user.impl;
+
+import java.sql.Time;
+import com.desmond.user.intf.User;
+
+import com.desmond.ecommerce.base.model.impl.BaseModelImpl;
+
+public class UserImpl extends BaseModelImpl implements User{
+		private long id;
+	private Time createdDate;
+	private Time modifiedDate;
+	private String name;
+	private String password;
+	private String reallyName;
+	private String identity;
+	private String postcode;
+	private String email;
+	private String address;
+	private String phone;
+	private String question;
+	private String answer;
+
+		public long getId() {		return id;	}
+	public void setId(long id) {		this.id = id;	}
+	public Time getCreatedDate() {		return createdDate;	}
+	public void setCreatedDate(Time createdDate) {		this.createdDate = createdDate;	}
+	public Time getModifiedDate() {		return modifiedDate;	}
+	public void setModifiedDate(Time modifiedDate) {		this.modifiedDate = modifiedDate;	}
+	public String getName() {		return name;	}
+	public void setName(String name) {		this.name = name;	}
+	public String getPassword() {		return password;	}
+	public void setPassword(String password) {		this.password = password;	}
+	public String getReallyName() {		return reallyName;	}
+	public void setReallyName(String reallyName) {		this.reallyName = reallyName;	}
+	public String getIdentity() {		return identity;	}
+	public void setIdentity(String identity) {		this.identity = identity;	}
+	public String getPostcode() {		return postcode;	}
+	public void setPostcode(String postcode) {		this.postcode = postcode;	}
+	public String getEmail() {		return email;	}
+	public void setEmail(String email) {		this.email = email;	}
+	public String getAddress() {		return address;	}
+	public void setAddress(String address) {		this.address = address;	}
+	public String getPhone() {		return phone;	}
+	public void setPhone(String phone) {		this.phone = phone;	}
+	public String getQuestion() {		return question;	}
+	public void setQuestion(String question) {		this.question = question;	}
+	public String getAnswer() {		return answer;	}
+	public void setAnswer(String answer) {		this.answer = answer;	}
+
+}
+
+DEBUG main com.desmond.generator.util.SQLGeneratorHelper - sql: create table ec_order (
+) engine InnoDB;
+INFO main com.desmond.generator.run.TestRun - fileName: com/desmond/generator/template/Model.dt
+INFO main com.desmond.generator.run.TestRun - fileName: com/desmond/generator/template/ModelImpl.dt
+INFO main com.desmond.generator.run.TestRun - fileName: 
+INFO main com.desmond.generator.run.TestRun - fileName: 
+INFO main com.desmond.generator.run.TestRun - 
+INFO main com.desmond.generator.run.TestRun - Builder [packateName=com.desmond.user, author=Presley, nameSpace=ec, entities:
+-------Entity [name=User, tableName=ec_user, columns:
+	-------Column [name=id, type=long, isPrimary=true, isAutoIncrement=true, isUnique=false, isNotNull=false]
+	-------Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=name, type=String, isPrimary=false, isAutoIncrement=false, isUnique=true, isNotNull=true]
+	-------Column [name=password, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=reallyName, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=identity, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=postcode, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=email, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=address, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=phone, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=question, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=answer, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+
+
+INFO main com.desmond.generator.run.TestRun - package com.desmond.user.intf;
+
+import java.sql.Time;
+
+import com.desmond.ecommerce.base.model.intf.BaseModel;
+
+public interface User extends BaseModel{
+		public long getId();
+	public void setId(long id);
+	public Time getCreatedDate();
+	public void setCreatedDate(Time createdDate);
+	public Time getModifiedDate();
+	public void setModifiedDate(Time modifiedDate);
+	public String getName();
+	public void setName(String name);
+	public String getPassword();
+	public void setPassword(String password);
+	public String getReallyName();
+	public void setReallyName(String reallyName);
+	public String getIdentity();
+	public void setIdentity(String identity);
+	public String getPostcode();
+	public void setPostcode(String postcode);
+	public String getEmail();
+	public void setEmail(String email);
+	public String getAddress();
+	public void setAddress(String address);
+	public String getPhone();
+	public void setPhone(String phone);
+	public String getQuestion();
+	public void setQuestion(String question);
+	public String getAnswer();
+	public void setAnswer(String answer);
+
+}
+
+INFO main com.desmond.generator.run.TestRun - package com.desmond.user.impl;
+
+import java.sql.Time;
+import com.desmond.user.intf.User;
+
+import com.desmond.ecommerce.base.model.impl.BaseModelImpl;
+
+public class UserImpl extends BaseModelImpl implements User{
+		private long id;
+	private Time createdDate;
+	private Time modifiedDate;
+	private String name;
+	private String password;
+	private String reallyName;
+	private String identity;
+	private String postcode;
+	private String email;
+	private String address;
+	private String phone;
+	private String question;
+	private String answer;
+
+		public long getId() {		return id;	}
+	public void setId(long id) {		this.id = id;	}
+	public Time getCreatedDate() {		return createdDate;	}
+	public void setCreatedDate(Time createdDate) {		this.createdDate = createdDate;	}
+	public Time getModifiedDate() {		return modifiedDate;	}
+	public void setModifiedDate(Time modifiedDate) {		this.modifiedDate = modifiedDate;	}
+	public String getName() {		return name;	}
+	public void setName(String name) {		this.name = name;	}
+	public String getPassword() {		return password;	}
+	public void setPassword(String password) {		this.password = password;	}
+	public String getReallyName() {		return reallyName;	}
+	public void setReallyName(String reallyName) {		this.reallyName = reallyName;	}
+	public String getIdentity() {		return identity;	}
+	public void setIdentity(String identity) {		this.identity = identity;	}
+	public String getPostcode() {		return postcode;	}
+	public void setPostcode(String postcode) {		this.postcode = postcode;	}
+	public String getEmail() {		return email;	}
+	public void setEmail(String email) {		this.email = email;	}
+	public String getAddress() {		return address;	}
+	public void setAddress(String address) {		this.address = address;	}
+	public String getPhone() {		return phone;	}
+	public void setPhone(String phone) {		this.phone = phone;	}
+	public String getQuestion() {		return question;	}
+	public void setQuestion(String question) {		this.question = question;	}
+	public String getAnswer() {		return answer;	}
+	public void setAnswer(String answer) {		this.answer = answer;	}
+
+}
+
+INFO main com.desmond.generator.run.TestRun - fileName: com/desmond/generator/template/Model.dt
+INFO main com.desmond.generator.run.TestRun - fileName: com/desmond/generator/template/ModelImpl.dt
+INFO main com.desmond.generator.run.TestRun - fileName: 
+INFO main com.desmond.generator.run.TestRun - fileName: 
+INFO main com.desmond.generator.run.TestRun - 
+INFO main com.desmond.generator.run.TestRun - Builder [packateName=com.desmond.user, author=Presley, nameSpace=ec, entities:
+-------Entity [name=User, tableName=ec_user, columns:
+	-------Column [name=id, type=long, isPrimary=true, isAutoIncrement=true, isUnique=false, isNotNull=false]
+	-------Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=name, type=String, isPrimary=false, isAutoIncrement=false, isUnique=true, isNotNull=true]
+	-------Column [name=password, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=reallyName, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=identity, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=postcode, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=email, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=address, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=phone, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=question, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=answer, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+
+
+INFO main com.desmond.generator.run.TestRun - package com.desmond.user.intf;
+
+import java.sql.Time;
+
+import com.desmond.ecommerce.base.model.intf.BaseModel;
+
+public interface User extends BaseModel{
+		public long getId();
+	public void setId(long id);
+	public Time getCreatedDate();
+	public void setCreatedDate(Time createdDate);
+	public Time getModifiedDate();
+	public void setModifiedDate(Time modifiedDate);
+	public String getName();
+	public void setName(String name);
+	public String getPassword();
+	public void setPassword(String password);
+	public String getReallyName();
+	public void setReallyName(String reallyName);
+	public String getIdentity();
+	public void setIdentity(String identity);
+	public String getPostcode();
+	public void setPostcode(String postcode);
+	public String getEmail();
+	public void setEmail(String email);
+	public String getAddress();
+	public void setAddress(String address);
+	public String getPhone();
+	public void setPhone(String phone);
+	public String getQuestion();
+	public void setQuestion(String question);
+	public String getAnswer();
+	public void setAnswer(String answer);
+
+}
+
+INFO main com.desmond.generator.run.TestRun - package com.desmond.user.impl;
+
+import java.sql.Time;
+import com.desmond.user.intf.User;
+
+import com.desmond.ecommerce.base.model.impl.BaseModelImpl;
+
+public class UserImpl extends BaseModelImpl implements User{
+		private long id;
+	private Time createdDate;
+	private Time modifiedDate;
+	private String name;
+	private String password;
+	private String reallyName;
+	private String identity;
+	private String postcode;
+	private String email;
+	private String address;
+	private String phone;
+	private String question;
+	private String answer;
+
+		public long getId() {		return id;	}
+	public void setId(long id) {		this.id = id;	}
+	public Time getCreatedDate() {		return createdDate;	}
+	public void setCreatedDate(Time createdDate) {		this.createdDate = createdDate;	}
+	public Time getModifiedDate() {		return modifiedDate;	}
+	public void setModifiedDate(Time modifiedDate) {		this.modifiedDate = modifiedDate;	}
+	public String getName() {		return name;	}
+	public void setName(String name) {		this.name = name;	}
+	public String getPassword() {		return password;	}
+	public void setPassword(String password) {		this.password = password;	}
+	public String getReallyName() {		return reallyName;	}
+	public void setReallyName(String reallyName) {		this.reallyName = reallyName;	}
+	public String getIdentity() {		return identity;	}
+	public void setIdentity(String identity) {		this.identity = identity;	}
+	public String getPostcode() {		return postcode;	}
+	public void setPostcode(String postcode) {		this.postcode = postcode;	}
+	public String getEmail() {		return email;	}
+	public void setEmail(String email) {		this.email = email;	}
+	public String getAddress() {		return address;	}
+	public void setAddress(String address) {		this.address = address;	}
+	public String getPhone() {		return phone;	}
+	public void setPhone(String phone) {		this.phone = phone;	}
+	public String getQuestion() {		return question;	}
+	public void setQuestion(String question) {		this.question = question;	}
+	public String getAnswer() {		return answer;	}
+	public void setAnswer(String answer) {		this.answer = answer;	}
+
+}
+
+INFO main com.desmond.generator.run.TestRun - fileName: com/desmond/generator/template/Model.dt
+INFO main com.desmond.generator.run.TestRun - fileName: com/desmond/generator/template/ModelImpl.dt
+INFO main com.desmond.generator.run.TestRun - fileName: 
+INFO main com.desmond.generator.run.TestRun - fileName: 
+INFO main com.desmond.generator.run.TestRun - 
+INFO main com.desmond.generator.run.TestRun - Builder [packateName=com.desmond.user, author=Presley, nameSpace=ec, entities:
+-------Entity [name=User, tableName=ec_user, columns:
+	-------Column [name=id, type=long, isPrimary=true, isAutoIncrement=true, isUnique=false, isNotNull=false]
+	-------Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=name, type=String, isPrimary=false, isAutoIncrement=false, isUnique=true, isNotNull=true]
+	-------Column [name=password, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=reallyName, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=identity, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=postcode, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=email, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=address, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=phone, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=question, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=answer, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+
+
+INFO main com.desmond.generator.run.TestRun - package com.desmond.user.intf;
+
+import java.sql.Time;
+
+import com.desmond.ecommerce.base.model.intf.BaseModel;
+
+public interface User extends BaseModel{
+		public long getId();
+	public void setId(long id);
+	public Time getCreatedDate();
+	public void setCreatedDate(Time createdDate);
+	public Time getModifiedDate();
+	public void setModifiedDate(Time modifiedDate);
+	public String getName();
+	public void setName(String name);
+	public String getPassword();
+	public void setPassword(String password);
+	public String getReallyName();
+	public void setReallyName(String reallyName);
+	public String getIdentity();
+	public void setIdentity(String identity);
+	public String getPostcode();
+	public void setPostcode(String postcode);
+	public String getEmail();
+	public void setEmail(String email);
+	public String getAddress();
+	public void setAddress(String address);
+	public String getPhone();
+	public void setPhone(String phone);
+	public String getQuestion();
+	public void setQuestion(String question);
+	public String getAnswer();
+	public void setAnswer(String answer);
+
+}
+
+INFO main com.desmond.generator.run.TestRun - package com.desmond.user.impl;
+
+import java.sql.Time;
+import com.desmond.user.intf.User;
+
+import com.desmond.ecommerce.base.model.impl.BaseModelImpl;
+
+public class UserImpl extends BaseModelImpl implements User{
+		private long id;
+	private Time createdDate;
+	private Time modifiedDate;
+	private String name;
+	private String password;
+	private String reallyName;
+	private String identity;
+	private String postcode;
+	private String email;
+	private String address;
+	private String phone;
+	private String question;
+	private String answer;
+
+		public long getId() {		return id;	}
+	public void setId(long id) {		this.id = id;	}
+	public Time getCreatedDate() {		return createdDate;	}
+	public void setCreatedDate(Time createdDate) {		this.createdDate = createdDate;	}
+	public Time getModifiedDate() {		return modifiedDate;	}
+	public void setModifiedDate(Time modifiedDate) {		this.modifiedDate = modifiedDate;	}
+	public String getName() {		return name;	}
+	public void setName(String name) {		this.name = name;	}
+	public String getPassword() {		return password;	}
+	public void setPassword(String password) {		this.password = password;	}
+	public String getReallyName() {		return reallyName;	}
+	public void setReallyName(String reallyName) {		this.reallyName = reallyName;	}
+	public String getIdentity() {		return identity;	}
+	public void setIdentity(String identity) {		this.identity = identity;	}
+	public String getPostcode() {		return postcode;	}
+	public void setPostcode(String postcode) {		this.postcode = postcode;	}
+	public String getEmail() {		return email;	}
+	public void setEmail(String email) {		this.email = email;	}
+	public String getAddress() {		return address;	}
+	public void setAddress(String address) {		this.address = address;	}
+	public String getPhone() {		return phone;	}
+	public void setPhone(String phone) {		this.phone = phone;	}
+	public String getQuestion() {		return question;	}
+	public void setQuestion(String question) {		this.question = question;	}
+	public String getAnswer() {		return answer;	}
+	public void setAnswer(String answer) {		this.answer = answer;	}
+
+}
+
+DEBUG main com.desmond.generator.util.SQLGeneratorHelper - sql: create table ec_user (
+	id BIGINT(25) PRIMARY KEY AUTO_INCREMENT,	createdDate TIMESTAMP ,	modifiedDate TIMESTAMP ,	name VARCHAR(75) NOT NULL UNIQUE ,	password VARCHAR(75) ,	reallyName VARCHAR(75) ,	identity VARCHAR(75) ,	postcode VARCHAR(75) ,	email VARCHAR(75) ,	address VARCHAR(75) ,	phone VARCHAR(75) ,	question VARCHAR(75) ,	answer VARCHAR(75) ) engine InnoDB;
+INFO main com.desmond.generator.run.TestRun - fileName: com/desmond/generator/template/Model.dt
+INFO main com.desmond.generator.run.TestRun - fileName: com/desmond/generator/template/ModelImpl.dt
+INFO main com.desmond.generator.run.TestRun - fileName: 
+INFO main com.desmond.generator.run.TestRun - fileName: 
+INFO main com.desmond.generator.run.TestRun - 
+INFO main com.desmond.generator.run.TestRun - Builder [packateName=com.desmond.user, author=Presley, nameSpace=ec, entities:
+-------Entity [name=User, tableName=ec_user, columns:
+	-------Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=name, type=String, isPrimary=false, isAutoIncrement=false, isUnique=true, isNotNull=true]
+	-------Column [name=password, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=reallyName, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=identity, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=postcode, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=email, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=address, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=phone, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=question, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=answer, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+
+
+INFO main com.desmond.generator.run.TestRun - package com.desmond.user.intf;
+
+import java.sql.Time;
+
+import com.desmond.ecommerce.base.model.intf.BaseModel;
+
+public interface User extends BaseModel{
+		public long getId();
+	public void setId(long id);
+	public Time getCreatedDate();
+	public void setCreatedDate(Time createdDate);
+	public Time getModifiedDate();
+	public void setModifiedDate(Time modifiedDate);
+	public String getName();
+	public void setName(String name);
+	public String getPassword();
+	public void setPassword(String password);
+	public String getReallyName();
+	public void setReallyName(String reallyName);
+	public String getIdentity();
+	public void setIdentity(String identity);
+	public String getPostcode();
+	public void setPostcode(String postcode);
+	public String getEmail();
+	public void setEmail(String email);
+	public String getAddress();
+	public void setAddress(String address);
+	public String getPhone();
+	public void setPhone(String phone);
+	public String getQuestion();
+	public void setQuestion(String question);
+	public String getAnswer();
+	public void setAnswer(String answer);
+
+}
+
+INFO main com.desmond.generator.run.TestRun - package com.desmond.user.impl;
+
+import java.sql.Time;
+import com.desmond.user.intf.User;
+
+import com.desmond.ecommerce.base.model.impl.BaseModelImpl;
+
+public class UserImpl extends BaseModelImpl implements User{
+		private long id;
+	private Time createdDate;
+	private Time modifiedDate;
+	private String name;
+	private String password;
+	private String reallyName;
+	private String identity;
+	private String postcode;
+	private String email;
+	private String address;
+	private String phone;
+	private String question;
+	private String answer;
+
+		public long getId() {		return id;	}
+	public void setId(long id) {		this.id = id;	}
+	public Time getCreatedDate() {		return createdDate;	}
+	public void setCreatedDate(Time createdDate) {		this.createdDate = createdDate;	}
+	public Time getModifiedDate() {		return modifiedDate;	}
+	public void setModifiedDate(Time modifiedDate) {		this.modifiedDate = modifiedDate;	}
+	public String getName() {		return name;	}
+	public void setName(String name) {		this.name = name;	}
+	public String getPassword() {		return password;	}
+	public void setPassword(String password) {		this.password = password;	}
+	public String getReallyName() {		return reallyName;	}
+	public void setReallyName(String reallyName) {		this.reallyName = reallyName;	}
+	public String getIdentity() {		return identity;	}
+	public void setIdentity(String identity) {		this.identity = identity;	}
+	public String getPostcode() {		return postcode;	}
+	public void setPostcode(String postcode) {		this.postcode = postcode;	}
+	public String getEmail() {		return email;	}
+	public void setEmail(String email) {		this.email = email;	}
+	public String getAddress() {		return address;	}
+	public void setAddress(String address) {		this.address = address;	}
+	public String getPhone() {		return phone;	}
+	public void setPhone(String phone) {		this.phone = phone;	}
+	public String getQuestion() {		return question;	}
+	public void setQuestion(String question) {		this.question = question;	}
+	public String getAnswer() {		return answer;	}
+	public void setAnswer(String answer) {		this.answer = answer;	}
+
+}
+
+DEBUG main com.desmond.generator.util.SQLGeneratorHelper - sql: create table ec_user (
+	id BIGINT(25) PRIMARY KEY ,	createdDate TIMESTAMP ,	modifiedDate TIMESTAMP ,	name VARCHAR(75) NOT NULL UNIQUE ,	password VARCHAR(75) ,	reallyName VARCHAR(75) ,	identity VARCHAR(75) ,	postcode VARCHAR(75) ,	email VARCHAR(75) ,	address VARCHAR(75) ,	phone VARCHAR(75) ,	question VARCHAR(75) ,	answer VARCHAR(75) ) engine InnoDB;

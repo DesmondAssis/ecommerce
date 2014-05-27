@@ -16,7 +16,6 @@ public class Column {
 
 	public Column() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Column(String name, String type, Boolean isPrimary,
@@ -73,7 +72,7 @@ public class Column {
 	 * 
 	 * @return the isPrimary
 	 */
-	public Boolean getIsPrimary() {
+	public Boolean isPrimary() {
 		return isPrimary;
 	}
 
@@ -92,7 +91,7 @@ public class Column {
 	 * 
 	 * @return the isAutoIncrement
 	 */
-	public Boolean getIsAutoIncrement() {
+	public Boolean isAutoIncrement() {
 		return isAutoIncrement;
 	}
 
@@ -110,7 +109,7 @@ public class Column {
 	 * Returns the isUnique of this Column.
 	 * @return the isUnique
 	 */
-	public Boolean getIsUnique() {
+	public Boolean isUnique() {
 		return isUnique;
 	}
 
@@ -126,7 +125,7 @@ public class Column {
 	 * Returns the isNotNull of this Column.
 	 * @return the isNotNull
 	 */
-	public Boolean getIsNotNull() {
+	public Boolean isNotNull() {
 		return isNotNull;
 	}
 
@@ -136,6 +135,16 @@ public class Column {
 	 */
 	public void setIsNotNull(Boolean isNotNull) {
 		this.isNotNull = isNotNull;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Column [name=" + name + ", type=" + type + ", isPrimary="
+				+ isPrimary + ", isAutoIncrement=" + isAutoIncrement
+				+ ", isUnique=" + isUnique + ", isNotNull=" + isNotNull + "]";
 	}
 	
 }

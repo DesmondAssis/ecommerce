@@ -3,9 +3,9 @@
 	<author>Presley</author>
 	<namespace>ec</namespace>
 	
-	<entity name="User" tableName="ec_user">
+	<entity name="User" table-Name="ec_user">
         <!-- PK fields -->
-		<column name="id" type="long" primary="true" autoIncrement="true"/>
+		<column name="id" type="long" primary="true" auto-increment="false"/>
 		
 		<!-- Audit fields -->
 

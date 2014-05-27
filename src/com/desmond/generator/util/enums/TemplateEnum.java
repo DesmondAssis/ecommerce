@@ -1,4 +1,4 @@
-package com.desmond.ecommerce.util.cgenerate;
+package com.desmond.generator.util.enums;
 
 public enum TemplateEnum {
 	MODEL(0, "com/desmond/generator/template/Model.dt"),

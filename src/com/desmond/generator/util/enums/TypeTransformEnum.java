@@ -1,8 +1,9 @@
-package com.desmond.ecommerce.util.cgenerate;
+package com.desmond.generator.util.enums;
 
-import com.desmond.ecommerce.util.constant.DMConstants;
+import com.desmond.generator.util.constant.DMConstants;
 
 public enum TypeTransformEnum {
+	INVALID(DMConstants.DB_TYPE_INVAILD, "", ""),
 	LONG(DMConstants.DB_TYPE_MYSQL, "long", "BIGINT(25)"),
 	STRING(DMConstants.DB_TYPE_MYSQL, "String", "VARCHAR(75)"),
 	TIME(DMConstants.DB_TYPE_MYSQL, "Time", "TIMESTAMP");
@@ -15,6 +16,26 @@ public enum TypeTransformEnum {
 		this.dbType = dbType;
 		this.typeInJava = typeInJava;
 		TypeInDB = typeInDB;
+	}
+	
+	public static TypeTransformEnum getTypeByTypeInDB(int db, String typeInDB) {
+		for(TypeTransformEnum type : TypeTransformEnum.values()) {
+			if(db == type.getDbType() && typeInDB.equals(type.getTypeInDB())) {
+				return type;
+			}
+		}
+		
+		return TypeTransformEnum.INVALID;
+	}
+	
+	public static TypeTransformEnum getTypeByTypeInJava(int db, String typeInJava) {
+		for(TypeTransformEnum type : TypeTransformEnum.values()) {
+			if(db == type.getDbType() && typeInJava.equals(type.getTypeInJava())) {
+				return type;
+			}
+		}
+		
+		return TypeTransformEnum.INVALID;
 	}
 
 	/**
@@ -57,6 +78,7 @@ public enum TypeTransformEnum {
 		return TypeInDB;
 	}
 
+	
 	/**
 	 * Sets the typeInDB of this TypeTransformEnum.
 	 * @param typeInDB the typeInDB to set
