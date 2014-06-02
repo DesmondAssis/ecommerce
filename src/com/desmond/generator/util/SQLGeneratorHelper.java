@@ -25,7 +25,10 @@ public class SQLGeneratorHelper {
     			List<Column> columnList = entity.getColumns();
     			StringBuilder tableSb = new StringBuilder();
     			StringBuilder rowsSb = new StringBuilder();
-    			tableSb.append(SQLStatementConstant.CREATE_TABLE_PREFIX.replace("${table-name}", entity.getTableName()));
+    			String tableName = StringUtils.isNotBlank(entity.getTableName()) ?
+						entity.getTableName() 
+						: builder.getNameSpace() + "_" + entity.getName();
+    			tableSb.append(SQLStatementConstant.CREATE_TABLE_PREFIX.replace("${table-name}", tableName));
     			
     			if(columnList != null && columnList.size() > 0) {
     				for(Column c : columnList) {
@@ -40,6 +43,16 @@ public class SQLGeneratorHelper {
     			
     			tableSb.append(SQLStatementConstant.CREATE_TABLE_SUFFIX);
     			
+    			String packageFileName = builder.getPackateName().replace(".",
+						"/");
+				StringBuilder fileNameSb = new StringBuilder(
+						"L:/gitHub/projects/eCommerce/src/");
+				fileNameSb.append(packageFileName).append("/").append("intf/")
+						.append(entity.getName()).append(".sql");
+
+				// write to source
+				GeneratorHelper
+						.writeToDestFile(tableSb.toString(), fileNameSb.toString());
     			log.debug("sql: " + tableSb);
         	} // end: for:entity
     	} // end: if:entityList
@@ -52,12 +65,13 @@ public class SQLGeneratorHelper {
     		String columnName = StringUtils.uncapitalize(column.getName());
     		rowsSb.append(columnName).append(" ");
     		TypeTransformEnum type
-    			= TypeTransformEnum.getTypeByTypeInJava(DMConstants.DB_TYPE_MYSQL, column.getType());
+    			= TypeTransformEnum.getTypeByTypeInXml(DMConstants.DB_TYPE_MYSQL, column.getType());
     		
     		if(type.getDbType() == DMConstants.DB_TYPE_INVAILD) {
     			throw new NoSuchDBTypeException("No Such field type: " + type.getTypeInDB()
     						+ " for type in Java: " + type.getTypeInJava()
-    						+ " in DB: " + type.getDbType());
+    						+ " in DB: " + type.getDbType()
+    						+ " in column: " + column.getType());
     		}
     		
     		rowsSb.append(type.getTypeInDB()).append(" ");

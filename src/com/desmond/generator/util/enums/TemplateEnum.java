@@ -4,7 +4,7 @@ public enum TemplateEnum {
 	MODEL(0, "com/desmond/generator/template/Model.dt"),
 	MODEL_IMPL(1, "com/desmond/generator/template/ModelImpl.dt"),
 	DAO(2, ""),
-	DAO_IMPL(3, "");
+	DAO_IMPL(3, "com/desmond/generator/template/UserDaoImpl.dt");
 
 	private int type;
 	private String relativeURL;

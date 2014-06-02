@@ -1,6 +1,7 @@
 package com.desmond.ecommerce.base.model.intf;
 
 import java.sql.Time;
+import java.sql.Timestamp;
 
 public interface BaseModel {
 	/**
@@ -19,23 +20,23 @@ public interface BaseModel {
 	 * Returns the createDate of this BaseModelImpl.
 	 * @return the createDate
 	 */
-	public Time getCreateDate();
+	public Timestamp getCreateDate();
 	
 	/**
 	 * Sets the createDate of this BaseModelImpl.
 	 * @param createDate the createDate to set
 	 */
-	public void setCreateDate(Time createDate);
+	public void setCreateDate(Timestamp createDate);
 	
 	/**
 	 * Returns the modifiedDate of this BaseModelImpl.
 	 * @return the modifiedDate
 	 */
-	public Time getModifiedDate();
+	public Timestamp getModifiedDate();
 	
 	/**
 	 * Sets the modifiedDate of this BaseModelImpl.
 	 * @param modifiedDate the modifiedDate to set
 	 */
-	public void setModifiedDate(Time modifiedDate);
+	public void setModifiedDate(Timestamp modifiedDate);
 }

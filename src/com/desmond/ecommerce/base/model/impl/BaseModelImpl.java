@@ -1,13 +1,13 @@
 package com.desmond.ecommerce.base.model.impl;
 
-import java.sql.Time;
+import java.sql.Timestamp;
 
 import com.desmond.ecommerce.base.model.intf.BaseModel;
 
 public class BaseModelImpl implements BaseModel{
 	private long primaryKey;
-	private Time createDate;
-	private Time modifiedDate;
+	private Timestamp createDate;
+	private Timestamp modifiedDate;
 	
 	/**
 	 * Returns the primaryKey of this BaseModelImpl.
@@ -29,7 +29,7 @@ public class BaseModelImpl implements BaseModel{
 	 * Returns the createDate of this BaseModelImpl.
 	 * @return the createDate
 	 */
-	public Time getCreateDate() {
+	public Timestamp getCreateDate() {
 		return createDate;
 	}
 	
@@ -37,7 +37,7 @@ public class BaseModelImpl implements BaseModel{
 	 * Sets the createDate of this BaseModelImpl.
 	 * @param createDate the createDate to set
 	 */
-	public void setCreateDate(Time createDate) {
+	public void setCreateDate(Timestamp createDate) {
 		this.createDate = createDate;
 	}
 	
@@ -45,7 +45,7 @@ public class BaseModelImpl implements BaseModel{
 	 * Returns the modifiedDate of this BaseModelImpl.
 	 * @return the modifiedDate
 	 */
-	public Time getModifiedDate() {
+	public Timestamp getModifiedDate() {
 		return modifiedDate;
 	}
 	
@@ -53,7 +53,7 @@ public class BaseModelImpl implements BaseModel{
 	 * Sets the modifiedDate of this BaseModelImpl.
 	 * @param modifiedDate the modifiedDate to set
 	 */
-	public void setModifiedDate(Time modifiedDate) {
+	public void setModifiedDate(Timestamp modifiedDate) {
 		this.modifiedDate = modifiedDate;
 	}
 }

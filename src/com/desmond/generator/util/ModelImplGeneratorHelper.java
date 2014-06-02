@@ -42,33 +42,36 @@ public class ModelImplGeneratorHelper {
 
 				if (columnList != null && columnList.size() > 0) {
 					for (Column c : columnList) {
-						String nameCapitalition = StringUtils.capitalize(c
-								.getName());
-						String nameUnCapitalition = StringUtils.uncapitalize(c
-								.getName());
+						if(!GeneratorHelper.filedsExcludeMap.containsKey(c.getName())) {
 
-						if (c.getType().equals("Date")
-								&& !flagMap.containsKey("Date")) {
-							importsSb.append("import java.util.Date;\n");
-							flagMap.put("Date", "");
-						} else if (c.getType().equals("Time")
-								&& !flagMap.containsKey("Time")) {
-							importsSb.append("import java.sql.Time;\n");
-							flagMap.put("Time", "");
-						}
+							String nameCapitalition = StringUtils.capitalize(c
+									.getName());
+							String nameUnCapitalition = StringUtils.uncapitalize(c
+									.getName());
 
-						// getter
-						setterAndGetterSb.append("\r\tpublic ")
-								.append(c.getType()).append(" get")
-								.append(nameCapitalition).append("(")
-								.append(");").append("\r\n");
+							if (c.getType().equals("Date")
+									&& !flagMap.containsKey("Date")) {
+								importsSb.append("import java.util.Date;\n");
+								flagMap.put("Date", "");
+							} else if (c.getType().equals("Time")
+									&& !flagMap.containsKey("Time")) {
+								importsSb.append("import java.sql.Timestamp;\n");
+								flagMap.put("Time", "");
+							}
 
-						// setter
-						setterAndGetterSb.append("\r\tpublic ").append("void")
-								.append(" set").append(nameCapitalition)
-								.append("(").append(c.getType()).append(" ")
-								.append(nameUnCapitalition).append(");")
-								.append("\r\n");
+							// getter
+							setterAndGetterSb.append("\r\tpublic ")
+									.append(c.getType()).append(" get")
+									.append(nameCapitalition).append("(")
+									.append(");").append("\r\n");
+
+							// setter
+							setterAndGetterSb.append("\r\tpublic ").append("void")
+									.append(" set").append(nameCapitalition)
+									.append("(").append(c.getType()).append(" ")
+									.append(nameUnCapitalition).append(");")
+									.append("\r\n");
+						} 
 					}
 				}
 
@@ -111,42 +114,44 @@ public class ModelImplGeneratorHelper {
 
 				if (columnList != null && columnList.size() > 0) {
 					for (Column c : columnList) {
-						String nameCapitalition = StringUtils.capitalize(c
-								.getName());
-						String nameUnCapitalition = StringUtils.uncapitalize(c
-								.getName());
-						if (c.getType().equals("Date")
-								&& !flagMap.containsKey("Date")) {
-							importsSb.append("import java.util.Date;\n");
-							flagMap.put("Date", "");
-						} else if (c.getType().equals("Time")
-								&& !flagMap.containsKey("Time")) {
-							importsSb.append("import java.sql.Time;\n");
-							flagMap.put("Time", "");
+						if(!GeneratorHelper.filedsExcludeMap.containsKey(c.getName())) {
+							String nameCapitalition = StringUtils.capitalize(c
+									.getName());
+							String nameUnCapitalition = StringUtils.uncapitalize(c
+									.getName());
+							if (c.getType().equals("Date")
+									&& !flagMap.containsKey("Date")) {
+								importsSb.append("import java.util.Date;\n");
+								flagMap.put("Date", "");
+							} else if (c.getType().equals("Time")
+									&& !flagMap.containsKey("Time")) {
+								importsSb.append("import java.sql.Time;\n");
+								flagMap.put("Time", "");
+							}
+
+							// private fields
+							privateFieldsSb.append("\r\tprivate ")
+									.append(c.getType()).append(" ")
+									.append(c.getName()).append(";").append("\r\n");
+
+							// getter
+							setterAndGetterSb.append("\r\tpublic ")
+									.append(c.getType()).append(" get")
+									.append(nameCapitalition).append("(")
+									.append(") {").append("\r\t\treturn ")
+									.append(c.getName()).append(";")
+									.append("\r\t}").append("\r\n");
+
+							// setter
+							setterAndGetterSb.append("\r\tpublic ").append("void")
+									.append(" set").append(nameCapitalition)
+									.append("(").append(c.getType()).append(" ")
+									.append(nameUnCapitalition).append(") {")
+									.append("\r\t\tthis.")
+									.append(nameUnCapitalition).append(" = ")
+									.append(nameUnCapitalition).append(";")
+									.append("\r\t}").append("\r\n");
 						}
-
-						// private fields
-						privateFieldsSb.append("\r\tprivate ")
-								.append(c.getType()).append(" ")
-								.append(c.getName()).append(";").append("\r\n");
-
-						// getter
-						setterAndGetterSb.append("\r\tpublic ")
-								.append(c.getType()).append(" get")
-								.append(nameCapitalition).append("(")
-								.append(") {").append("\r\t\treturn ")
-								.append(c.getName()).append(";")
-								.append("\r\t}").append("\r\n");
-
-						// setter
-						setterAndGetterSb.append("\r\tpublic ").append("void")
-								.append(" set").append(nameCapitalition)
-								.append("(").append(c.getType()).append(" ")
-								.append(nameUnCapitalition).append(") {")
-								.append("\r\t\tthis.")
-								.append(nameUnCapitalition).append(" = ")
-								.append(nameUnCapitalition).append(";")
-								.append("\r\t}").append("\r\n");
 
 					} // end: column
 				} // end: if:column

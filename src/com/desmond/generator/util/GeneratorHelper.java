@@ -31,12 +31,17 @@ public class GeneratorHelper {
 	private static Logger log = Logger.getLogger(GeneratorHelper.class.getName());
 	
 	public static Map<Integer, String> templateFileMap = new HashMap<Integer, String>();
+	public static Map<String, String> filedsExcludeMap = new HashMap<String, String>();
 	
 	static {
 		for(TemplateEnum en : TemplateEnum.values()) {
     		String source = GeneratorHelper.getServiceFileAsString(en.getRelativeURL());
     		templateFileMap.put(en.getType(), source);
     	}
+		
+		filedsExcludeMap.put("id", "id");
+		filedsExcludeMap.put("createdDate", "createdDate");
+		filedsExcludeMap.put("modifiedDate", "modifiedDate");
 	}
 	
 	public static void writeToDestFile(String sourceFileStr, String destdile) {

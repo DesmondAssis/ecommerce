@@ -1,4 +1,4 @@
-package com.desmond.user.impl;
+package com.desmond.ecommerce.impl.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
