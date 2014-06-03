@@ -150,41 +150,41 @@ public class AdminDaoImpl implements AdminDao{
 //	��������鿴����Ա��Ϣ����ݿ����
 //	@param adminId ����Աid
 //	*/
-//   public AdminBean viewAdmin(int adminId){
-//	   AdminBean ad=null;
-//	   
-//		
-//	    Connection conn = DButil.getConnection();
-//	    String sql="select * from admin where admin_id=?";
-//	    PreparedStatement ps=null;
-//	    ResultSet rs=null;
-//	    try {
-//			ps=conn.prepareStatement(sql);
-//			ps.setInt(1, adminId);
-//			rs=ps.executeQuery();
-//			if(rs.next()){
-//				ad=new AdminBean();
-//				ad.setAdminId(rs.getInt("admin_id"));
-//				ad.setUserName(rs.getString("admin_name"));
-//				ad.setPwd(rs.getString("admin_pwd"));
-//				ad.setAdmin_type(rs.getInt("admin_type"));
-//				int [] auth=new int[5];
-//				for(int i=0;i<auth.length;i++){
-//					auth[i]=rs.getInt("authority"+(i+1));
-//				}
-//				ad.setAuthority(auth);
-//				log.info("dao�鿴�ɹ�"+ad.getAdminId());
-//			}
-//			
-//		} catch (SQLException e) {
-//			log.error("error when execute sql" + sql, e);
-//		}finally{
-//			DButil.close(conn, ps);
-//		}
-//		}
-//	   
-//	   return ad;
-//   }
+   public AdminBean viewAdmin(int adminId){
+	   AdminBean ad=null;
+	   
+		
+	    Connection conn = DButil.getConnection();
+	    String sql="select * from admin where admin_id=?";
+	    PreparedStatement ps=null;
+	    ResultSet rs=null;
+	    try {
+			ps=conn.prepareStatement(sql);
+			ps.setInt(1, adminId);
+			rs=ps.executeQuery();
+			if(rs.next()){
+				ad=new AdminBean();
+				ad.setAdminId(rs.getInt("admin_id"));
+				ad.setUserName(rs.getString("admin_name"));
+				ad.setPwd(rs.getString("admin_pwd"));
+				ad.setAdmin_type(rs.getInt("admin_type"));
+				int [] auth=new int[5];
+				for(int i=0;i<auth.length;i++){
+					auth[i]=rs.getInt("authority"+(i+1));
+				}
+				ad.setAuthority(auth);
+				log.info("dao�鿴�ɹ�"+ad.getAdminId());
+			}
+			
+		} catch (SQLException e) {
+			log.error("error when execute sql" + sql, e);
+		}finally{
+			DButil.close(conn, ps);
+		}
+		
+	   
+	   return ad;
+   }
 //   
 //   /**
 //	���������ѯ���й���Ա��Ϣ����ݿ����

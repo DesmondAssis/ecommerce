@@ -6,15 +6,15 @@ import org.apache.log4j.Logger;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
 
+import com.desmond.User.impl.UserDaoImpl;
+import com.desmond.User.impl.UserImpl;
+import com.desmond.User.intf.User;
 import com.desmond.generator.exception.NoSuchDBTypeException;
 import com.desmond.generator.run.model.Builder;
 import com.desmond.generator.util.DaoImplGeneratorHelper;
 import com.desmond.generator.util.GeneratorHelper;
 import com.desmond.generator.util.ModelImplGeneratorHelper;
 import com.desmond.generator.util.SQLGeneratorHelper;
-import com.desmond.user.impl.UserDaoImpl;
-import com.desmond.user.impl.UserImpl;
-import com.desmond.user.intf.User;
 
 public class TestRun {
 
@@ -44,7 +44,7 @@ public class TestRun {
 		
 		
 		// test CURD of user.
-//		testCURD();
+		testCURD();
 	}
 	
 	private static void testCURD() {
@@ -66,6 +66,13 @@ public class TestRun {
 		// update.
 		user.setPrimaryKey(12);
 		userDao.update(user);
+		
+		// read.
+		User testUser = userDao.fetchByPrimaryKey(9);
+		log.info(testUser.getEmail());
+		
+		// delete.
+		userDao.delete(12);
 	}
 
 }

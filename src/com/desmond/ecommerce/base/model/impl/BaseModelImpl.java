@@ -6,7 +6,7 @@ import com.desmond.ecommerce.base.model.intf.BaseModel;
 
 public class BaseModelImpl implements BaseModel{
 	private long primaryKey;
-	private Timestamp createDate;
+	private Timestamp createdDate;
 	private Timestamp modifiedDate;
 	
 	/**
@@ -26,21 +26,21 @@ public class BaseModelImpl implements BaseModel{
 	}
 	
 	/**
-	 * Returns the createDate of this BaseModelImpl.
-	 * @return the createDate
+	 * Returns the createdDate of this BaseModelImpl.
+	 * @return the createdDate
 	 */
-	public Timestamp getCreateDate() {
-		return createDate;
+	public Timestamp getCreatedDate() {
+		return createdDate;
 	}
-	
+
 	/**
-	 * Sets the createDate of this BaseModelImpl.
-	 * @param createDate the createDate to set
+	 * Sets the createdDate of this BaseModelImpl.
+	 * @param createdDate the createdDate to set
 	 */
-	public void setCreateDate(Timestamp createDate) {
-		this.createDate = createDate;
+	public void setCreatedDate(Timestamp createdDate) {
+		this.createdDate = createdDate;
 	}
-	
+
 	/**
 	 * Returns the modifiedDate of this BaseModelImpl.
 	 * @return the modifiedDate

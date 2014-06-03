@@ -6,7 +6,7 @@ public enum TypeTransformEnum {
 	INVALID(DMConstants.DB_TYPE_INVAILD, "", "", ""),
 	LONG(DMConstants.DB_TYPE_MYSQL, "long", "Long", "BIGINT(25)"),
 	STRING(DMConstants.DB_TYPE_MYSQL, "String", "String", "VARCHAR(75)"),
-	TIME(DMConstants.DB_TYPE_MYSQL, "Time", "Time", "TIMESTAMP");
+	TIME(DMConstants.DB_TYPE_MYSQL, "Time", "Timestamp", "TIMESTAMP");
 	
 	private int dbType;
 	private String typeInXml;

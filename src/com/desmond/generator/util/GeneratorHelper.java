@@ -44,17 +44,31 @@ public class GeneratorHelper {
 		filedsExcludeMap.put("modifiedDate", "modifiedDate");
 	}
 	
+	private static void mkDir(String fullPath, String directoryPath) {
+		String[] dirctories = directoryPath.split("/");
+		if(dirctories == null || dirctories.length <= 1) {
+			return;
+		}
+		File directory = new File(fullPath.substring(0, fullPath.indexOf(dirctories[0]) + dirctories[0].length()));
+		if(!directory.exists()) {
+			directory.mkdir();
+		} else if(!directory.isDirectory()) {
+			directory.delete();
+			directory.mkdir();
+		}
+		int index = directoryPath.indexOf("/");
+		String dirctoryStr = index != -1 ? directoryPath.substring(index+1, directoryPath.length()) : "";
+		mkDir(fullPath, dirctoryStr);
+	}
+	
+//	public static void main(String[] args) {
+//		String destPath = "C:/Users/Presley/Desktop/test/test01/test02/test03/java/a.java";
+//		mkDir(destPath, destPath);
+//	}
+	
 	public static void writeToDestFile(String sourceFileStr, String destdile) {
     	try {
-    		int index = destdile.lastIndexOf("/");
-    		String dirctoryStr = index != -1 ? destdile.substring(0, index) : "";
-    		File directory = new File(dirctoryStr);
-    		if(!directory.exists()) {
-    			directory.mkdir();
-    		} else if(!directory.isDirectory()) {
-    			directory.delete();
-    			directory.mkdir();
-    		}
+    		mkDir(destdile, destdile);
     		
     		BufferedWriter bw = new BufferedWriter(new FileWriter(destdile));
     		log.info(sourceFileStr);

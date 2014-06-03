@@ -1,4 +1,4 @@
-INFO main com.desmond.generator.util.GeneratorHelper - package com.desmond.user.impl;
+INFO main com.desmond.generator.util.GeneratorHelper - package com.desmond.User.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,7 +12,7 @@ import org.apache.log4j.Logger;
 
 import com.desmond.ecommerce.util.db.Counter;
 import com.desmond.ecommerce.util.db.DButil;
-import com.desmond.user.intf.User;
+import com.desmond.User.intf.User;
 
 public class UserDaoImpl{
 	
@@ -28,7 +28,6 @@ public class UserDaoImpl{
 			ps.setLong(1, nextPrimaryKey);
 			ps.setTimestamp(2, new Timestamp(new Date().getTime()));
 			ps.setTimestamp(3, new Timestamp(new Date().getTime()));
-			
 						ps.setString(4, user.getName());			ps.setString(5, user.getPassword());			ps.setString(6, user.getReallyName());			ps.setString(7, user.getIdentity());			ps.setString(8, user.getPostcode());			ps.setString(9, user.getEmail());			ps.setString(10, user.getAddress());			ps.setString(11, user.getPhone());			ps.setString(12, user.getQuestion());			ps.setString(13, user.getAnswer());
 			
 			update = ps.executeUpdate();
@@ -49,13 +48,12 @@ public class UserDaoImpl{
 		String sql = "UPDATE ec_user set createdDate = ?, modifiedDate = ?,"				+ "name = ?,"				+ "password = ?,"				+ "reallyName = ?,"				+ "identity = ?,"				+ "postcode = ?,"				+ "email = ?,"				+ "address = ?,"				+ "phone = ?,"				+ "question = ?,"				+ "answer = ?" 				+" where id = ?";
 		try {
 			ps = conn.prepareStatement(sql);
-			ps.setTimestamp(1, user.getCreateDate());
+			ps.setTimestamp(1, user.getCreatedDate());
 			ps.setTimestamp(2, new Timestamp(new Date().getTime()));
-			
 						ps.setString(3, user.getName());			ps.setString(4, user.getPassword());			ps.setString(5, user.getReallyName());			ps.setString(6, user.getIdentity());			ps.setString(7, user.getPostcode());			ps.setString(8, user.getEmail());			ps.setString(9, user.getAddress());			ps.setString(10, user.getPhone());			ps.setString(11, user.getQuestion());			ps.setString(12, user.getAnswer());			ps.setLong(13, user.getPrimaryKey());
 			
 			update=ps.executeUpdate();		
-			log.debug(String.format("DML: s%, affect %d row.", sql, update));
+			log.debug("DML:" + sql + " affect " + sql + " row.");
 		} catch (SQLException e) {
 			log.error("error when update.", e);
 		}finally{
@@ -65,139 +63,39 @@ public class UserDaoImpl{
 		return update;
 	}
 	
-	private static Logger log = Logger.getLogger(UserDaoImpl.class.getName());
-}
-
-INFO main com.desmond.generator.util.DaoImplGeneratorHelper - package com.desmond.user.impl;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Timestamp;
-import java.util.Date;
-import java.sql.Time;
-
-import org.apache.log4j.Logger;
-
-import com.desmond.ecommerce.util.db.Counter;
-import com.desmond.ecommerce.util.db.DButil;
-import com.desmond.user.intf.User;
-
-public class UserDaoImpl{
-	
-	public int add(User user) {
-		int update = 0;
+	public User fetchByPrimaryKey(long primaryKey){
+		User user = null;
 		Connection conn = DButil.getConnection();
-		long nextPrimaryKey = Counter.getPrimaryKey(User.class.getName(), conn);
-		
 		PreparedStatement ps = null;
-		String sql = "INSERT INTO ec_user VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-		try {
-			ps=conn.prepareStatement(sql);
-			ps.setLong(1, nextPrimaryKey);
-			ps.setTimestamp(2, new Timestamp(new Date().getTime()));
-			ps.setTimestamp(3, new Timestamp(new Date().getTime()));
-			
-						ps.setString(4, user.getName());			ps.setString(5, user.getPassword());			ps.setString(6, user.getReallyName());			ps.setString(7, user.getIdentity());			ps.setString(8, user.getPostcode());			ps.setString(9, user.getEmail());			ps.setString(10, user.getAddress());			ps.setString(11, user.getPhone());			ps.setString(12, user.getQuestion());			ps.setString(13, user.getAnswer());
-			
-			update = ps.executeUpdate();
-			log.debug("count= " + update);
-		} catch(SQLException e) {
-			log.error("error when insert", e);
-		} finally {
-			DButil.close(conn, ps);
-		}
-		
-		return update;
-	}
-	
-	public int update(User user){
-		int update=0;
-		Connection conn = DButil.getConnection();
-		PreparedStatement ps=null;
-		String sql = "UPDATE ec_user set createdDate = ?, modifiedDate = ?,"				+ "name = ?,"				+ "password = ?,"				+ "reallyName = ?,"				+ "identity = ?,"				+ "postcode = ?,"				+ "email = ?,"				+ "address = ?,"				+ "phone = ?,"				+ "question = ?,"				+ "answer = ?" 				+" where id = ?";
+		String sql = "SELECT * FROM ec_user WHERE id = ?";
+		ResultSet rs = null;
 		try {
 			ps = conn.prepareStatement(sql);
-			ps.setTimestamp(1, user.getCreateDate());
-			ps.setTimestamp(2, new Timestamp(new Date().getTime()));
-			
-						ps.setString(3, user.getName());			ps.setString(4, user.getPassword());			ps.setString(5, user.getReallyName());			ps.setString(6, user.getIdentity());			ps.setString(7, user.getPostcode());			ps.setString(8, user.getEmail());			ps.setString(9, user.getAddress());			ps.setString(10, user.getPhone());			ps.setString(11, user.getQuestion());			ps.setString(12, user.getAnswer());			ps.setLong(13, user.getPrimaryKey());
-			
-			update=ps.executeUpdate();		
-			log.debug(String.format("DML: s%, affect %d row.", sql, update));
+			ps.setLong(1, primaryKey);
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				user = new UserImpl();
+								user.setPrimaryKey(rs.getLong(1));				user.setCreatedDate(rs.getTimestamp(2));				user.setModifiedDate(rs.getTimestamp(3));				user.setName(rs.getString(4));				user.setPassword(rs.getString(5));				user.setReallyName(rs.getString(6));				user.setIdentity(rs.getString(7));				user.setPostcode(rs.getString(8));				user.setEmail(rs.getString(9));				user.setAddress(rs.getString(10));				user.setPhone(rs.getString(11));				user.setQuestion(rs.getString(12));				user.setAnswer(rs.getString(13));
+			}
 		} catch (SQLException e) {
-			log.error("error when update.", e);
-		}finally{
-			DButil.close(conn, ps);
+			log.error("error when get ${User} by primaryKey: " + primaryKey, e);
 		}
 		
-		return update;
+		return user;
 	}
 	
-	private static Logger log = Logger.getLogger(UserDaoImpl.class.getName());
-}
-
-INFO main com.desmond.generator.util.GeneratorHelper - package com.desmond.user.impl;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Timestamp;
-import java.util.Date;
-import java.sql.Time;
-
-import org.apache.log4j.Logger;
-
-import com.desmond.ecommerce.util.db.Counter;
-import com.desmond.ecommerce.util.db.DButil;
-import com.desmond.user.intf.User;
-
-public class UserDaoImpl{
-	
-	public int add(User user) {
+	public int delete(long primaryKey){
 		int update = 0;
 		Connection conn = DButil.getConnection();
-		long nextPrimaryKey = Counter.getPrimaryKey(User.class.getName(), conn);
-		
 		PreparedStatement ps = null;
-		String sql = "INSERT INTO ec_user VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-		try {
-			ps=conn.prepareStatement(sql);
-			ps.setLong(1, nextPrimaryKey);
-			ps.setTimestamp(2, new Timestamp(new Date().getTime()));
-			ps.setTimestamp(3, new Timestamp(new Date().getTime()));
-			
-						ps.setString(4, user.getName());			ps.setString(5, user.getPassword());			ps.setString(6, user.getReallyName());			ps.setString(7, user.getIdentity());			ps.setString(8, user.getPostcode());			ps.setString(9, user.getEmail());			ps.setString(10, user.getAddress());			ps.setString(11, user.getPhone());			ps.setString(12, user.getQuestion());			ps.setString(13, user.getAnswer());
-			
-			update = ps.executeUpdate();
-			log.debug("count= " + update);
-		} catch(SQLException e) {
-			log.error("error when insert", e);
-		} finally {
-			DButil.close(conn, ps);
-		}
+		String sql = "DELETE FROM ec_user WHERE id = ?";
 		
-		return update;
-	}
-	
-	public int update(User user){
-		int update=0;
-		Connection conn = DButil.getConnection();
-		PreparedStatement ps=null;
-		String sql = "UPDATE ec_user set createdDate = ?, modifiedDate = ?,"				+ "name = ?,"				+ "password = ?,"				+ "reallyName = ?,"				+ "identity = ?,"				+ "postcode = ?,"				+ "email = ?,"				+ "address = ?,"				+ "phone = ?,"				+ "question = ?,"				+ "answer = ?" 				+" where id = ?";
 		try {
 			ps = conn.prepareStatement(sql);
-			ps.setTimestamp(1, user.getCreateDate());
-			ps.setTimestamp(2, new Timestamp(new Date().getTime()));
-			
-						ps.setString(3, user.getName());			ps.setString(4, user.getPassword());			ps.setString(5, user.getReallyName());			ps.setString(6, user.getIdentity());			ps.setString(7, user.getPostcode());			ps.setString(8, user.getEmail());			ps.setString(9, user.getAddress());			ps.setString(10, user.getPhone());			ps.setString(11, user.getQuestion());			ps.setString(12, user.getAnswer());			ps.setLong(13, user.getPrimaryKey());
-			
-			update=ps.executeUpdate();		
-			log.debug(String.format("DML: s%, affect %d row.", sql, update));
+			ps.setLong(1, primaryKey);
+			update = ps.executeUpdate();
 		} catch (SQLException e) {
-			log.error("error when update.", e);
+			log.error("error when delete", e);
 		}finally{
 			DButil.close(conn, ps);
 		}
@@ -212,12 +110,14 @@ INFO main com.desmond.generator.util.GeneratorHelper - create table ec_user (
 	id BIGINT(25) PRIMARY KEY ,	createdDate TIMESTAMP ,	modifiedDate TIMESTAMP ,	name VARCHAR(75) NOT NULL UNIQUE ,	password VARCHAR(75) ,	reallyName VARCHAR(75) ,	identity VARCHAR(75) ,	postcode VARCHAR(75) ,	email VARCHAR(75) UNIQUE ,	address VARCHAR(75) ,	phone VARCHAR(75) ,	question VARCHAR(75) ,	answer VARCHAR(75) ) engine InnoDB;
 DEBUG main com.desmond.generator.util.SQLGeneratorHelper - sql: create table ec_user (
 	id BIGINT(25) PRIMARY KEY ,	createdDate TIMESTAMP ,	modifiedDate TIMESTAMP ,	name VARCHAR(75) NOT NULL UNIQUE ,	password VARCHAR(75) ,	reallyName VARCHAR(75) ,	identity VARCHAR(75) ,	postcode VARCHAR(75) ,	email VARCHAR(75) UNIQUE ,	address VARCHAR(75) ,	phone VARCHAR(75) ,	question VARCHAR(75) ,	answer VARCHAR(75) ) engine InnoDB;
+DEBUG main com.desmond.User.impl.UserDaoImpl - DML: UPDATE ec_user set createdDate = ?, modifiedDate = ?,name = ?,password = ?,reallyName = ?,identity = ?,postcode = ?,email = ?,address = ?,phone = ?,question = ?,answer = ? where id = ?, affect 1 row.
+INFO main com.desmond.generator.run.TestRun - test@desmond.com
 INFO main com.desmond.generator.util.GeneratorHelper - fileName: com/desmond/generator/template/Model.dt
 INFO main com.desmond.generator.util.GeneratorHelper - fileName: com/desmond/generator/template/ModelImpl.dt
 INFO main com.desmond.generator.util.GeneratorHelper - fileName: 
-INFO main com.desmond.generator.util.GeneratorHelper - fileName: com/desmond/generator/template/UserDaoImpl.dt
+INFO main com.desmond.generator.util.GeneratorHelper - fileName: com/desmond/generator/template/ModelDaoImpl.dt
 INFO main com.desmond.generator.util.GeneratorHelper - 
-INFO main com.desmond.generator.run.TestRun - Builder [packateName=com.desmond.user, author=Presley, nameSpace=ec, entities:
+INFO main com.desmond.generator.run.TestRun - Builder [packateName=com.desmond.User, author=Presley, nameSpace=ec, entities:
 -------Entity [name=User, tableName=ec_user, columns:
 	-------Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false]
 	-------Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
@@ -233,15 +133,8 @@ INFO main com.desmond.generator.run.TestRun - Builder [packateName=com.desmond.u
 	-------Column [name=question, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
 	-------Column [name=answer, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
 
--------Entity [name=Test, tableName=null, columns:
-	-------Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false]
-	-------Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
-	-------Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
-	-------Column [name=name, type=String, isPrimary=false, isAutoIncrement=false, isUnique=true, isNotNull=true]
-	-------Column [name=password, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
 
-
-INFO main com.desmond.generator.util.GeneratorHelper - package com.desmond.user.intf;
+INFO main com.desmond.generator.util.GeneratorHelper - package com.desmond.User.intf;
 
 
 import com.desmond.ecommerce.base.model.intf.BaseModel;
@@ -270,38 +163,9 @@ public interface User extends BaseModel{
 
 }
 
-INFO main com.desmond.generator.util.GeneratorHelper - package com.desmond.user.intf;
+INFO main com.desmond.generator.util.GeneratorHelper - package com.desmond.User.impl;
 
-
-import com.desmond.ecommerce.base.model.intf.BaseModel;
-
-public interface User extends BaseModel{
-		public String getName();
-	public void setName(String name);
-	public String getPassword();
-	public void setPassword(String password);
-	public String getReallyName();
-	public void setReallyName(String reallyName);
-	public String getIdentity();
-	public void setIdentity(String identity);
-	public String getPostcode();
-	public void setPostcode(String postcode);
-	public String getEmail();
-	public void setEmail(String email);
-	public String getAddress();
-	public void setAddress(String address);
-	public String getPhone();
-	public void setPhone(String phone);
-	public String getQuestion();
-	public void setQuestion(String question);
-	public String getAnswer();
-	public void setAnswer(String answer);
-
-}
-
-INFO main com.desmond.generator.util.GeneratorHelper - package com.desmond.user.impl;
-
-import com.desmond.user.intf.User;
+import com.desmond.User.intf.User;
 
 import com.desmond.ecommerce.base.model.impl.BaseModelImpl;
 
@@ -340,48 +204,7 @@ public class UserImpl extends BaseModelImpl implements User{
 
 }
 
-INFO main com.desmond.generator.util.GeneratorHelper - package com.desmond.user.impl;
-
-import com.desmond.user.intf.User;
-
-import com.desmond.ecommerce.base.model.impl.BaseModelImpl;
-
-public class UserImpl extends BaseModelImpl implements User{
-		private String name;
-	private String password;
-	private String reallyName;
-	private String identity;
-	private String postcode;
-	private String email;
-	private String address;
-	private String phone;
-	private String question;
-	private String answer;
-
-		public String getName() {		return name;	}
-	public void setName(String name) {		this.name = name;	}
-	public String getPassword() {		return password;	}
-	public void setPassword(String password) {		this.password = password;	}
-	public String getReallyName() {		return reallyName;	}
-	public void setReallyName(String reallyName) {		this.reallyName = reallyName;	}
-	public String getIdentity() {		return identity;	}
-	public void setIdentity(String identity) {		this.identity = identity;	}
-	public String getPostcode() {		return postcode;	}
-	public void setPostcode(String postcode) {		this.postcode = postcode;	}
-	public String getEmail() {		return email;	}
-	public void setEmail(String email) {		this.email = email;	}
-	public String getAddress() {		return address;	}
-	public void setAddress(String address) {		this.address = address;	}
-	public String getPhone() {		return phone;	}
-	public void setPhone(String phone) {		this.phone = phone;	}
-	public String getQuestion() {		return question;	}
-	public void setQuestion(String question) {		this.question = question;	}
-	public String getAnswer() {		return answer;	}
-	public void setAnswer(String answer) {		this.answer = answer;	}
-
-}
-
-INFO main com.desmond.generator.util.DaoImplGeneratorHelper - package com.desmond.user.impl;
+INFO main com.desmond.generator.util.DaoImplGeneratorHelper - package com.desmond.User.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -395,7 +218,7 @@ import org.apache.log4j.Logger;
 
 import com.desmond.ecommerce.util.db.Counter;
 import com.desmond.ecommerce.util.db.DButil;
-import com.desmond.user.intf.User;
+import com.desmond.User.intf.User;
 
 public class UserDaoImpl{
 	
@@ -411,7 +234,6 @@ public class UserDaoImpl{
 			ps.setLong(1, nextPrimaryKey);
 			ps.setTimestamp(2, new Timestamp(new Date().getTime()));
 			ps.setTimestamp(3, new Timestamp(new Date().getTime()));
-			
 						ps.setString(4, user.getName());			ps.setString(5, user.getPassword());			ps.setString(6, user.getReallyName());			ps.setString(7, user.getIdentity());			ps.setString(8, user.getPostcode());			ps.setString(9, user.getEmail());			ps.setString(10, user.getAddress());			ps.setString(11, user.getPhone());			ps.setString(12, user.getQuestion());			ps.setString(13, user.getAnswer());
 			
 			update = ps.executeUpdate();
@@ -432,15 +254,54 @@ public class UserDaoImpl{
 		String sql = "UPDATE ec_user set createdDate = ?, modifiedDate = ?,"				+ "name = ?,"				+ "password = ?,"				+ "reallyName = ?,"				+ "identity = ?,"				+ "postcode = ?,"				+ "email = ?,"				+ "address = ?,"				+ "phone = ?,"				+ "question = ?,"				+ "answer = ?" 				+" where id = ?";
 		try {
 			ps = conn.prepareStatement(sql);
-			ps.setTimestamp(1, user.getCreateDate());
+			ps.setTimestamp(1, user.getCreatedDate());
 			ps.setTimestamp(2, new Timestamp(new Date().getTime()));
-			
 						ps.setString(3, user.getName());			ps.setString(4, user.getPassword());			ps.setString(5, user.getReallyName());			ps.setString(6, user.getIdentity());			ps.setString(7, user.getPostcode());			ps.setString(8, user.getEmail());			ps.setString(9, user.getAddress());			ps.setString(10, user.getPhone());			ps.setString(11, user.getQuestion());			ps.setString(12, user.getAnswer());			ps.setLong(13, user.getPrimaryKey());
 			
 			update=ps.executeUpdate();		
-			log.debug(String.format("DML: s%, affect %d row.", sql, update));
+			log.debug("DML:" + sql + " affect " + sql + " row.");
 		} catch (SQLException e) {
 			log.error("error when update.", e);
+		}finally{
+			DButil.close(conn, ps);
+		}
+		
+		return update;
+	}
+	
+	public User fetchByPrimaryKey(long primaryKey){
+		User user = null;
+		Connection conn = DButil.getConnection();
+		PreparedStatement ps = null;
+		String sql = "SELECT * FROM ec_user WHERE id = ?";
+		ResultSet rs = null;
+		try {
+			ps = conn.prepareStatement(sql);
+			ps.setLong(1, primaryKey);
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				user = new UserImpl();
+								user.setPrimaryKey(rs.getLong(1));				user.setCreatedDate(rs.getTimestamp(2));				user.setModifiedDate(rs.getTimestamp(3));				user.setName(rs.getString(4));				user.setPassword(rs.getString(5));				user.setReallyName(rs.getString(6));				user.setIdentity(rs.getString(7));				user.setPostcode(rs.getString(8));				user.setEmail(rs.getString(9));				user.setAddress(rs.getString(10));				user.setPhone(rs.getString(11));				user.setQuestion(rs.getString(12));				user.setAnswer(rs.getString(13));
+			}
+		} catch (SQLException e) {
+			log.error("error when get ${User} by primaryKey: " + primaryKey, e);
+		}
+		
+		return user;
+	}
+	
+	public int delete(long primaryKey){
+		int update = 0;
+		Connection conn = DButil.getConnection();
+		PreparedStatement ps = null;
+		String sql = "DELETE FROM ec_user WHERE id = ?";
+		
+		try {
+			ps = conn.prepareStatement(sql);
+			ps.setLong(1, primaryKey);
+			update = ps.executeUpdate();
+		} catch (SQLException e) {
+			log.error("error when delete", e);
 		}finally{
 			DButil.close(conn, ps);
 		}
@@ -451,7 +312,7 @@ public class UserDaoImpl{
 	private static Logger log = Logger.getLogger(UserDaoImpl.class.getName());
 }
 
-INFO main com.desmond.generator.util.GeneratorHelper - package com.desmond.user.impl;
+INFO main com.desmond.generator.util.GeneratorHelper - package com.desmond.User.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -465,7 +326,7 @@ import org.apache.log4j.Logger;
 
 import com.desmond.ecommerce.util.db.Counter;
 import com.desmond.ecommerce.util.db.DButil;
-import com.desmond.user.intf.User;
+import com.desmond.User.intf.User;
 
 public class UserDaoImpl{
 	
@@ -481,7 +342,6 @@ public class UserDaoImpl{
 			ps.setLong(1, nextPrimaryKey);
 			ps.setTimestamp(2, new Timestamp(new Date().getTime()));
 			ps.setTimestamp(3, new Timestamp(new Date().getTime()));
-			
 						ps.setString(4, user.getName());			ps.setString(5, user.getPassword());			ps.setString(6, user.getReallyName());			ps.setString(7, user.getIdentity());			ps.setString(8, user.getPostcode());			ps.setString(9, user.getEmail());			ps.setString(10, user.getAddress());			ps.setString(11, user.getPhone());			ps.setString(12, user.getQuestion());			ps.setString(13, user.getAnswer());
 			
 			update = ps.executeUpdate();
@@ -502,13 +362,12 @@ public class UserDaoImpl{
 		String sql = "UPDATE ec_user set createdDate = ?, modifiedDate = ?,"				+ "name = ?,"				+ "password = ?,"				+ "reallyName = ?,"				+ "identity = ?,"				+ "postcode = ?,"				+ "email = ?,"				+ "address = ?,"				+ "phone = ?,"				+ "question = ?,"				+ "answer = ?" 				+" where id = ?";
 		try {
 			ps = conn.prepareStatement(sql);
-			ps.setTimestamp(1, user.getCreateDate());
+			ps.setTimestamp(1, user.getCreatedDate());
 			ps.setTimestamp(2, new Timestamp(new Date().getTime()));
-			
 						ps.setString(3, user.getName());			ps.setString(4, user.getPassword());			ps.setString(5, user.getReallyName());			ps.setString(6, user.getIdentity());			ps.setString(7, user.getPostcode());			ps.setString(8, user.getEmail());			ps.setString(9, user.getAddress());			ps.setString(10, user.getPhone());			ps.setString(11, user.getQuestion());			ps.setString(12, user.getAnswer());			ps.setLong(13, user.getPrimaryKey());
 			
 			update=ps.executeUpdate();		
-			log.debug(String.format("DML: s%, affect %d row.", sql, update));
+			log.debug("DML:" + sql + " affect " + sql + " row.");
 		} catch (SQLException e) {
 			log.error("error when update.", e);
 		}finally{
@@ -518,139 +377,39 @@ public class UserDaoImpl{
 		return update;
 	}
 	
-	private static Logger log = Logger.getLogger(UserDaoImpl.class.getName());
-}
-
-INFO main com.desmond.generator.util.DaoImplGeneratorHelper - package com.desmond.user.impl;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Timestamp;
-import java.util.Date;
-import java.sql.Time;
-
-import org.apache.log4j.Logger;
-
-import com.desmond.ecommerce.util.db.Counter;
-import com.desmond.ecommerce.util.db.DButil;
-import com.desmond.user.intf.User;
-
-public class UserDaoImpl{
-	
-	public int add(User user) {
-		int update = 0;
+	public User fetchByPrimaryKey(long primaryKey){
+		User user = null;
 		Connection conn = DButil.getConnection();
-		long nextPrimaryKey = Counter.getPrimaryKey(User.class.getName(), conn);
-		
 		PreparedStatement ps = null;
-		String sql = "INSERT INTO ec_user VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-		try {
-			ps=conn.prepareStatement(sql);
-			ps.setLong(1, nextPrimaryKey);
-			ps.setTimestamp(2, new Timestamp(new Date().getTime()));
-			ps.setTimestamp(3, new Timestamp(new Date().getTime()));
-			
-						ps.setString(4, user.getName());			ps.setString(5, user.getPassword());			ps.setString(6, user.getReallyName());			ps.setString(7, user.getIdentity());			ps.setString(8, user.getPostcode());			ps.setString(9, user.getEmail());			ps.setString(10, user.getAddress());			ps.setString(11, user.getPhone());			ps.setString(12, user.getQuestion());			ps.setString(13, user.getAnswer());
-			
-			update = ps.executeUpdate();
-			log.debug("count= " + update);
-		} catch(SQLException e) {
-			log.error("error when insert", e);
-		} finally {
-			DButil.close(conn, ps);
-		}
-		
-		return update;
-	}
-	
-	public int update(User user){
-		int update=0;
-		Connection conn = DButil.getConnection();
-		PreparedStatement ps=null;
-		String sql = "UPDATE ec_user set createdDate = ?, modifiedDate = ?,"				+ "name = ?,"				+ "password = ?,"				+ "reallyName = ?,"				+ "identity = ?,"				+ "postcode = ?,"				+ "email = ?,"				+ "address = ?,"				+ "phone = ?,"				+ "question = ?,"				+ "answer = ?" 				+" where id = ?";
+		String sql = "SELECT * FROM ec_user WHERE id = ?";
+		ResultSet rs = null;
 		try {
 			ps = conn.prepareStatement(sql);
-			ps.setTimestamp(1, user.getCreateDate());
-			ps.setTimestamp(2, new Timestamp(new Date().getTime()));
-			
-						ps.setString(3, user.getName());			ps.setString(4, user.getPassword());			ps.setString(5, user.getReallyName());			ps.setString(6, user.getIdentity());			ps.setString(7, user.getPostcode());			ps.setString(8, user.getEmail());			ps.setString(9, user.getAddress());			ps.setString(10, user.getPhone());			ps.setString(11, user.getQuestion());			ps.setString(12, user.getAnswer());			ps.setLong(13, user.getPrimaryKey());
-			
-			update=ps.executeUpdate();		
-			log.debug(String.format("DML: s%, affect %d row.", sql, update));
+			ps.setLong(1, primaryKey);
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				user = new UserImpl();
+								user.setPrimaryKey(rs.getLong(1));				user.setCreatedDate(rs.getTimestamp(2));				user.setModifiedDate(rs.getTimestamp(3));				user.setName(rs.getString(4));				user.setPassword(rs.getString(5));				user.setReallyName(rs.getString(6));				user.setIdentity(rs.getString(7));				user.setPostcode(rs.getString(8));				user.setEmail(rs.getString(9));				user.setAddress(rs.getString(10));				user.setPhone(rs.getString(11));				user.setQuestion(rs.getString(12));				user.setAnswer(rs.getString(13));
+			}
 		} catch (SQLException e) {
-			log.error("error when update.", e);
-		}finally{
-			DButil.close(conn, ps);
+			log.error("error when get ${User} by primaryKey: " + primaryKey, e);
 		}
 		
-		return update;
+		return user;
 	}
 	
-	private static Logger log = Logger.getLogger(UserDaoImpl.class.getName());
-}
-
-INFO main com.desmond.generator.util.GeneratorHelper - package com.desmond.user.impl;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Timestamp;
-import java.util.Date;
-import java.sql.Time;
-
-import org.apache.log4j.Logger;
-
-import com.desmond.ecommerce.util.db.Counter;
-import com.desmond.ecommerce.util.db.DButil;
-import com.desmond.user.intf.User;
-
-public class UserDaoImpl{
-	
-	public int add(User user) {
+	public int delete(long primaryKey){
 		int update = 0;
 		Connection conn = DButil.getConnection();
-		long nextPrimaryKey = Counter.getPrimaryKey(User.class.getName(), conn);
-		
 		PreparedStatement ps = null;
-		String sql = "INSERT INTO ec_user VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-		try {
-			ps=conn.prepareStatement(sql);
-			ps.setLong(1, nextPrimaryKey);
-			ps.setTimestamp(2, new Timestamp(new Date().getTime()));
-			ps.setTimestamp(3, new Timestamp(new Date().getTime()));
-			
-						ps.setString(4, user.getName());			ps.setString(5, user.getPassword());			ps.setString(6, user.getReallyName());			ps.setString(7, user.getIdentity());			ps.setString(8, user.getPostcode());			ps.setString(9, user.getEmail());			ps.setString(10, user.getAddress());			ps.setString(11, user.getPhone());			ps.setString(12, user.getQuestion());			ps.setString(13, user.getAnswer());
-			
-			update = ps.executeUpdate();
-			log.debug("count= " + update);
-		} catch(SQLException e) {
-			log.error("error when insert", e);
-		} finally {
-			DButil.close(conn, ps);
-		}
+		String sql = "DELETE FROM ec_user WHERE id = ?";
 		
-		return update;
-	}
-	
-	public int update(User user){
-		int update=0;
-		Connection conn = DButil.getConnection();
-		PreparedStatement ps=null;
-		String sql = "UPDATE ec_user set createdDate = ?, modifiedDate = ?,"				+ "name = ?,"				+ "password = ?,"				+ "reallyName = ?,"				+ "identity = ?,"				+ "postcode = ?,"				+ "email = ?,"				+ "address = ?,"				+ "phone = ?,"				+ "question = ?,"				+ "answer = ?" 				+" where id = ?";
 		try {
 			ps = conn.prepareStatement(sql);
-			ps.setTimestamp(1, user.getCreateDate());
-			ps.setTimestamp(2, new Timestamp(new Date().getTime()));
-			
-						ps.setString(3, user.getName());			ps.setString(4, user.getPassword());			ps.setString(5, user.getReallyName());			ps.setString(6, user.getIdentity());			ps.setString(7, user.getPostcode());			ps.setString(8, user.getEmail());			ps.setString(9, user.getAddress());			ps.setString(10, user.getPhone());			ps.setString(11, user.getQuestion());			ps.setString(12, user.getAnswer());			ps.setLong(13, user.getPrimaryKey());
-			
-			update=ps.executeUpdate();		
-			log.debug(String.format("DML: s%, affect %d row.", sql, update));
+			ps.setLong(1, primaryKey);
+			update = ps.executeUpdate();
 		} catch (SQLException e) {
-			log.error("error when update.", e);
+			log.error("error when delete", e);
 		}finally{
 			DButil.close(conn, ps);
 		}
@@ -665,7 +424,5 @@ INFO main com.desmond.generator.util.GeneratorHelper - create table ec_user (
 	id BIGINT(25) PRIMARY KEY ,	createdDate TIMESTAMP ,	modifiedDate TIMESTAMP ,	name VARCHAR(75) NOT NULL UNIQUE ,	password VARCHAR(75) ,	reallyName VARCHAR(75) ,	identity VARCHAR(75) ,	postcode VARCHAR(75) ,	email VARCHAR(75) UNIQUE ,	address VARCHAR(75) ,	phone VARCHAR(75) ,	question VARCHAR(75) ,	answer VARCHAR(75) ) engine InnoDB;
 DEBUG main com.desmond.generator.util.SQLGeneratorHelper - sql: create table ec_user (
 	id BIGINT(25) PRIMARY KEY ,	createdDate TIMESTAMP ,	modifiedDate TIMESTAMP ,	name VARCHAR(75) NOT NULL UNIQUE ,	password VARCHAR(75) ,	reallyName VARCHAR(75) ,	identity VARCHAR(75) ,	postcode VARCHAR(75) ,	email VARCHAR(75) UNIQUE ,	address VARCHAR(75) ,	phone VARCHAR(75) ,	question VARCHAR(75) ,	answer VARCHAR(75) ) engine InnoDB;
-INFO main com.desmond.generator.util.GeneratorHelper - create table ec_Test (
-	id BIGINT(25) PRIMARY KEY ,	createdDate TIMESTAMP ,	modifiedDate TIMESTAMP ,	name VARCHAR(75) NOT NULL UNIQUE ,	password VARCHAR(75) ) engine InnoDB;
-DEBUG main com.desmond.generator.util.SQLGeneratorHelper - sql: create table ec_Test (
-	id BIGINT(25) PRIMARY KEY ,	createdDate TIMESTAMP ,	modifiedDate TIMESTAMP ,	name VARCHAR(75) NOT NULL UNIQUE ,	password VARCHAR(75) ) engine InnoDB;
+DEBUG main com.desmond.User.impl.UserDaoImpl - DML: UPDATE ec_user set createdDate = ?, modifiedDate = ?,name = ?,password = ?,reallyName = ?,identity = ?,postcode = ?,email = ?,address = ?,phone = ?,question = ?,answer = ? where id = ?, affect 1 row.
+INFO main com.desmond.generator.run.TestRun - test@desmond.com

@@ -12,6 +12,7 @@ import org.apache.log4j.Logger;
 
 import com.desmond.ecommerce.util.db.Counter;
 import com.desmond.ecommerce.util.db.DButil;
+import com.desmond.user.impl.UserImpl;
 import com.desmond.user.intf.User;
 
 public class CopyOfUserDaoImpl{
@@ -71,7 +72,7 @@ public class CopyOfUserDaoImpl{
 				+ " where id=?";
 		try {
 			ps = conn.prepareStatement(sql);
-			ps.setTime(1, user.getCreateDate());
+			ps.setTimestamp(1, user.getCreateDate());
 			ps.setTime(2, new Time(new Date().getTime()));
 			
 			ps.setString(3, user.getName());
@@ -98,37 +99,38 @@ public class CopyOfUserDaoImpl{
 		return update;
 	}
 	
-	public User fetchByPrimaryKey(long primaryKey){
-		User user = null;
+	public ${model} fetchByPrimaryKey(long primaryKey){
+		${model} ${modelVariable} = null;
 		Connection conn = DButil.getConnection();
 		PreparedStatement ps = null;
-		String sql = "select * from ${table_name} where id = ?";
+		String sql = ${selectStatementSql};
 		ResultSet rs = null;
 		try {
 			ps = conn.prepareStatement(sql);
 			ps.setLong(1, primaryKey);
 			rs = ps.executeQuery();
 			while(rs.next()) {
-				user = new UserImpl();
-				user.setPrimaryKey(rs.getLong("id"));
+				${modelVariable} = new ${model}Impl();
+				
+				${selectStatementSetSql}
 			}
 		} catch (SQLException e) {
-			log.error(String.format("error when get User by Id: s%", primaryKey), e);
+			log.error(String.format("error when get ${User} by primaryKey: s%", primaryKey), e);
 		}
 		
-		return user;
+		return ${modelVariable};
 	}
 	
-	public int delete(long id){
-		int update=0;
-		Connection conn=DButil.getConnection();
-		PreparedStatement ps=null;
-		String sql="delete from ec_user where id = ?";
+	public int delete(long primaryKey){
+		int update = 0;
+		Connection conn = DButil.getConnection();
+		PreparedStatement ps = null;
+		String sql = ${deleteStatementSql};
 		
 		try {
 			ps = conn.prepareStatement(sql);
-			ps.setLong(1, id);
-			update=ps.executeUpdate();
+			ps.setLong(1, primaryKey);
+			update = ps.executeUpdate();
 		} catch (SQLException e) {
 			log.error("error when delete", e);
 		}finally{

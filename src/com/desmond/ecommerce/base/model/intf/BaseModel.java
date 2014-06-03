@@ -20,13 +20,13 @@ public interface BaseModel {
 	 * Returns the createDate of this BaseModelImpl.
 	 * @return the createDate
 	 */
-	public Timestamp getCreateDate();
+	public Timestamp getCreatedDate();
 	
 	/**
 	 * Sets the createDate of this BaseModelImpl.
 	 * @param createDate the createDate to set
 	 */
-	public void setCreateDate(Timestamp createDate);
+	public void setCreatedDate(Timestamp createDate);
 	
 	/**
 	 * Returns the modifiedDate of this BaseModelImpl.
