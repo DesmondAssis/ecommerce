@@ -53,7 +53,7 @@ public class SQLGeneratorHelper {
 				// write to source
 				GeneratorHelper
 						.writeToDestFile(tableSb.toString(), fileNameSb.toString());
-    			log.debug("sql: " + tableSb);
+    			//log.debug("sql: " + tableSb);
         	} // end: for:entity
     	} // end: if:entityList
     	

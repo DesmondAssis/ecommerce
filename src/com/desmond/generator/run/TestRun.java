@@ -15,6 +15,7 @@ import com.desmond.generator.util.DaoImplGeneratorHelper;
 import com.desmond.generator.util.GeneratorHelper;
 import com.desmond.generator.util.ModelImplGeneratorHelper;
 import com.desmond.generator.util.SQLGeneratorHelper;
+import com.desmond.generator.util.ServiceImplGeneratorHelper;
 
 public class TestRun {
 
@@ -26,14 +27,16 @@ public class TestRun {
 		
 		// transform.
 		Builder builder = GeneratorHelper.transformElementToBean(root);
-		log.info(builder);
+		//log.info(builder);
 		
 		// generate model.
 		ModelImplGeneratorHelper.generateModelAndImpl(builder);
 		
 		// generate dao.
 		DaoImplGeneratorHelper.generateDaoImpl(builder);
+		
 		// generate service
+		ServiceImplGeneratorHelper.generateService(builder);
 		
 		// generate initial SQL.
 		try {
@@ -44,7 +47,7 @@ public class TestRun {
 		
 		
 		// test CURD of user.
-		testCURD();
+		//testCURD();
 	}
 	
 	private static void testCURD() {

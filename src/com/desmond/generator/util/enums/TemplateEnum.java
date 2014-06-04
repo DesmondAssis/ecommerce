@@ -4,7 +4,10 @@ public enum TemplateEnum {
 	MODEL(0, "com/desmond/generator/template/Model.dt"),
 	MODEL_IMPL(1, "com/desmond/generator/template/ModelImpl.dt"),
 	DAO(2, ""),
-	DAO_IMPL(3, "com/desmond/generator/template/ModelDaoImpl.dt");
+	DAO_IMPL(3, "com/desmond/generator/template/DaoImpl.dt"),
+	SERVICE(4, ""),
+	SERVICE_IMPL(5, "com/desmond/generator/template/LocalServiceImpl.dt"),
+	SERVICE_BASE_IMPL(6, "com/desmond/generator/template/ServiceBaseImpl.dt");
 
 	private int type;
 	private String relativeURL;

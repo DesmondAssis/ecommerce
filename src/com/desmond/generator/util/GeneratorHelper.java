@@ -71,7 +71,7 @@ public class GeneratorHelper {
     		mkDir(destdile, destdile);
     		
     		BufferedWriter bw = new BufferedWriter(new FileWriter(destdile));
-    		log.info(sourceFileStr);
+    		//log.info(sourceFileStr);
 			bw.write(sourceFileStr);
 			bw.flush();
 		} catch (FileNotFoundException e) {
@@ -172,7 +172,7 @@ public class GeneratorHelper {
 		Document jdomDoc = saxBuilder.build(in);
 
 		// get the document type
-		log.info(jdomDoc.getDocType());
+		//log.info(jdomDoc.getDocType());
 
 		// get the root element
 		Element root = jdomDoc.getRootElement();

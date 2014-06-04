@@ -209,7 +209,7 @@ public class DaoImplGeneratorHelper {
 				fileNameSb.append(packageFileName).append("/").append("impl/")
 						.append(entity.getName()).append("DaoImpl.java");
 				
-				log.info(template);
+				//log.info(template);
 				// write to source
 				GeneratorHelper
 						.writeToDestFile(template, fileNameSb.toString());
