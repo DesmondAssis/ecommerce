@@ -7,6 +7,7 @@ import org.apache.log4j.Logger;
 
 import com.desmond.generator.run.model.Builder;
 import com.desmond.generator.run.model.Entity;
+import com.desmond.generator.util.constant.DMConstants;
 import com.desmond.generator.util.enums.TemplateEnum;
 
 public class ServiceImplGeneratorHelper {
@@ -21,27 +22,27 @@ public class ServiceImplGeneratorHelper {
 			for (Entity entity : entityList) {
 				StringBuilder importsSb = new StringBuilder();
 				
-				importsSb.append("import " + builder.getPackateName()+ ".intf." + entity.getName());
+				importsSb.append("import " + entity.getPackageName()+ ".intf." + entity.getName());
 				
-				template = template
+				String outputTemplate = template
 						.replace("${packageName}",
-								builder.getPackateName() + ".impl")
+								entity.getPackageName() + ".impl")
 						.replace("${imports}", importsSb.toString())
 						.replace("${model}", entity.getName())
 						.replace("${modelVariable}", StringUtils.uncapitalize(entity.getName()))
 								;
 
-				String packageFileName = builder.getPackateName().replace(".",
+				String packageFileName = entity.getPackageName().replace(".",
 						"/");
 				StringBuilder fileNameSb = new StringBuilder(
-						"L:/gitHub/projects/eCommerce/src/");
+						DMConstants.sourceDirectory);
 				fileNameSb.append(packageFileName).append("/").append("impl/")
 						.append(entity.getName()).append("ServiceBaseImpl.java");
 				
 				//log.info(template);
 				// write to source
 				GeneratorHelper
-						.writeToDestFile(template, fileNameSb.toString());
+						.writeToDestFile(outputTemplate, fileNameSb.toString());
 			}
 		}
 	}
@@ -54,24 +55,24 @@ public class ServiceImplGeneratorHelper {
 		if (entityList != null && entityList.size() > 0) {
 			for (Entity entity : entityList) {
 				StringBuilder importsSb = new StringBuilder();
-				template = template
+				String outputTemplate = template
 						.replace("${packageName}",
-								builder.getPackateName() + ".impl")
+								entity.getPackageName() + ".impl")
 						.replace("${imports}", importsSb.toString())
 						.replace("${model}", entity.getName())
 							;
 
-				String packageFileName = builder.getPackateName().replace(".",
+				String packageFileName = entity.getPackageName().replace(".",
 						"/");
 				StringBuilder fileNameSb = new StringBuilder(
-						"L:/gitHub/projects/eCommerce/src/");
+						DMConstants.sourceDirectory);
 				fileNameSb.append(packageFileName).append("/").append("impl/")
 						.append(entity.getName()).append("LocalServiceImpl.java");
 				
 				//log.info(template);
 				// write to source
 				GeneratorHelper
-						.writeToDestFile(template, fileNameSb.toString());
+						.writeToDestFile(outputTemplate, fileNameSb.toString());
 			}
 		}
 	}

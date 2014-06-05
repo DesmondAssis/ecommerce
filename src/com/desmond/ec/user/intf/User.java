@@ -1,4 +1,4 @@
-package com.desmond.User.intf;
+package com.desmond.ec.user.intf;
 
 
 import com.desmond.ecommerce.base.model.intf.BaseModel;

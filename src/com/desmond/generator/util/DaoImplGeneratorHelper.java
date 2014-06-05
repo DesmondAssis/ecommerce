@@ -51,7 +51,7 @@ public class DaoImplGeneratorHelper {
 			Column field = fields.get(i);
 			setStatementSb.append("\r\t\t\t")
 							.append("ps.set")
-							.append(field.getType())
+							.append(StringUtils.capitalize(field.getType()))
 							.append("(")
 							.append(i+1)
 							.append(", ")
@@ -95,7 +95,7 @@ public class DaoImplGeneratorHelper {
 							.append(StringUtils.capitalize(field.getName()))
 							.append("(")
 							.append("rs.get")
-							.append(TypeTransformEnum.getTypeByTypeInXml(DMConstants.DB_TYPE_MYSQL, field.getType()).getTypeInJava())
+							.append(StringUtils.capitalize(TypeTransformEnum.getTypeByTypeInXml(DMConstants.DB_TYPE_MYSQL, field.getType()).getTypeInJava()))
 							.append("(")
 							.append(i + 1)
 							.append("));");
@@ -134,7 +134,7 @@ public class DaoImplGeneratorHelper {
 			Column field = fields.get(i);
 			setStatementSb.append("\r\t\t\t")
 							.append("ps.set")
-							.append(field.getType())
+							.append(StringUtils.capitalize(field.getType()))
 							.append("(")
 							.append(i)
 							.append(", ")
@@ -178,12 +178,12 @@ public class DaoImplGeneratorHelper {
 				// delete.
 				String deleteSql = DELETE_STATEMENT + condition + "\"";
 				
-				importsSb.append("import " + builder.getPackateName()+ ".intf." + entity.getName());
+				importsSb.append("import " + entity.getPackageName()+ ".intf." + entity.getName());
 				String tableName = StringUtils.isNotBlank(entity.getTableName()) ?
 											entity.getTableName() 
 											: builder.getNameSpace() + "_" + entity.getName();
 				
-				template = template
+				String outputTemplate = template
 						.replace("${insertSql}", insertSql)
 						.replace("${insertSetStatement}", insertSetStatement)
 						.replace("${updateStatementSql}", updateSql)
@@ -192,7 +192,7 @@ public class DaoImplGeneratorHelper {
 						.replace("${selectStatementSetSql}", readSetSql)
 						.replace("${deleteStatementSql}", deleteSql)
 						.replace("${packageName}",
-								builder.getPackateName() + ".impl")
+								entity.getPackageName() + ".impl")
 						.replace("${imports}", importsSb.toString())
 						.replace("${model}",
 								StringUtils.capitalize(entity.getName()))
@@ -202,17 +202,17 @@ public class DaoImplGeneratorHelper {
 						.replace("${table_name}", tableName)
 								;
 
-				String packageFileName = builder.getPackateName().replace(".",
+				String packageFileName = entity.getPackageName().replace(".",
 						"/");
 				StringBuilder fileNameSb = new StringBuilder(
-						"L:/gitHub/projects/eCommerce/src/");
+						DMConstants.sourceDirectory);
 				fileNameSb.append(packageFileName).append("/").append("impl/")
 						.append(entity.getName()).append("DaoImpl.java");
 				
-				//log.info(template);
+				//log.info(packageFileName);
 				// write to source
 				GeneratorHelper
-						.writeToDestFile(template, fileNameSb.toString());
+						.writeToDestFile(outputTemplate, fileNameSb.toString());
 			}
 		}
 	}

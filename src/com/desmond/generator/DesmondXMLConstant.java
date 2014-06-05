@@ -8,6 +8,7 @@ public interface DesmondXMLConstant {
 	String ENTITY = "entity";
 	String NAME = "name";
 	String TABLE_NAME = "table-Name";
+	String SUB_PACKAGE_NAME = "sub-pakage-path";
 	String COLUMN = "column";
 	String TYPE = "type";
 	String PRIMARY = "primary";

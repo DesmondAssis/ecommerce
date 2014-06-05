@@ -75,25 +75,25 @@ public class ModelImplGeneratorHelper {
 					}
 				}
 
-				template = template
+				String outputTemplate = template
 						.replace("${packageName}",
-								builder.getPackateName() + ".intf")
+								entity.getPackageName() + ".intf")
 						.replace("${imports}", importsSb.toString())
 						.replace("${model}",
 								StringUtils.capitalize(entity.getName()))
 						.replace("${setterAndGetter}",
 								setterAndGetterSb.toString());
 
-				String packageFileName = builder.getPackateName().replace(".",
+				String packageFileName = entity.getPackageName().replace(".",
 						"/");
 				StringBuilder fileNameSb = new StringBuilder(
-						"L:/gitHub/projects/eCommerce/src/");
+						DMConstants.sourceDirectory);
 				fileNameSb.append(packageFileName).append("/").append("intf/")
 						.append(entity.getName()).append(".java");
 
 				// write to source
 				GeneratorHelper
-						.writeToDestFile(template, fileNameSb.toString());
+						.writeToDestFile(outputTemplate, fileNameSb.toString());
 			} // end:entity
 		}
 	}
@@ -156,12 +156,12 @@ public class ModelImplGeneratorHelper {
 					} // end: column
 				} // end: if:column
 
-				String modelName = builder.getPackateName() + ".intf."
+				String modelName = entity.getPackageName() + ".intf."
 						+ entity.getName();
 				importsSb.append("import " + modelName + ";\n");
-				template = template
+				String outputTemplate = template
 						.replace("${packageName}",
-								builder.getPackateName() + ".impl")
+								entity.getPackageName() + ".impl")
 						.replace("${imports}", importsSb.toString())
 						.replace(
 								"${modelImpl}",
@@ -173,17 +173,17 @@ public class ModelImplGeneratorHelper {
 						.replace("${setterAndGetter}",
 								setterAndGetterSb.toString());
 
-				String packageFileName = builder.getPackateName().replace(".",
+				String packageFileName = entity.getPackageName().replace(".",
 						"/");
 				StringBuilder fileNameSb = new StringBuilder(
-						"L:/gitHub/projects/eCommerce/src/");
+						DMConstants.sourceDirectory);
 				fileNameSb.append(packageFileName).append("/").append("impl/")
 						.append(entity.getName()).append("Impl")
 						.append(".java");
 
 				// write to source file.
 				GeneratorHelper
-						.writeToDestFile(template, fileNameSb.toString());
+						.writeToDestFile(outputTemplate, fileNameSb.toString());
 			} // end: entity
 		} // end: if:entity
 

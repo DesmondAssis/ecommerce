@@ -1,6 +1,6 @@
-package com.desmond.User.impl;
+package com.desmond.ec.user.impl;
 
-import com.desmond.User.intf.User;
+import com.desmond.ec.user.intf.User;
 
 import com.desmond.ecommerce.base.model.impl.BaseModelImpl;
 

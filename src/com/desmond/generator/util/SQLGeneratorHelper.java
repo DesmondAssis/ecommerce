@@ -46,8 +46,8 @@ public class SQLGeneratorHelper {
     			String packageFileName = builder.getPackateName().replace(".",
 						"/");
 				StringBuilder fileNameSb = new StringBuilder(
-						"L:/gitHub/projects/eCommerce/src/");
-				fileNameSb.append(packageFileName).append("/").append("intf/")
+						DMConstants.sourceDirectory);
+				fileNameSb.append(packageFileName).append("/").append("sqls/")
 						.append(entity.getName()).append(".sql");
 
 				// write to source

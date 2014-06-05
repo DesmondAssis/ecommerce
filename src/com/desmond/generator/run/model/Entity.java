@@ -5,6 +5,8 @@ import java.util.List;
 public class Entity {
 	private String name;
 	private String tableName;
+	private String subPackageName;
+	private String packageName;
 	List<Column> columns;
 
 	public Entity() {
@@ -55,6 +57,38 @@ public class Entity {
 	public void setTableName(String tableName) {
 		this.tableName = tableName;
 	}
+	
+	/**
+	 * Returns the subPackageName of this Entity.
+	 * @return the subPackageName
+	 */
+	public String getSubPackageName() {
+		return subPackageName;
+	}
+
+	/**
+	 * Sets the subPackageName of this Entity.
+	 * @param subPackageName the subPackageName to set
+	 */
+	public void setSubPackageName(String subPackageName) {
+		this.subPackageName = subPackageName;
+	}
+
+	/**
+	 * Returns the packageName of this Entity.
+	 * @return the packageName
+	 */
+	public String getPackageName() {
+		return packageName;
+	}
+
+	/**
+	 * Sets the packageName of this Entity.
+	 * @param packageName the packageName to set
+	 */
+	public void setPackageName(String packageName) {
+		this.packageName = (packageName + "." + this.subPackageName).toLowerCase();
+	}
 
 	/**
 	 * Returns the columns of this Entity.
@@ -77,9 +111,10 @@ public class Entity {
 	 */
 	@Override
 	public String toString() {
-		StringBuilder resultSb = new StringBuilder(
-				"Entity [name=" + name + ", tableName=" + tableName
-				+ ", columns" + ":\n");
+		StringBuilder resultSb 
+		= new StringBuilder("Entity [name=" + name + ", tableName=" + tableName
+				+ ", subPackageName=" + subPackageName + ", packageName="
+				+ packageName + ", columns=" + columns + "]:\n");
 		
 		if(this.getColumns() != null) {
 			for(Column column : this.getColumns()){
@@ -91,5 +126,6 @@ public class Entity {
 		
 		return resultSb.toString();
 	}
+	
 	
 }

@@ -1,4 +1,4 @@
-package com.desmond.User.impl;
+package com.desmond.ec.user.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,7 +12,7 @@ import org.apache.log4j.Logger;
 
 import com.desmond.ecommerce.util.db.Counter;
 import com.desmond.ecommerce.util.db.DButil;
-import com.desmond.User.intf.User;
+import com.desmond.ec.user.intf.User;
 
 public class UserDaoImpl{
 	

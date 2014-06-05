@@ -5,6 +5,7 @@ import com.desmond.generator.util.constant.DMConstants;
 public enum TypeTransformEnum {
 	INVALID(DMConstants.DB_TYPE_INVAILD, "", "", ""),
 	LONG(DMConstants.DB_TYPE_MYSQL, "long", "Long", "BIGINT(25)"),
+	INT(DMConstants.DB_TYPE_MYSQL, "int", "int", "INT"),
 	STRING(DMConstants.DB_TYPE_MYSQL, "String", "String", "VARCHAR(75)"),
 	TIME(DMConstants.DB_TYPE_MYSQL, "Time", "Timestamp", "TIMESTAMP");
 	

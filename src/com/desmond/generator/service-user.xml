@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<desmond-builder package-path="com.desmond.User">
+<desmond-builder package-path="com.desmond.ec">
 	<author>Presley</author>
 	<namespace>ec</namespace>
 	
-	<entity name="User" table-Name="ec_user">
+	<entity name="User" table-Name="ec_user" sub-pakage-path="user">
         <!-- PK fields -->
 		<column name="id" type="long" primary="true" auto-increment="false"/>
 		
@@ -45,4 +45,30 @@
 			<finder-column name="date" />
 		</finder> -->
     </entity>
+    
+    <!-- order -->
+    <entity name="Order" table-Name="ec_order" sub-pakage-path="order">
+        <!-- PK fields -->
+		<column name="id" type="long" primary="true"/>
+		
+		<!-- Audit fields -->
+
+		<column name="createdDate" type="Time" />
+		<column name="modifiedDate" type="Time" />
+
+		<!-- Foreign Key fields -->
+		
+		<!-- Other fields -->
+		<column name="status" type="int" not-null="true" />
+		<column name="userId" type="long" not-null="true" />
+		<column name="name" type="String" not-null="true" />
+		<column name="address" type="String" not-null="true" />
+		<column name="postCode" type="String" />
+		<column name="telephone" type="String" not-null="true"/>
+		<column name="phone" type="String" />
+		<column name="post" type="int"  not-null="true"/>
+		<column name="pay" type="String"  not-null="true"/>
+		<column name="notes" type="String" />
+	</entity>
+	
 </desmond-builder>

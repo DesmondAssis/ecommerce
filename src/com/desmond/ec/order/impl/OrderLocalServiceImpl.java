@@ -1,6 +1,6 @@
-package com.desmond.User.impl;
+package com.desmond.ec.order.impl;
 
-public abstract class UserLocalServiceImpl extends UserServiceBaseImpl{
+public abstract class OrderLocalServiceImpl extends OrderServiceBaseImpl{
 	/*
 	 * NOTE FOR DEVELOPERS:
 	 * 

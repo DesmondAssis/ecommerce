@@ -49,7 +49,8 @@ public class GeneratorHelper {
 		if(dirctories == null || dirctories.length <= 1) {
 			return;
 		}
-		File directory = new File(fullPath.substring(0, fullPath.indexOf(dirctories[0]) + dirctories[0].length()));
+		File directory = new File(fullPath.substring(0, fullPath.indexOf("/" + dirctories[0] + "/") + dirctories[0].length() + 1));
+//		log.info(directory);
 		if(!directory.exists()) {
 			directory.mkdir();
 		} else if(!directory.isDirectory()) {
@@ -74,6 +75,7 @@ public class GeneratorHelper {
     		//log.info(sourceFileStr);
 			bw.write(sourceFileStr);
 			bw.flush();
+			log.info("generate: " + destdile);
 		} catch (FileNotFoundException e) {
 			log.error("error", e);
 		} catch (IOException e) {
@@ -82,7 +84,7 @@ public class GeneratorHelper {
     }
     
     public static String getServiceFileAsString(String fileName) {
-    	log.info("fileName: " + fileName);
+//    	log.info("fileName: " + fileName);
     	String templateFileAsString = null;
     	InputStream in = TestRun.class.getClassLoader().getResourceAsStream(fileName);
 		BufferedInputStream bis = new BufferedInputStream(in);
@@ -128,6 +130,9 @@ public class GeneratorHelper {
 						.getAttributeValue(DesmondXMLConstant.NAME));
 				entity.setTableName(eleEntity
 						.getAttributeValue(DesmondXMLConstant.TABLE_NAME));
+				entity.setSubPackageName(eleEntity
+						.getAttributeValue(DesmondXMLConstant.SUB_PACKAGE_NAME));
+				entity.setPackageName(builder.getPackateName());
 				List<Element> columnElementList = eleEntity
 						.getChildren(DesmondXMLConstant.COLUMN);
 				List<Column> columnList = new ArrayList<Column>(
