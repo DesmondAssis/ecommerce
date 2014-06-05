@@ -109,6 +109,7 @@ public class ModelImplGeneratorHelper {
 
 				StringBuilder privateFieldsSb = new StringBuilder();
 				StringBuilder setterAndGetterSb = new StringBuilder();
+				StringBuilder mockSb = new StringBuilder();
 				StringBuilder importsSb = new StringBuilder();
 				Map<String, String> flagMap = new HashMap<String, String>();
 
@@ -151,6 +152,14 @@ public class ModelImplGeneratorHelper {
 									.append(nameUnCapitalition).append(" = ")
 									.append(nameUnCapitalition).append(";")
 									.append("\r\t}").append("\r\n");
+							
+							// mock
+							String valueObj = TypeTransformEnum.getMockValueByTypeInXml(c.getType(), nameCapitalition);
+							mockSb.append("\r\t\t").append("${modelVariable}.set")
+									.append(nameCapitalition)
+									.append("(")
+									.append(valueObj)
+									.append(");");
 						}
 
 					} // end: column
@@ -171,7 +180,11 @@ public class ModelImplGeneratorHelper {
 								StringUtils.capitalize(entity.getName()))
 						.replace("${privateFields}", privateFieldsSb.toString())
 						.replace("${setterAndGetter}",
-								setterAndGetterSb.toString());
+								setterAndGetterSb.toString())
+						.replace("${mockSetValue}", mockSb.toString())
+						.replace("${modelVariable}",
+								entity.getName().toLowerCase())
+								;
 
 				String packageFileName = entity.getPackageName().replace(".",
 						"/");

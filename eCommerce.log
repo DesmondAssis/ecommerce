@@ -1,0 +1,153 @@
+DEBUG main com.desmond.ec.user.impl.UserDaoImpl - DML:UPDATE ec_user set createdDate = ?, modifiedDate = ?,name = ?,password = ?,reallyName = ?,identity = ?,postcode = ?,email = ?,address = ?,phone = ?,question = ?,answer = ? where id = ? affect UPDATE ec_user set createdDate = ?, modifiedDate = ?,name = ?,password = ?,reallyName = ?,identity = ?,postcode = ?,email = ?,address = ?,phone = ?,question = ?,answer = ? where id = ? row.
+INFO main com.desmond.generator.run.TestRun - test@desmond.com
+INFO main com.desmond.generator.run.TestRun - Builder [packateName=com.desmond.ec, author=Presley, nameSpace=ec, entities:
+-------Entity [name=User, tableName=ec_user, subPackageName=user, packageName=com.desmond.ec.user, columns=[Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=name, type=String, isPrimary=false, isAutoIncrement=false, isUnique=true, isNotNull=true], Column [name=password, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=reallyName, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=identity, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=postcode, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=email, type=String, isPrimary=false, isAutoIncrement=false, isUnique=true, isNotNull=false], Column [name=address, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=phone, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=question, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=answer, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]]]:
+	-------Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=name, type=String, isPrimary=false, isAutoIncrement=false, isUnique=true, isNotNull=true]
+	-------Column [name=password, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=reallyName, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=identity, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=postcode, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=email, type=String, isPrimary=false, isAutoIncrement=false, isUnique=true, isNotNull=false]
+	-------Column [name=address, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=phone, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=question, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=answer, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+
+-------Entity [name=Order, tableName=ec_order, subPackageName=order, packageName=com.desmond.ec.order, columns=[Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=status, type=int, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=userId, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=name, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=address, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=postCode, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=telephone, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=phone, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=post, type=int, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=pay, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=notes, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]]]:
+	-------Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=status, type=int, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=userId, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=name, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=address, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=postCode, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=telephone, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=phone, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=post, type=int, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=pay, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=notes, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+
+
+INFO main com.desmond.generator.run.TestRun - deleting L:/gitHub/projects/eCommerce/src/com/desmond/ec...
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/user/intf/User.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/order/intf/Order.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/user/impl/UserImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/order/impl/OrderImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/user/impl/UserDaoImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/order/impl/OrderDaoImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/user/impl/UserServiceBaseImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/order/impl/OrderServiceBaseImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/user/impl/UserLocalServiceImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/order/impl/OrderLocalServiceImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/sqls/User.sql
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/sqls/Order.sql
+INFO main com.desmond.generator.run.TestRun - Builder [packateName=com.desmond.ec, author=Presley, nameSpace=ec, entities:
+-------Entity [name=User, tableName=ec_user, subPackageName=user, packageName=com.desmond.ec.user, columns=[Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=name, type=String, isPrimary=false, isAutoIncrement=false, isUnique=true, isNotNull=true], Column [name=password, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=reallyName, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=identity, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=postcode, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=email, type=String, isPrimary=false, isAutoIncrement=false, isUnique=true, isNotNull=false], Column [name=address, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=phone, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=question, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=answer, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]]]:
+	-------Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=name, type=String, isPrimary=false, isAutoIncrement=false, isUnique=true, isNotNull=true]
+	-------Column [name=password, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=reallyName, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=identity, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=postcode, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=email, type=String, isPrimary=false, isAutoIncrement=false, isUnique=true, isNotNull=false]
+	-------Column [name=address, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=phone, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=question, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=answer, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+
+-------Entity [name=Order, tableName=ec_order, subPackageName=order, packageName=com.desmond.ec.order, columns=[Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=status, type=int, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=userId, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=name, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=address, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=postCode, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=telephone, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=phone, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=post, type=int, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=pay, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=notes, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]]]:
+	-------Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=status, type=int, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=userId, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=name, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=address, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=postCode, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=telephone, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=phone, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=post, type=int, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=pay, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=notes, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+
+
+INFO main com.desmond.generator.run.TestRun - deleting L:/gitHub/projects/eCommerce/src/com/desmond/ec...
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/user/intf/User.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/order/intf/Order.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/user/impl/UserImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/order/impl/OrderImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/user/impl/UserDaoImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/order/impl/OrderDaoImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/user/impl/UserServiceBaseImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/order/impl/OrderServiceBaseImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/user/impl/UserLocalServiceImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/order/impl/OrderLocalServiceImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/sqls/User.sql
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/sqls/Order.sql
+INFO main com.desmond.generator.run.TestRun - Builder [packateName=com.desmond.ec, author=Presley, nameSpace=ec, entities:
+-------Entity [name=User, tableName=ec_user, subPackageName=user, packageName=com.desmond.ec.user, columns=[Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=name, type=String, isPrimary=false, isAutoIncrement=false, isUnique=true, isNotNull=true], Column [name=password, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=reallyName, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=identity, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=postcode, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=email, type=String, isPrimary=false, isAutoIncrement=false, isUnique=true, isNotNull=false], Column [name=address, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=phone, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=question, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=answer, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]]]:
+	-------Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=name, type=String, isPrimary=false, isAutoIncrement=false, isUnique=true, isNotNull=true]
+	-------Column [name=password, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=reallyName, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=identity, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=postcode, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=email, type=String, isPrimary=false, isAutoIncrement=false, isUnique=true, isNotNull=false]
+	-------Column [name=address, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=phone, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=question, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=answer, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+
+-------Entity [name=Order, tableName=ec_order, subPackageName=order, packageName=com.desmond.ec.order, columns=[Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=status, type=int, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=userId, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=name, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=address, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=postCode, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=telephone, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=phone, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=post, type=int, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=pay, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=notes, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]]]:
+	-------Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=status, type=int, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=userId, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=name, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=address, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=postCode, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=telephone, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=phone, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=post, type=int, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=pay, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=notes, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+
+
+INFO main com.desmond.generator.run.TestRun - deleting L:/gitHub/projects/eCommerce/src/com/desmond/ec...
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/user/intf/User.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/order/intf/Order.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/user/impl/UserImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/order/impl/OrderImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/user/impl/UserDaoImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/order/impl/OrderDaoImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/user/impl/UserServiceBaseImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/order/impl/OrderServiceBaseImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/user/impl/UserLocalServiceImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/order/impl/OrderLocalServiceImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/sqls/User.sql
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/sqls/Order.sql
+ERROR main com.desmond.ec.user.impl.UserDaoImpl - error when insert
+com.mysql.jdbc.exceptions.MySQLIntegrityConstraintViolationException: Duplicate entry 'Name100000000' for key 'name'
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:931)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:2985)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1631)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1723)
+	at com.mysql.jdbc.Connection.execSQL(Connection.java:3256)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1313)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:1585)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:1500)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:1485)
+	at com.desmond.ec.user.impl.UserDaoImpl.add(UserDaoImpl.java:43)
+	at com.desmond.generator.run.TestRun.testCURD(TestRun.java:68)
+	at com.desmond.generator.run.TestRun.main(TestRun.java:61)
+DEBUG main com.desmond.ec.user.impl.UserDaoImpl - DML:UPDATE ec_user set createdDate = ?, modifiedDate = ?,name = ?,password = ?,reallyName = ?,identity = ?,postcode = ?,email = ?,address = ?,phone = ?,question = ?,answer = ? where id = ? affect UPDATE ec_user set createdDate = ?, modifiedDate = ?,name = ?,password = ?,reallyName = ?,identity = ?,postcode = ?,email = ?,address = ?,phone = ?,question = ?,answer = ? where id = ? row.
+INFO main com.desmond.generator.run.TestRun - test@desmond.com

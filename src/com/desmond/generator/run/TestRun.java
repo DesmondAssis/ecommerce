@@ -9,6 +9,10 @@ import org.apache.log4j.Logger;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
 
+import com.desmond.ec.*;
+import com.desmond.ec.user.impl.UserDaoImpl;
+import com.desmond.ec.user.impl.UserImpl;
+import com.desmond.ec.user.intf.User;
 import com.desmond.generator.exception.NoSuchDBTypeException;
 import com.desmond.generator.run.model.Builder;
 import com.desmond.generator.util.DaoImplGeneratorHelper;
@@ -54,35 +58,25 @@ public class TestRun {
 		
 		
 		// test CURD of user.
-		//testCURD();
+		testCURD();
 	}
 	
-//	private static void testCURD() {
-//		User user = new UserImpl();
-//		user.setName("Desmond1");
-//		user.setPassword("test");
-//		user.setReallyName("Desmond Li");
-//		user.setIdentity("4302344234234");
-//		user.setPostcode("908273");
-//		user.setEmail("test1@desmond.com");
-//		user.setAddress("Yu Shanghai G Rd.");
-//		user.setPhone("15009090909");
-//		user.setQuestion("My girl friend's name?");
-//		user.setAnswer("Alina Lin");
-//		
-//		UserDaoImpl userDao = new UserDaoImpl();
-////		userDao.add(user);
-//		
-//		// update.
-//		user.setPrimaryKey(12);
-//		userDao.update(user);
-//		
-//		// read.
-//		User testUser = userDao.fetchByPrimaryKey(9);
-//		log.info(testUser.getEmail());
-//		
-//		// delete.
-//		userDao.delete(12);
-//	}
+	private static void testCURD() {
+		User user = (new UserImpl()).mockUserImpl();
+		
+		UserDaoImpl userDao = new UserDaoImpl();
+		userDao.add(user);
+		
+		// update.
+		user.setPrimaryKey(12);
+		userDao.update(user);
+		
+		// read.
+		User testUser = userDao.fetchByPrimaryKey(9);
+		log.info(testUser.getEmail());
+		
+		// delete.
+		userDao.delete(12);
+	}
 
 }

@@ -50,6 +50,39 @@ public enum TypeTransformEnum {
 		
 		return TypeTransformEnum.INVALID;
 	}
+	
+	public static String getMockValueByTypeInXml(int db, String typeInXml, String name) {
+		for(TypeTransformEnum type : TypeTransformEnum.values()) {
+			if(db == type.getDbType() && typeInXml.equals(type.getTypeInXml())) {
+				switch(type) {
+				case LONG:return "1000+ Math.random()*100000";
+				case INT:return "Math.random()*1000";
+				case STRING: return name + Math.random();
+				case TIME: return "new java.sql.Timestamp(new java.util.Date().getTime())";
+				
+				}
+			}
+		}
+		
+		return "unkown value of " + name;
+	}
+	
+	public static String getMockValueByTypeInXml(String typeInXml, String name) {
+		int db = DMConstants.DB_TYPE_MYSQL;
+		for(TypeTransformEnum type : TypeTransformEnum.values()) {
+			if(db == type.getDbType() && typeInXml.equals(type.getTypeInXml())) {
+				switch(type) {
+				case LONG:return "Math.round(10000)";
+				case INT:return "Math.round(100)";
+				case STRING: return "\"" + name + "\" + " + "Math.round(100000000)";
+				case TIME: return "new java.sql.Timestamp(new java.util.Date().getTime())";
+				
+				}
+			}
+		}
+		
+		return "unkown value of " + name;
+	}
 
 	/**
 	 * Returns the dbType of this TypeTransformEnum.

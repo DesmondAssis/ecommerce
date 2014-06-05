@@ -37,4 +37,11 @@ public class UserImpl extends BaseModelImpl implements User{
 	public String getAnswer() {		return answer;	}
 	public void setAnswer(String answer) {		this.answer = answer;	}
 
+	
+	public User mockUserImpl() {
+		User user = new UserImpl();
+				user.setName("Name" + Math.round(100000000));		user.setPassword("Password" + Math.round(100000000));		user.setReallyName("ReallyName" + Math.round(100000000));		user.setIdentity("Identity" + Math.round(100000000));		user.setPostcode("Postcode" + Math.round(100000000));		user.setEmail("Email" + Math.round(100000000));		user.setAddress("Address" + Math.round(100000000));		user.setPhone("Phone" + Math.round(100000000));		user.setQuestion("Question" + Math.round(100000000));		user.setAnswer("Answer" + Math.round(100000000));
+		
+		return user;
+	}
 }

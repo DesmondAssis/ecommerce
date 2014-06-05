@@ -37,4 +37,11 @@ public class OrderImpl extends BaseModelImpl implements Order{
 	public String getNotes() {		return notes;	}
 	public void setNotes(String notes) {		this.notes = notes;	}
 
+	
+	public Order mockOrderImpl() {
+		Order order = new OrderImpl();
+				order.setStatus(Math.round(100));		order.setUserId(Math.round(10000));		order.setName("Name" + Math.round(100000000));		order.setAddress("Address" + Math.round(100000000));		order.setPostCode("PostCode" + Math.round(100000000));		order.setTelephone("Telephone" + Math.round(100000000));		order.setPhone("Phone" + Math.round(100000000));		order.setPost(Math.round(100));		order.setPay("Pay" + Math.round(100000000));		order.setNotes("Notes" + Math.round(100000000));
+		
+		return order;
+	}
 }
