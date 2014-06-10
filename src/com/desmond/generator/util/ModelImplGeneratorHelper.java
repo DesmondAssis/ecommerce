@@ -27,7 +27,6 @@ public class ModelImplGeneratorHelper {
 		generateModelImpl(builder);
 	}
 	
-	
 	private static void generateModel(Builder builder) {
 		String template = GeneratorHelper.templateFileMap
 				.get(TemplateEnum.MODEL.getType());

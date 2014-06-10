@@ -55,7 +55,7 @@ public class DaoImplGeneratorHelper {
 							.append("(")
 							.append(i+1)
 							.append(", ")
-							.append(entity.getName().toLowerCase())
+							.append("${modelVariable}")
 							.append(".get")
 							.append(StringUtils.capitalize(field.getName()))
 							.append("());");
@@ -138,7 +138,7 @@ public class DaoImplGeneratorHelper {
 							.append("(")
 							.append(i)
 							.append(", ")
-							.append(entity.getName().toLowerCase())
+							.append("${modelVariable}")
 							.append(".get")
 							.append(StringUtils.capitalize(field.getName()))
 							.append("());");
@@ -149,7 +149,7 @@ public class DaoImplGeneratorHelper {
 		.append("(")
 		.append(fields.size())
 		.append(", ")
-		.append(entity.getName().toLowerCase())
+		.append("${modelVariable}")
 		.append(".getPrimaryKey());");
 		return setStatementSb.toString();
 	}

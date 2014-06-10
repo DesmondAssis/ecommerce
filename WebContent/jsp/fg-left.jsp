@@ -30,7 +30,7 @@ function quit() {
             <td height="16">&nbsp;</td>
           </tr>
         </table>
-        <form name="form" method="post" action="PiMeng/loginSuccess.jsp" onSubmit="return checkEmpty(form)">
+        <form name="form" method="post" action="user/loginSuccess.jsp" onSubmit="return checkEmpty(form)">
           <table width="200" border="0" align="center">
             <tr>
               <td width="100" height="20">用户名：</td>
@@ -42,7 +42,7 @@ function quit() {
             </tr>
 			 <tr>
               <td height="15"><input type="image" class="input1"  src="image/fg-land.gif" width="51" height="20"></td>
-              <td height="15"><a href="PiMeng/regist.jsp">注册</a>&nbsp;<a href="PiMeng/search.jsp">找回密码?</a></td>
+              <td height="15"><a href="user/regist.jsp">注册</a>&nbsp;<a href="user/search.jsp">找回密码?</a></td>
 			 </tr>	  
           </table>
 		  </form>

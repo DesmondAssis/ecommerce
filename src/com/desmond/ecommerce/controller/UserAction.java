@@ -11,11 +11,10 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.actions.DispatchAction;
 
+import com.desmond.ec.user.impl.UserImpl;
+import com.desmond.ec.user.impl.UserLocalServiceImpl;
+import com.desmond.ec.user.intf.User;
 import com.desmond.ecommerce.form.UserForm;
-import com.desmond.ecommerce.impl.model.UserModelImpl;
-import com.desmond.ecommerce.impl.service.UserLocalServiceImpl;
-import com.desmond.ecommerce.interf.model.UserModel;
-import com.desmond.ecommerce.interf.service.UserService;
 
 /**
  * 
@@ -38,32 +37,28 @@ public class UserAction extends DispatchAction {
 		UserForm uf = (UserForm) form;
 		ActionForward forward = null;
 		String forwardPage = "";
-		boolean isSuccess = false;
-		UserService us = new UserLocalServiceImpl();
+		int isSuccess = 0;
+		UserLocalServiceImpl uls = new UserLocalServiceImpl();
 
-		UserModel ub = new UserModelImpl();
+		User user = new UserImpl();
 
-		ub.setAddress(uf.getAddress());
-		ub.setAnswer(uf.getAnswer());
-		// ub.setCreditId(uf.getCreditId());
-		ub.setEmail(uf.getEmail());
-		ub.setIdentity(uf.getIdentity());
-		ub.setName(uf.getName());
-		ub.setPostcode(uf.getPostcode());
-		ub.setPassword(uf.getPassword());
-		ub.setQuestion(uf.getQuestion());
-		ub.setPhone(uf.getPhone());
-		ub.setReallyName(uf.getReallyName());
+		user.setAddress(uf.getAddress());
+		user.setAnswer(uf.getAnswer());
+		user.setEmail(uf.getEmail());
+		user.setIdentity(uf.getIdentity());
+		user.setName(uf.getName());
+		user.setPostcode(uf.getPostcode());
+		user.setPassword(uf.getPassword());
+		user.setQuestion(uf.getQuestion());
+		user.setPhone(uf.getPhone());
+		user.setReallyName(uf.getReallyName());
 
-		Date now = new Date(new java.util.Date().getTime());
-		ub.setRegistDate(now);
-
-		isSuccess = us.regist(ub);
+		isSuccess = uls.add(user);
 		
-		if (isSuccess) {
+		if (isSuccess > 0) {
 			HttpSession session = request.getSession();
-			session.setAttribute("user", ub);
-			forwardPage = "";
+			session.setAttribute("user", user);
+			forwardPage = "registSuccess";
 		}
 		
 		forward = mapping.findForward(forwardPage);
@@ -83,15 +78,15 @@ public class UserAction extends DispatchAction {
 			HttpServletRequest request, HttpServletResponse response) {
 		UserForm uf = (UserForm) form;
 		ActionForward forward = null;
-		String forwardPage = "";
-		UserService us = new UserLocalServiceImpl();
-		UserModel ub = null;
-		ub = us.login(uf.getName(), uf.getPassword());
+		String forwardPage = "index";
+		UserLocalServiceImpl uls = new UserLocalServiceImpl();
+		uf.setUserId(Integer.valueOf(uf.getName()));
+		User user =  uls.login(uf);
 		
-		if (ub != null) {
+		if (user != null) {
 			HttpSession session = request.getSession();
-			session.setAttribute("user", ub);
-			forwardPage = "";
+			session.setAttribute("user", user);
+			forwardPage = "loginSuccess";
 		}
 		
 		forward = mapping.findForward(forwardPage);
@@ -112,10 +107,10 @@ public class UserAction extends DispatchAction {
 		UserForm uf = (UserForm) form;
 		ActionForward forward = null;
 		String forwardPage = "";
-		boolean isSuccess = false;
-		UserService us = new UserLocalServiceImpl();
+		int isSuccess = 0;
+		UserLocalServiceImpl us = new UserLocalServiceImpl();
 
-		UserModel ub = new UserModelImpl();
+		User ub = new UserImpl();
 		ub.setPrimaryKey(uf.getUserId());
 		ub.setName(uf.getName());
 		ub.setPassword(uf.getPassword());
@@ -131,7 +126,7 @@ public class UserAction extends DispatchAction {
 
 		isSuccess = us.update(ub);
 
-		if (isSuccess) {
+		if (isSuccess > 0) {
 			HttpSession session = request.getSession();
 			session.setAttribute("user", ub);
 			forwardPage = "";
@@ -154,23 +149,11 @@ public class UserAction extends DispatchAction {
 			HttpServletRequest request, HttpServletResponse response) {
 		UserForm uf = (UserForm) form;
 		ActionForward forward = null;
-		String forwardPage = "";
-		boolean isSuccess = false;
-		UserService us = new UserLocalServiceImpl();
-		isSuccess = us.modifyPassword(uf.getUserId(), uf.getNewPwd());
+		UserLocalServiceImpl us = new UserLocalServiceImpl();
+		User user = us.fetchByPrimaryKey(uf.getUserId());
+		user.setPassword(uf.getNewPwd());
 
-		
-		if (isSuccess) {
-			HttpSession session = request.getSession();
-			UserModel ub = (UserModel) session.getAttribute("user");
-			ub.setPassword(uf.getPassword());
-			session.setAttribute("user", ub);
-			forwardPage = "";
-		}
-		
-		forward = mapping.findForward(forwardPage);
-		
-		return forward;
+		return update(mapping, form, request, response);
 	}
 
 	/**
@@ -187,8 +170,8 @@ public class UserAction extends DispatchAction {
 		ActionForward forward = null;
 		String forwardPage = "";
 		boolean isSuccess = false;
-		UserService us = new UserLocalServiceImpl();
-		isSuccess = us.changePassword(uf.getName(), uf.getAnswer(), uf.getNewPwd());
+		UserLocalServiceImpl uls = new UserLocalServiceImpl();
+		isSuccess = uls.changePassword(uf);
 		
 		if (isSuccess) {
 			forwardPage = "";

@@ -1,6 +1,6 @@
 package com.desmond.ec.order.impl;
 
-public abstract class OrderLocalServiceImpl extends OrderServiceBaseImpl{
+public class OrderLocalServiceImpl extends OrderServiceBaseImpl{
 	/*
 	 * NOTE FOR DEVELOPERS:
 	 * 

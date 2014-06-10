@@ -37,14 +37,14 @@
       <tr>
         <td width="200" height="35" align="right">用户名：</td>
         <td width="180" align="left">
-           <html:text property="username"></html:text>
+           <html:text property="name"></html:text>
            <font color=red>*</font></td></tr>
       <tr>
         <td height="35">          
           <div align="right">密&nbsp;&nbsp;&nbsp;码：</div></td>
         <td>
             <div align="left">
-              <html:password property="pwd"></html:password>
+              <html:password property="password"></html:password>
               <font color=red>*</font>
             </div></td></tr>
       <tr>
@@ -82,7 +82,7 @@
           <div align="right">真实姓名：</div></td>
         <td>
             <div align="left">
-              <html:text property="name"></html:text>
+              <html:text property="reallyName"></html:text>
               <font color=red>*</font>
             </div></td></tr>
       <tr>
@@ -120,7 +120,7 @@
           <div align="right">联系电话：</div></td>
         <td>
             <div align="left">
-              <html:text property="tel"></html:text>
+              <html:text property="phone"></html:text>
               <font color=red>*</font>
           </div></td></tr>
     </table>

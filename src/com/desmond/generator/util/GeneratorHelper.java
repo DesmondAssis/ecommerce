@@ -170,7 +170,7 @@ public class GeneratorHelper {
     
     public static Element getService() throws JDOMException, IOException {
     	InputStream in = GeneratorHelper.class.getClassLoader().getResourceAsStream(
-				"com/desmond/generator/service-user.xml");
+				"com/desmond/generator/service-ec.xml");
 		// Use a SAX builder
 		SAXBuilder saxBuilder = new SAXBuilder();
 		// build a JDOM2 Document using the SAXBuilder.

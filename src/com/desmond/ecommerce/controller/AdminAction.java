@@ -14,10 +14,10 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.actions.DispatchAction;
 
+import com.desmond.ec.user.impl.AdministratorImpl;
+import com.desmond.ec.user.impl.AdministratorLocalServiceImpl;
+import com.desmond.ec.user.intf.Administrator;
 import com.desmond.ecommerce.form.AdminForm;
-import com.desmond.ecommerce.impl.service.AdminLocalServiceImpl;
-import com.desmond.ecommerce.interf.model.AdminModel;
-import com.desmond.ecommerce.interf.service.AdminService;
 
 /**"
  * 
@@ -27,18 +27,18 @@ import com.desmond.ecommerce.interf.service.AdminService;
  * #AdminAction
  */
 public class AdminAction extends DispatchAction {
-	private static Logger log = Logger.getLogger(AdminLocalServiceImpl.class.getName());
+	private static Logger log = Logger.getLogger(AdminAction.class.getName());
 
 public ActionForward regist(ActionMapping mapping, ActionForm form,
 		HttpServletRequest request, HttpServletResponse response){	  
 	  AdminForm af=(AdminForm)form;	
 	  ActionForward forward=null;
-	  String forwardPage="managerFailed"; //Ĭ��Ϊʧ��ҳ��	  
+	  String forwardPage="managerFailed";  
 	  boolean isSucces=false;
 	  
-	  log.info("controller regist ok");
-	  
-	  AdminService as=new AdminLocalServiceImpl();
+	  AdministratorLocalServiceImpl as=new AdministratorLocalServiceImpl();
+	  Administrator admin = new AdministratorImpl();
+	  admin.setUserId(userId);
 	  isSucces = as.regist(af.getUserName(), af.getPwd(), af.getEmail());
 	  
       if(isSucces){

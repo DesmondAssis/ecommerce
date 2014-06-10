@@ -20,10 +20,20 @@ public class SQLGeneratorHelper {
 	
 	public static void creteTable(Builder builder) throws NoSuchDBTypeException{
     	List<Entity> entityList = builder.getEntities();
+
+		StringBuilder sqlSb = new StringBuilder("drop database if exists ecommerce;\rcreate database"
+				+ " ecommerce character set utf8;\ruse ecommerce;");
+		
+		String packageFileName = builder.getPackateName().replace(".",
+				"/");
+		StringBuilder sqlFileDirctory = new StringBuilder(
+				DMConstants.sourceDirectory);
+		sqlFileDirctory.append(packageFileName).append("/").append("sqls/");
+		
     	if(entityList != null && entityList.size() > 0) {
     		for(Entity entity : entityList) {
     			List<Column> columnList = entity.getColumns();
-    			StringBuilder tableSb = new StringBuilder();
+    			StringBuilder tableSb = new StringBuilder("\r\n\n");
     			StringBuilder rowsSb = new StringBuilder();
     			String tableName = StringUtils.isNotBlank(entity.getTableName()) ?
 						entity.getTableName() 
@@ -43,20 +53,22 @@ public class SQLGeneratorHelper {
     			
     			tableSb.append(SQLStatementConstant.CREATE_TABLE_SUFFIX);
     			
-    			String packageFileName = builder.getPackateName().replace(".",
-						"/");
-				StringBuilder fileNameSb = new StringBuilder(
-						DMConstants.sourceDirectory);
-				fileNameSb.append(packageFileName).append("/").append("sqls/")
-						.append(entity.getName()).append(".sql");
+    			StringBuilder fileNameSb = new StringBuilder(sqlFileDirctory); 
+    			
+    			fileNameSb.append(entity.getName()).append(".sql");
 
 				// write to source
 				GeneratorHelper
 						.writeToDestFile(tableSb.toString(), fileNameSb.toString());
     			//log.debug("sql: " + tableSb);
+				sqlSb.append(tableSb);
         	} // end: for:entity
     	} // end: if:entityList
     	
+    	sqlSb.append("\r\n\ncreate table ec_counter (\r\tname varchar(75) not null primary key,"
+    			+ "\r\tcurrentId bigint(20)\r) engine InnoDB;");
+    	GeneratorHelper
+		.writeToDestFile(sqlSb.toString(), sqlFileDirctory.append("init.sql").toString());
     }
     
     private static void createIndividualRow(Column column, StringBuilder rowsSb) throws NoSuchDBTypeException{

@@ -6,6 +6,8 @@ public enum TypeTransformEnum {
 	INVALID(DMConstants.DB_TYPE_INVAILD, "", "", ""),
 	LONG(DMConstants.DB_TYPE_MYSQL, "long", "Long", "BIGINT(25)"),
 	INT(DMConstants.DB_TYPE_MYSQL, "int", "int", "INT"),
+	DOUBLE(DMConstants.DB_TYPE_MYSQL, "double", "double", "DOUBLE"),
+	BOOLEAN(DMConstants.DB_TYPE_MYSQL, "boolean", "boolean", "TINYINT"),
 	STRING(DMConstants.DB_TYPE_MYSQL, "String", "String", "VARCHAR(75)"),
 	TIME(DMConstants.DB_TYPE_MYSQL, "Time", "Timestamp", "TIMESTAMP");
 	
@@ -55,9 +57,11 @@ public enum TypeTransformEnum {
 		for(TypeTransformEnum type : TypeTransformEnum.values()) {
 			if(db == type.getDbType() && typeInXml.equals(type.getTypeInXml())) {
 				switch(type) {
-				case LONG:return "1000+ Math.random()*100000";
-				case INT:return "Math.random()*1000";
-				case STRING: return name + Math.random();
+				case LONG:return "Math.round(10000)";
+				case INT:return "Math.round(100)";
+				case DOUBLE:return "Math.rint(100)";
+				case BOOLEAN:return "false";
+				case STRING: return "\"" + name + "\" + " + "Math.round(100000000)";
 				case TIME: return "new java.sql.Timestamp(new java.util.Date().getTime())";
 				
 				}
@@ -68,20 +72,8 @@ public enum TypeTransformEnum {
 	}
 	
 	public static String getMockValueByTypeInXml(String typeInXml, String name) {
-		int db = DMConstants.DB_TYPE_MYSQL;
-		for(TypeTransformEnum type : TypeTransformEnum.values()) {
-			if(db == type.getDbType() && typeInXml.equals(type.getTypeInXml())) {
-				switch(type) {
-				case LONG:return "Math.round(10000)";
-				case INT:return "Math.round(100)";
-				case STRING: return "\"" + name + "\" + " + "Math.round(100000000)";
-				case TIME: return "new java.sql.Timestamp(new java.util.Date().getTime())";
-				
-				}
-			}
-		}
 		
-		return "unkown value of " + name;
+		return TypeTransformEnum.getMockValueByTypeInXml(DMConstants.DB_TYPE_MYSQL, typeInXml, name);
 	}
 
 	/**

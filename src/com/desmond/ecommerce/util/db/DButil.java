@@ -8,8 +8,6 @@ import java.sql.SQLException;
 
 import org.apache.log4j.Logger;
 
-import com.desmond.ecommerce.impl.dao.UserDaoImpl;
-
 public class DButil {
 	private static String url = "jdbc:mysql://localhost:3306/ecommerce?useUnicode=true&amp;characterEncoding=UTF-8";
 	private static String user = "root";
@@ -17,7 +15,7 @@ public class DButil {
 	private static String driverClass = "com.mysql.jdbc.Driver";
 	private static Connection conn = null;
 
-	private static Logger log = Logger.getLogger(UserDaoImpl.class.getName());
+	private static Logger log = Logger.getLogger(DButil.class.getName());
 
 	public static Connection getConnection() {
 		try {

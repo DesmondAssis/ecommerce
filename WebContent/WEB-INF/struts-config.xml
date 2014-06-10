@@ -29,7 +29,9 @@
 				path="/userAction"
 				scope="request"
 				type="com.desmond.ecommerce.controller.UserAction">
-			<forward name="loginSuccess" path="/PiMeng/loginSuccess.jsp"></forward>
+			<forward name="loginSuccess" path="/jsp/user/loginSuccess.jsp"/>
+			<forward name="loginFailed" path="/jsp/user/index.jsp"/>
+			<forward name="registSuccess" path="/jsp/user/index.jsp"></forward>
 		</action>
 		
 		<action parameter="method"

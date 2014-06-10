@@ -1,6 +1,6 @@
 package ${packageName};
 
-public abstract class ${model}LocalServiceImpl extends ${model}ServiceBaseImpl{
+public class ${model}LocalServiceImpl extends ${model}ServiceBaseImpl{
 	/*
 	 * NOTE FOR DEVELOPERS:
 	 * 

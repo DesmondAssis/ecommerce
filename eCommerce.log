@@ -1,5 +1,4 @@
-DEBUG main com.desmond.ec.user.impl.UserDaoImpl - DML:UPDATE ec_user set createdDate = ?, modifiedDate = ?,name = ?,password = ?,reallyName = ?,identity = ?,postcode = ?,email = ?,address = ?,phone = ?,question = ?,answer = ? where id = ? affect UPDATE ec_user set createdDate = ?, modifiedDate = ?,name = ?,password = ?,reallyName = ?,identity = ?,postcode = ?,email = ?,address = ?,phone = ?,question = ?,answer = ? where id = ? row.
-INFO main com.desmond.generator.run.TestRun - test@desmond.com
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/sqls/init.sql
 INFO main com.desmond.generator.run.TestRun - Builder [packateName=com.desmond.ec, author=Presley, nameSpace=ec, entities:
 -------Entity [name=User, tableName=ec_user, subPackageName=user, packageName=com.desmond.ec.user, columns=[Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=name, type=String, isPrimary=false, isAutoIncrement=false, isUnique=true, isNotNull=true], Column [name=password, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=reallyName, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=identity, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=postcode, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=email, type=String, isPrimary=false, isAutoIncrement=false, isUnique=true, isNotNull=false], Column [name=address, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=phone, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=question, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=answer, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]]]:
 	-------Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false]
@@ -31,20 +30,166 @@ INFO main com.desmond.generator.run.TestRun - Builder [packateName=com.desmond.e
 	-------Column [name=pay, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
 	-------Column [name=notes, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
 
+-------Entity [name=OrderGoods, tableName=null, subPackageName=order, packageName=com.desmond.ec.order, columns=[Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=orderId, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=orderGoodId, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=orderGoodNum, type=int, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=orderGoodPrice, type=double, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]]]:
+	-------Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=orderId, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=orderGoodId, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=orderGoodNum, type=int, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=orderGoodPrice, type=double, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+
+-------Entity [name=Administrator, tableName=null, subPackageName=user, packageName=com.desmond.ec.user, columns=[Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=userId, type=long, isPrimary=false, isAutoIncrement=false, isUnique=true, isNotNull=true], Column [name=authority, type=int, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]]]:
+	-------Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=userId, type=long, isPrimary=false, isAutoIncrement=false, isUnique=true, isNotNull=true]
+	-------Column [name=authority, type=int, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+
+-------Entity [name=Goods, tableName=null, subPackageName=goods, packageName=com.desmond.ec.goods, columns=[Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=name, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=mainClass, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=subClass, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=price, type=double, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=remain, type=int, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=image, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=unit, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=isRecommend, type=boolean, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]]]:
+	-------Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=name, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=mainClass, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=subClass, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=price, type=double, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=remain, type=int, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=image, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=unit, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=isRecommend, type=boolean, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+
+-------Entity [name=Cart, tableName=null, subPackageName=cart, packageName=com.desmond.ec.cart, columns=[Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=sessionId, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=goodId, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=goodNum, type=int, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=userId, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]]]:
+	-------Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=sessionId, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=goodId, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=goodNum, type=int, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=userId, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+
+-------Entity [name=GoodsClass, tableName=null, subPackageName=goods, packageName=com.desmond.ec.goods, columns=[Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=name, type=String, isPrimary=false, isAutoIncrement=false, isUnique=true, isNotNull=true], Column [name=parentClass, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]]]:
+	-------Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=name, type=String, isPrimary=false, isAutoIncrement=false, isUnique=true, isNotNull=true]
+	-------Column [name=parentClass, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+
+-------Entity [name=Comment, tableName=null, subPackageName=comment, packageName=com.desmond.ec.comment, columns=[Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=userId, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=content, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=goodId, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]]]:
+	-------Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=userId, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=content, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=goodId, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+
+-------Entity [name=Information, tableName=null, subPackageName=info, packageName=com.desmond.ec.info, columns=[Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=title, type=String, isPrimary=false, isAutoIncrement=false, isUnique=true, isNotNull=true], Column [name=content, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=status, type=int, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=type, type=int, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]]]:
+	-------Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=title, type=String, isPrimary=false, isAutoIncrement=false, isUnique=true, isNotNull=true]
+	-------Column [name=content, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=status, type=int, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=type, type=int, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+
+-------Entity [name=SaleStatics, tableName=null, subPackageName=sale, packageName=com.desmond.ec.sale, columns=[Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=goodId, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=goodsClass, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=saleNumber, type=int, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=saleNumAmount, type=int, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]]]:
+	-------Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=goodId, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=goodsClass, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=saleNumber, type=int, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=saleNumAmount, type=int, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+
+-------Entity [name=OrderHistory, tableName=null, subPackageName=order, packageName=com.desmond.ec.order, columns=[Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=orderId, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=modifiedReason, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=userId, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]]]:
+	-------Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=orderId, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=modifiedReason, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=userId, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+
+-------Entity [name=AdminAuthority, tableName=null, subPackageName=user, packageName=com.desmond.ec.user, columns=[Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=name, type=String, isPrimary=false, isAutoIncrement=false, isUnique=true, isNotNull=true]]]:
+	-------Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=name, type=String, isPrimary=false, isAutoIncrement=false, isUnique=true, isNotNull=true]
+
 
 INFO main com.desmond.generator.run.TestRun - deleting L:/gitHub/projects/eCommerce/src/com/desmond/ec...
 INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/user/intf/User.java
 INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/order/intf/Order.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/order/intf/OrderGoods.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/user/intf/Administrator.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/goods/intf/Goods.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/cart/intf/Cart.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/goods/intf/GoodsClass.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/comment/intf/Comment.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/info/intf/Information.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/sale/intf/SaleStatics.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/order/intf/OrderHistory.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/user/intf/AdminAuthority.java
 INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/user/impl/UserImpl.java
 INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/order/impl/OrderImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/order/impl/OrderGoodsImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/user/impl/AdministratorImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/goods/impl/GoodsImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/cart/impl/CartImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/goods/impl/GoodsClassImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/comment/impl/CommentImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/info/impl/InformationImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/sale/impl/SaleStaticsImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/order/impl/OrderHistoryImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/user/impl/AdminAuthorityImpl.java
 INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/user/impl/UserDaoImpl.java
 INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/order/impl/OrderDaoImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/order/impl/OrderGoodsDaoImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/user/impl/AdministratorDaoImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/goods/impl/GoodsDaoImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/cart/impl/CartDaoImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/goods/impl/GoodsClassDaoImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/comment/impl/CommentDaoImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/info/impl/InformationDaoImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/sale/impl/SaleStaticsDaoImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/order/impl/OrderHistoryDaoImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/user/impl/AdminAuthorityDaoImpl.java
 INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/user/impl/UserServiceBaseImpl.java
 INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/order/impl/OrderServiceBaseImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/order/impl/OrderGoodsServiceBaseImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/user/impl/AdministratorServiceBaseImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/goods/impl/GoodsServiceBaseImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/cart/impl/CartServiceBaseImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/goods/impl/GoodsClassServiceBaseImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/comment/impl/CommentServiceBaseImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/info/impl/InformationServiceBaseImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/sale/impl/SaleStaticsServiceBaseImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/order/impl/OrderHistoryServiceBaseImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/user/impl/AdminAuthorityServiceBaseImpl.java
 INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/user/impl/UserLocalServiceImpl.java
 INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/order/impl/OrderLocalServiceImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/order/impl/OrderGoodsLocalServiceImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/user/impl/AdministratorLocalServiceImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/goods/impl/GoodsLocalServiceImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/cart/impl/CartLocalServiceImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/goods/impl/GoodsClassLocalServiceImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/comment/impl/CommentLocalServiceImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/info/impl/InformationLocalServiceImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/sale/impl/SaleStaticsLocalServiceImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/order/impl/OrderHistoryLocalServiceImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/user/impl/AdminAuthorityLocalServiceImpl.java
 INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/sqls/User.sql
 INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/sqls/Order.sql
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/sqls/OrderGoods.sql
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/sqls/Administrator.sql
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/sqls/Goods.sql
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/sqls/Cart.sql
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/sqls/GoodsClass.sql
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/sqls/Comment.sql
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/sqls/Information.sql
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/sqls/SaleStatics.sql
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/sqls/OrderHistory.sql
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/sqls/AdminAuthority.sql
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/sqls/init.sql
 INFO main com.desmond.generator.run.TestRun - Builder [packateName=com.desmond.ec, author=Presley, nameSpace=ec, entities:
 -------Entity [name=User, tableName=ec_user, subPackageName=user, packageName=com.desmond.ec.user, columns=[Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=name, type=String, isPrimary=false, isAutoIncrement=false, isUnique=true, isNotNull=true], Column [name=password, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=reallyName, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=identity, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=postcode, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=email, type=String, isPrimary=false, isAutoIncrement=false, isUnique=true, isNotNull=false], Column [name=address, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=phone, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=question, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=answer, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]]]:
 	-------Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false]
@@ -76,78 +221,163 @@ INFO main com.desmond.generator.run.TestRun - Builder [packateName=com.desmond.e
 	-------Column [name=pay, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
 	-------Column [name=notes, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
 
+-------Entity [name=OrderGoods, tableName=null, subPackageName=order, packageName=com.desmond.ec.order, columns=[Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=orderId, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=orderGoodId, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=orderGoodNum, type=int, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=orderGoodPrice, type=double, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]]]:
+	-------Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=orderId, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=orderGoodId, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=orderGoodNum, type=int, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=orderGoodPrice, type=double, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
 
-INFO main com.desmond.generator.run.TestRun - deleting L:/gitHub/projects/eCommerce/src/com/desmond/ec...
-INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/user/intf/User.java
-INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/order/intf/Order.java
-INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/user/impl/UserImpl.java
-INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/order/impl/OrderImpl.java
-INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/user/impl/UserDaoImpl.java
-INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/order/impl/OrderDaoImpl.java
-INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/user/impl/UserServiceBaseImpl.java
-INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/order/impl/OrderServiceBaseImpl.java
-INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/user/impl/UserLocalServiceImpl.java
-INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/order/impl/OrderLocalServiceImpl.java
-INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/sqls/User.sql
-INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/sqls/Order.sql
-INFO main com.desmond.generator.run.TestRun - Builder [packateName=com.desmond.ec, author=Presley, nameSpace=ec, entities:
--------Entity [name=User, tableName=ec_user, subPackageName=user, packageName=com.desmond.ec.user, columns=[Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=name, type=String, isPrimary=false, isAutoIncrement=false, isUnique=true, isNotNull=true], Column [name=password, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=reallyName, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=identity, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=postcode, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=email, type=String, isPrimary=false, isAutoIncrement=false, isUnique=true, isNotNull=false], Column [name=address, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=phone, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=question, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=answer, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]]]:
+-------Entity [name=Administrator, tableName=null, subPackageName=user, packageName=com.desmond.ec.user, columns=[Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=userId, type=long, isPrimary=false, isAutoIncrement=false, isUnique=true, isNotNull=true], Column [name=authority, type=int, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]]]:
+	-------Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=userId, type=long, isPrimary=false, isAutoIncrement=false, isUnique=true, isNotNull=true]
+	-------Column [name=authority, type=int, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+
+-------Entity [name=Goods, tableName=null, subPackageName=goods, packageName=com.desmond.ec.goods, columns=[Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=name, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=mainClass, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=subClass, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=price, type=double, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=remain, type=int, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=image, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=unit, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=isRecommend, type=boolean, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]]]:
+	-------Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=name, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=mainClass, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=subClass, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=price, type=double, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=remain, type=int, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=image, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=unit, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=isRecommend, type=boolean, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+
+-------Entity [name=Cart, tableName=null, subPackageName=cart, packageName=com.desmond.ec.cart, columns=[Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=sessionId, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=goodId, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=goodNum, type=int, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=userId, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]]]:
+	-------Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=sessionId, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=goodId, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=goodNum, type=int, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=userId, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+
+-------Entity [name=GoodsClass, tableName=null, subPackageName=goods, packageName=com.desmond.ec.goods, columns=[Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=name, type=String, isPrimary=false, isAutoIncrement=false, isUnique=true, isNotNull=true], Column [name=parentClass, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]]]:
 	-------Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false]
 	-------Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
 	-------Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
 	-------Column [name=name, type=String, isPrimary=false, isAutoIncrement=false, isUnique=true, isNotNull=true]
-	-------Column [name=password, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
-	-------Column [name=reallyName, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
-	-------Column [name=identity, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
-	-------Column [name=postcode, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
-	-------Column [name=email, type=String, isPrimary=false, isAutoIncrement=false, isUnique=true, isNotNull=false]
-	-------Column [name=address, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
-	-------Column [name=phone, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
-	-------Column [name=question, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
-	-------Column [name=answer, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=parentClass, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
 
--------Entity [name=Order, tableName=ec_order, subPackageName=order, packageName=com.desmond.ec.order, columns=[Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=status, type=int, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=userId, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=name, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=address, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=postCode, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=telephone, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=phone, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=post, type=int, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=pay, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=notes, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]]]:
+-------Entity [name=Comment, tableName=null, subPackageName=comment, packageName=com.desmond.ec.comment, columns=[Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=userId, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=content, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=goodId, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]]]:
 	-------Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false]
 	-------Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
 	-------Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
-	-------Column [name=status, type=int, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
 	-------Column [name=userId, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
-	-------Column [name=name, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
-	-------Column [name=address, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
-	-------Column [name=postCode, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
-	-------Column [name=telephone, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
-	-------Column [name=phone, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
-	-------Column [name=post, type=int, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
-	-------Column [name=pay, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
-	-------Column [name=notes, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=content, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=goodId, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+
+-------Entity [name=Information, tableName=null, subPackageName=info, packageName=com.desmond.ec.info, columns=[Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=title, type=String, isPrimary=false, isAutoIncrement=false, isUnique=true, isNotNull=true], Column [name=content, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=status, type=int, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=type, type=int, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]]]:
+	-------Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=title, type=String, isPrimary=false, isAutoIncrement=false, isUnique=true, isNotNull=true]
+	-------Column [name=content, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=status, type=int, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=type, type=int, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+
+-------Entity [name=SaleStatics, tableName=null, subPackageName=sale, packageName=com.desmond.ec.sale, columns=[Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=goodId, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=goodsClass, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=saleNumber, type=int, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=saleNumAmount, type=int, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]]]:
+	-------Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=goodId, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=goodsClass, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=saleNumber, type=int, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=saleNumAmount, type=int, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+
+-------Entity [name=OrderHistory, tableName=null, subPackageName=order, packageName=com.desmond.ec.order, columns=[Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=orderId, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=modifiedReason, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true], Column [name=userId, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]]]:
+	-------Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=orderId, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=modifiedReason, type=String, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+	-------Column [name=userId, type=long, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=true]
+
+-------Entity [name=AdminAuthority, tableName=null, subPackageName=user, packageName=com.desmond.ec.user, columns=[Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false], Column [name=name, type=String, isPrimary=false, isAutoIncrement=false, isUnique=true, isNotNull=true]]]:
+	-------Column [name=id, type=long, isPrimary=true, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=createdDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=modifiedDate, type=Time, isPrimary=false, isAutoIncrement=false, isUnique=false, isNotNull=false]
+	-------Column [name=name, type=String, isPrimary=false, isAutoIncrement=false, isUnique=true, isNotNull=true]
 
 
 INFO main com.desmond.generator.run.TestRun - deleting L:/gitHub/projects/eCommerce/src/com/desmond/ec...
 INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/user/intf/User.java
 INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/order/intf/Order.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/order/intf/OrderGoods.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/user/intf/Administrator.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/goods/intf/Goods.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/cart/intf/Cart.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/goods/intf/GoodsClass.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/comment/intf/Comment.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/info/intf/Information.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/sale/intf/SaleStatics.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/order/intf/OrderHistory.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/user/intf/AdminAuthority.java
 INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/user/impl/UserImpl.java
 INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/order/impl/OrderImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/order/impl/OrderGoodsImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/user/impl/AdministratorImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/goods/impl/GoodsImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/cart/impl/CartImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/goods/impl/GoodsClassImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/comment/impl/CommentImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/info/impl/InformationImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/sale/impl/SaleStaticsImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/order/impl/OrderHistoryImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/user/impl/AdminAuthorityImpl.java
 INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/user/impl/UserDaoImpl.java
 INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/order/impl/OrderDaoImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/order/impl/OrderGoodsDaoImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/user/impl/AdministratorDaoImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/goods/impl/GoodsDaoImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/cart/impl/CartDaoImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/goods/impl/GoodsClassDaoImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/comment/impl/CommentDaoImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/info/impl/InformationDaoImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/sale/impl/SaleStaticsDaoImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/order/impl/OrderHistoryDaoImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/user/impl/AdminAuthorityDaoImpl.java
 INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/user/impl/UserServiceBaseImpl.java
 INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/order/impl/OrderServiceBaseImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/order/impl/OrderGoodsServiceBaseImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/user/impl/AdministratorServiceBaseImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/goods/impl/GoodsServiceBaseImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/cart/impl/CartServiceBaseImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/goods/impl/GoodsClassServiceBaseImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/comment/impl/CommentServiceBaseImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/info/impl/InformationServiceBaseImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/sale/impl/SaleStaticsServiceBaseImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/order/impl/OrderHistoryServiceBaseImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/user/impl/AdminAuthorityServiceBaseImpl.java
 INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/user/impl/UserLocalServiceImpl.java
 INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/order/impl/OrderLocalServiceImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/order/impl/OrderGoodsLocalServiceImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/user/impl/AdministratorLocalServiceImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/goods/impl/GoodsLocalServiceImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/cart/impl/CartLocalServiceImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/goods/impl/GoodsClassLocalServiceImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/comment/impl/CommentLocalServiceImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/info/impl/InformationLocalServiceImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/sale/impl/SaleStaticsLocalServiceImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/order/impl/OrderHistoryLocalServiceImpl.java
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/user/impl/AdminAuthorityLocalServiceImpl.java
 INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/sqls/User.sql
 INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/sqls/Order.sql
-ERROR main com.desmond.ec.user.impl.UserDaoImpl - error when insert
-com.mysql.jdbc.exceptions.MySQLIntegrityConstraintViolationException: Duplicate entry 'Name100000000' for key 'name'
-	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:931)
-	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:2985)
-	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1631)
-	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1723)
-	at com.mysql.jdbc.Connection.execSQL(Connection.java:3256)
-	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1313)
-	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:1585)
-	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:1500)
-	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:1485)
-	at com.desmond.ec.user.impl.UserDaoImpl.add(UserDaoImpl.java:43)
-	at com.desmond.generator.run.TestRun.testCURD(TestRun.java:68)
-	at com.desmond.generator.run.TestRun.main(TestRun.java:61)
-DEBUG main com.desmond.ec.user.impl.UserDaoImpl - DML:UPDATE ec_user set createdDate = ?, modifiedDate = ?,name = ?,password = ?,reallyName = ?,identity = ?,postcode = ?,email = ?,address = ?,phone = ?,question = ?,answer = ? where id = ? affect UPDATE ec_user set createdDate = ?, modifiedDate = ?,name = ?,password = ?,reallyName = ?,identity = ?,postcode = ?,email = ?,address = ?,phone = ?,question = ?,answer = ? where id = ? row.
-INFO main com.desmond.generator.run.TestRun - test@desmond.com
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/sqls/OrderGoods.sql
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/sqls/Administrator.sql
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/sqls/Goods.sql
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/sqls/Cart.sql
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/sqls/GoodsClass.sql
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/sqls/Comment.sql
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/sqls/Information.sql
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/sqls/SaleStatics.sql
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/sqls/OrderHistory.sql
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/sqls/AdminAuthority.sql
+INFO main com.desmond.generator.util.GeneratorHelper - generate: L:/gitHub/projects/eCommerce/src/com/desmond/ec/sqls/init.sql

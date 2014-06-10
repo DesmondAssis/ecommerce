@@ -2,10 +2,10 @@ package com.desmond.ecommerce.bean;
 
 import java.util.List;
 
-import com.desmond.ecommerce.interf.model.CommentModel;
-import com.desmond.ecommerce.interf.model.GoodsModel;
-import com.desmond.ecommerce.interf.model.InfoModel;
-import com.desmond.ecommerce.interf.model.OrderModel;
+import com.desmond.ec.comment.intf.Comment;
+import com.desmond.ec.goods.intf.Goods;
+import com.desmond.ec.info.intf.Information;
+import com.desmond.ec.order.intf.Order;
 
 /**
  * 
@@ -15,62 +15,126 @@ import com.desmond.ecommerce.interf.model.OrderModel;
  * #PageBean
  */
 public class PageBean {
-	private List<InfoModel> infoList;
-	private List<GoodsModel> goodsList;
-	private List<OrderModel> orderList;
-	private List<CommentModel> commentList;
+	private List<Information> infoList;
+	private List<Goods> goodsList;
+	private List<Order> orderList;
+	private List<Comment> commentList;
 	
 	private int totalNum;
 	private int pageNum;
 	private int totalPage;
 	private String printCtr;
-	public List<InfoModel> getInfoList() {
+	/**
+	 * Returns the infoList of this PageBean.
+	 * @return the infoList
+	 */
+	public List<Information> getInfoList() {
 		return infoList;
 	}
-	public void setInfoList(List<InfoModel> infoList) {
+	/**
+	 * Sets the infoList of this PageBean.
+	 * @param infoList the infoList to set
+	 */
+	public void setInfoList(List<Information> infoList) {
 		this.infoList = infoList;
 	}
-	public List<GoodsModel> getGoodsList() {
+	/**
+	 * Returns the goodsList of this PageBean.
+	 * @return the goodsList
+	 */
+	public List<Goods> getGoodsList() {
 		return goodsList;
 	}
-	public void setGoodsList(List<GoodsModel> goodsList) {
+	/**
+	 * Sets the goodsList of this PageBean.
+	 * @param goodsList the goodsList to set
+	 */
+	public void setGoodsList(List<Goods> goodsList) {
 		this.goodsList = goodsList;
 	}
-	public List<OrderModel> getOrderList() {
+	/**
+	 * Returns the orderList of this PageBean.
+	 * @return the orderList
+	 */
+	public List<Order> getOrderList() {
 		return orderList;
 	}
-	public void setOrderList(List<OrderModel> orderList) {
+	/**
+	 * Sets the orderList of this PageBean.
+	 * @param orderList the orderList to set
+	 */
+	public void setOrderList(List<Order> orderList) {
 		this.orderList = orderList;
 	}
-	public List<CommentModel> getCommentList() {
+	/**
+	 * Returns the commentList of this PageBean.
+	 * @return the commentList
+	 */
+	public List<Comment> getCommentList() {
 		return commentList;
 	}
-	public void setCommentList(List<CommentModel> commentList) {
+	/**
+	 * Sets the commentList of this PageBean.
+	 * @param commentList the commentList to set
+	 */
+	public void setCommentList(List<Comment> commentList) {
 		this.commentList = commentList;
 	}
+	/**
+	 * Returns the totalNum of this PageBean.
+	 * @return the totalNum
+	 */
 	public int getTotalNum() {
 		return totalNum;
 	}
+	/**
+	 * Sets the totalNum of this PageBean.
+	 * @param totalNum the totalNum to set
+	 */
 	public void setTotalNum(int totalNum) {
 		this.totalNum = totalNum;
 	}
+	/**
+	 * Returns the pageNum of this PageBean.
+	 * @return the pageNum
+	 */
 	public int getPageNum() {
 		return pageNum;
 	}
+	/**
+	 * Sets the pageNum of this PageBean.
+	 * @param pageNum the pageNum to set
+	 */
 	public void setPageNum(int pageNum) {
 		this.pageNum = pageNum;
 	}
+	/**
+	 * Returns the totalPage of this PageBean.
+	 * @return the totalPage
+	 */
 	public int getTotalPage() {
 		return totalPage;
 	}
+	/**
+	 * Sets the totalPage of this PageBean.
+	 * @param totalPage the totalPage to set
+	 */
 	public void setTotalPage(int totalPage) {
 		this.totalPage = totalPage;
 	}
+	/**
+	 * Returns the printCtr of this PageBean.
+	 * @return the printCtr
+	 */
 	public String getPrintCtr() {
 		return printCtr;
 	}
+	/**
+	 * Sets the printCtr of this PageBean.
+	 * @param printCtr the printCtr to set
+	 */
 	public void setPrintCtr(String printCtr) {
 		this.printCtr = printCtr;
 	}
-
+	
 }

@@ -1,5 +1,4 @@
 <%@ page contentType="text/html; charset=utf-8" import="java.util.*"%>
-<%@ page import="com.desmond.ecommerce.interf.model.OrderModel"%>
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html"%>
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic"%>
 <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean"%>
@@ -89,7 +88,7 @@
 		cellspacing="0">
 		<tr>
 			<td width="207" valign="top" bgcolor="#F5F5F5">
-				<!--左侧01--> <jsp:include page="jsp/fg-left.jsp" flush="true" /></td>
+				<!--左侧01vvv--> <jsp:include page="jsp/fg-left.jsp" flush="true" /></td>
 			<td width="560" valign="top" bgcolor="#FFFFFF">
 				<!--右侧01--> <html:form action="lookgoods.do?method=query_goods">
 					<table align="center">
