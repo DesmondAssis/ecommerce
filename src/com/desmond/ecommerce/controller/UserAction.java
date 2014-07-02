@@ -58,7 +58,7 @@ public class UserAction extends DispatchAction {
 		if (isSuccess > 0) {
 			HttpSession session = request.getSession();
 			session.setAttribute("user", user);
-			forwardPage = "registSuccess";
+			forwardPage = "index";
 		}
 		
 		forward = mapping.findForward(forwardPage);
@@ -80,7 +80,6 @@ public class UserAction extends DispatchAction {
 		ActionForward forward = null;
 		String forwardPage = "index";
 		UserLocalServiceImpl uls = new UserLocalServiceImpl();
-		uf.setUserId(Integer.valueOf(uf.getName()));
 		User user =  uls.login(uf);
 		
 		if (user != null) {
@@ -154,6 +153,15 @@ public class UserAction extends DispatchAction {
 		user.setPassword(uf.getNewPwd());
 
 		return update(mapping, form, request, response);
+	}
+	
+	public ActionForward logout(ActionMapping mapping, ActionForm form,
+			HttpServletRequest request, HttpServletResponse response) {
+		request.setAttribute("user", null);
+		request.getSession().invalidate();
+		
+		ActionForward forward = mapping.findForward("index");
+		return forward;
 	}
 
 	/**

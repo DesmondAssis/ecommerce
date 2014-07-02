@@ -1,5 +1,7 @@
 package com.desmond.ec.user.impl;
 
+import java.util.List;
+
 import com.desmond.ec.user.intf.User;
 import com.desmond.ecommerce.form.UserForm;
 
@@ -11,27 +13,25 @@ public class UserLocalServiceImpl extends UserServiceBaseImpl{
 	 * Add your custom code here.
 	 */
 	
-	public boolean changePassword(UserForm userForm) {
-		boolean modifiedSuccessfully = false;
+	public User login(UserForm uf) {
+		User user = null;
+		List<User> userList = this.getDao().findByNamePwd(uf.getName(), uf.getPassword());
 		
-		User user = this.fetchByPrimaryKey(userForm.getUserId());
-		if(user.getAnswer().equals(userForm.getAnswer())) {
-			user.setPassword(userForm.getPassword()); 
-			this.update(user);
-			modifiedSuccessfully = true;
-		}
-		
-		return modifiedSuccessfully;
+		return userList != null && userList.size() > 0 ? userList.get(0) : user;
 	}
 	
-	public User login(UserForm userForm) {
-		User user = null;
-		
-		User userFromDb = this.fetchByPrimaryKey(userForm.getUserId());
-		if(userFromDb.getPassword().equals(userForm.getPassword())) {
-			user = userFromDb;
+	public boolean changePassword(UserForm uf) {
+		boolean isSuccess = false;
+		User user = this.fetchByPrimaryKey(uf.getUserId());
+		if(user != null && user.getQuestion().equals(uf.getQuestion())) {
+			isSuccess = true;
 		}
 		
-		return user;
+		return isSuccess;
 	}
+	
+	public UserDaoImpl getDao() {
+		return new UserDaoImpl();
+	}
+	
 }

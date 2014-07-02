@@ -1,0 +1,37 @@
+
+<jsp:useBean id="user" class="com.desmond.ec.user.impl.UserImpl" scope="session"/>
+<script>
+function quit() {
+	if(confirm("没有要买的东西了吗？")){
+    	window.location.href="${path}/userAction.do?method=logout";
+	}
+}
+</script>
+<table width="100%" height="138"  border="0" cellpadding="0" cellspacing="0" background="${path}/image/fg_left01.jpg">
+	<tr>
+		<td valign="top">
+		
+			<table width="100%"  border="0" cellpadding="0" cellspacing="0">
+	 			<tr>
+      				<td height="30">&nbsp;</td>
+         		</tr>
+       		</table>      
+         	
+         	<table width="167" border="0" align="center">
+           		<tr>
+             		<td width="161" height="15">
+             			<font color="#FB6801"><jsp:getProperty property="name" name="user"/>,</font>欢迎回来
+             		</td>
+             	</tr>
+           		<tr>
+             		<td><a href="${path}/jsp/user/query.jsp">个人信息</a></td>         
+				<tr>
+					<td><a href="updatePwd.jsp">修改密码</a></td>	  
+				</tr>
+				<tr>
+    				<td><a href="javascript:quit()">安全退出</a></td>
+				</tr>	  
+         	</table>
+		</td>
+	</tr>
+</table>

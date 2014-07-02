@@ -28,10 +28,11 @@
 				name="userForm"
 				path="/userAction"
 				scope="request"
+				
 				type="com.desmond.ecommerce.controller.UserAction">
-			<forward name="loginSuccess" path="/jsp/user/loginSuccess.jsp"/>
-			<forward name="loginFailed" path="/jsp/user/index.jsp"/>
-			<forward name="registSuccess" path="/jsp/user/index.jsp"></forward>
+			<forward name="loginSuccess" path="/jsp/index.jsp"/>
+			<forward name="loginFailed" path="/jsp/index.jsp"/>
+			<forward name="index" path="/" redirect="true"/>
 		</action>
 		
 		<action parameter="method"

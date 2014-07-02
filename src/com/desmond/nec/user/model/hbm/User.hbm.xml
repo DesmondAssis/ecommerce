@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.desmond.nec.user.model">
+	<class name="User" table="ec_user">
+		<id name="id" type="java.lang.Long" column="id">
+			<!-- 指定identity主键生成策略 -->
+			<!--  <generator class="identity" />-->
+		</id>
+		<property name="createdDate" type="java.sql.Timestamp">
+			<column name="createdDate"/>
+		</property>
+		
+		<property name="modifiedDate" type="java.sql.Timestamp">
+			<column name="modifiedDate" />
+		</property>
+		
+		<property name="name" type="java.lang.String">
+			<column name="name"/>
+		</property>
+		
+		<property name="password" type="java.lang.String">
+			<column name="password" unique="true"/>
+		</property>
+		<property name="reallyName" type="java.lang.String">
+			<column name="reallyName"/>
+		</property>
+		<property name="identity" type="java.lang.String">
+			<column name="identity"/>
+		</property>
+		<property name="postcode" type="java.lang.String">
+			<column name="postcode"/>
+		</property>
+		<property name="email" type="java.lang.String">
+			<column name="email" unique="true"/>
+		</property>
+		<property name="address" type="java.lang.String">
+			<column name="address"/>
+		</property>
+		
+		<property name="phone" type="java.lang.String">
+			<column name="phone"/>
+		</property>
+		
+		<property name="question" type="java.lang.String">
+			<column name="question"/>
+		</property>
+		<property name="answer" type="java.lang.String">
+			<column name="answer"/>
+		</property>
+	</class>
+
+</hibernate-mapping>

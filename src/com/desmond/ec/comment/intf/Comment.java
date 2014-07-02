@@ -1,7 +1,7 @@
 package com.desmond.ec.comment.intf;
 
 
-import com.desmond.ecommerce.base.model.intf.BaseModel;
+import com.desmond.servicebuilder.model.base.intf.BaseModel;
 
 public interface Comment extends BaseModel{
 		public long getUserId();

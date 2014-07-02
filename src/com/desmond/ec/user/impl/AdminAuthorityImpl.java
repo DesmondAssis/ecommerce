@@ -2,7 +2,7 @@ package com.desmond.ec.user.impl;
 
 import com.desmond.ec.user.intf.AdminAuthority;
 
-import com.desmond.ecommerce.base.model.impl.BaseModelImpl;
+import com.desmond.servicebuilder.model.base.impl.BaseModelImpl;
 
 public class AdminAuthorityImpl extends BaseModelImpl implements AdminAuthority{
 		private String name;

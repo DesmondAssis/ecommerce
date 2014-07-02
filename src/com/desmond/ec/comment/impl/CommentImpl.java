@@ -2,7 +2,7 @@ package com.desmond.ec.comment.impl;
 
 import com.desmond.ec.comment.intf.Comment;
 
-import com.desmond.ecommerce.base.model.impl.BaseModelImpl;
+import com.desmond.servicebuilder.model.base.impl.BaseModelImpl;
 
 public class CommentImpl extends BaseModelImpl implements Comment{
 		private long userId;

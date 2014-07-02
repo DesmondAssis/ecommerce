@@ -2,7 +2,7 @@ package com.desmond.ec.order.impl;
 
 import com.desmond.ec.order.intf.OrderHistory;
 
-import com.desmond.ecommerce.base.model.impl.BaseModelImpl;
+import com.desmond.servicebuilder.model.base.impl.BaseModelImpl;
 
 public class OrderHistoryImpl extends BaseModelImpl implements OrderHistory{
 		private long orderId;

@@ -1,7 +1,7 @@
 package com.desmond.ec.order.intf;
 
 
-import com.desmond.ecommerce.base.model.intf.BaseModel;
+import com.desmond.servicebuilder.model.base.intf.BaseModel;
 
 public interface Order extends BaseModel{
 		public int getStatus();

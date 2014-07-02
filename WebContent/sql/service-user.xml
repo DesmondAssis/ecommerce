@@ -4,7 +4,7 @@
 	<namespace>ec</namespace>
 	
 	<entity name="User" tableName="ec_user">
-        <!-- PK fields -->w
+        <!-- PK fields -->
 		<column name="id" type="long" primary="true" autoIncrement="true"/>
 		
 		<!-- Audit fields -->
@@ -27,22 +27,15 @@
 		<column name="answer" type="String" />
 		
 		<!-- Order -->
+		<order by="asc">
+			<order-column name="name" order-by="asc"/>
+			<order-column name="phone" order-by="desc"/>
+		</order>
 		
-		<!-- Finder methods
-		<finder name="StatsGameId" return-type="Collection">
-			<finder-column name="statsGameId" />
+		<!-- Finder methods -->
+		<finder name="UserNamePassword" return-type="Collection">
+			<finder-column name="name" />
+			<finder-column name="password"/>
 		</finder>
-		
-		<finder name="ScheduleId" return-type="Collection">
-			<finder-column name="scheduleId" />
-		</finder>
-		
-		<finder name="Sport" return-type="Collection">
-			<finder-column name="sport" />
-		</finder>
-		
-		<finder name="Date" return-type="Collection">
-			<finder-column name="date" />
-		</finder> -->
     </entity>
 </desmond-builder>

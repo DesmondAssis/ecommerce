@@ -2,7 +2,7 @@ package com.desmond.ec.cart.impl;
 
 import com.desmond.ec.cart.intf.Cart;
 
-import com.desmond.ecommerce.base.model.impl.BaseModelImpl;
+import com.desmond.servicebuilder.model.base.impl.BaseModelImpl;
 
 public class CartImpl extends BaseModelImpl implements Cart{
 		private String sessionId;

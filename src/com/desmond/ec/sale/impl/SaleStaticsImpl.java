@@ -2,7 +2,7 @@ package com.desmond.ec.sale.impl;
 
 import com.desmond.ec.sale.intf.SaleStatics;
 
-import com.desmond.ecommerce.base.model.impl.BaseModelImpl;
+import com.desmond.servicebuilder.model.base.impl.BaseModelImpl;
 
 public class SaleStaticsImpl extends BaseModelImpl implements SaleStatics{
 		private long goodId;

@@ -2,7 +2,7 @@ package com.desmond.ec.goods.impl;
 
 import com.desmond.ec.goods.intf.GoodsClass;
 
-import com.desmond.ecommerce.base.model.impl.BaseModelImpl;
+import com.desmond.servicebuilder.model.base.impl.BaseModelImpl;
 
 public class GoodsClassImpl extends BaseModelImpl implements GoodsClass{
 		private String name;

@@ -8,12 +8,12 @@
 </head>
  <link href="css/css.css" rel="stylesheet" type="text/css"> 
 <body background="image/bg1.jpg">
-<jsp:include page="fg-top.jsp" flush="true"/>
+<jsp:include page="/jsp/front/fg-top.jsp" flush="true"/>
 <table width="766" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <td width="207" valign="top" bgcolor="#F5F5F5">
     <!--左侧01-->
-    <jsp:include page="fg-left-success.jsp" flush="true"/></td>
+    <jsp:include page="/jsp/front/fg-left-user-success.jspf" flush="true"/></td>
     <td width="559" valign="top" bgcolor="#FFFFFF">
     <!--右侧01-->		
     <div align="center">
@@ -29,7 +29,7 @@
     <td bgcolor="#fffff" align="center">
 
 
-  <html:form action="successUpdate.jsp"  onsubmit="return checkEmpty(memberForm)">
+  <html:form action="userAction?method=update"  onsubmit="return checkEmpty(memberForm)">
   
   <table width="298"  border="0" cellspacing="0" cellpadding="0">
       <tr>
@@ -124,7 +124,7 @@
 
 </table>
 
-	<jsp:include page="fg-down.jsp" flush="true"/>
+	<jsp:include page="/jsp/front/fg-down.jsp" flush="true"/>
 
 </body>
 </html:html>

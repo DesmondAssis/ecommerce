@@ -10,8 +10,8 @@ import java.sql.Time;
 
 import org.apache.log4j.Logger;
 
-import com.desmond.ecommerce.util.db.Counter;
-import com.desmond.ecommerce.util.db.DButil;
+import com.desmond.servicebuilder.util.db.Counter;
+import com.desmond.servicebuilder.util.db.DButil;
 import com.desmond.ec.cart.intf.Cart;
 
 public class CartDaoImpl{
@@ -83,6 +83,8 @@ public class CartDaoImpl{
 		
 		return cart;
 	}
+	
+	
 	
 	public int delete(long primaryKey){
 		int update = 0;

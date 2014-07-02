@@ -2,7 +2,7 @@ package com.desmond.ec.info.impl;
 
 import com.desmond.ec.info.intf.Information;
 
-import com.desmond.ecommerce.base.model.impl.BaseModelImpl;
+import com.desmond.servicebuilder.model.base.impl.BaseModelImpl;
 
 public class InformationImpl extends BaseModelImpl implements Information{
 		private String title;

@@ -6,19 +6,19 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>电子商城</title>
 </head>
-<link href="css/css.css" rel="stylesheet" type="text/css">
+<link href="../../css/css.css" rel="stylesheet" type="text/css">
 
-<body background="image/bg1.jpg">
-<jsp:include page="fg-top.jsp" flush="true"/>
+<body background="../../image/bg1.jpg">
+<jsp:include page="../front/fg-top.jsp" flush="true"/>
 <table width="766" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <td width="207" valign="top" bgcolor="#F5F5F5">
     <!--左侧01-->
-    <jsp:include page="fg-left.jsp" flush="true"/></td>
+    <jsp:include page="../front/fg-left.jsp" flush="true"/></td>
     <td width="559" valign="top" bgcolor="#FFFFFF">
     <!--右侧01-->		
     <div align="center">
-      <table width="558" height="46" border="0" cellpadding="0" cellspacing="0" background="image/fg35.jpg">
+      <table width="558" height="46" border="0" cellpadding="0" cellspacing="0" background="../../image/fg35.jpg">
       <tr>
          <td></td>
       </tr>
@@ -145,7 +145,7 @@
 
 </table>
 
-	<jsp:include page="fg-down.jsp" flush="true"/>
+	<jsp:include page="../front/fg-down.jsp" flush="true"/>
 
 </body>
 </html:html>

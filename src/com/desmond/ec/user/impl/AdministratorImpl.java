@@ -2,7 +2,7 @@ package com.desmond.ec.user.impl;
 
 import com.desmond.ec.user.intf.Administrator;
 
-import com.desmond.ecommerce.base.model.impl.BaseModelImpl;
+import com.desmond.servicebuilder.model.base.impl.BaseModelImpl;
 
 public class AdministratorImpl extends BaseModelImpl implements Administrator{
 		private long userId;

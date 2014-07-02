@@ -20,8 +20,7 @@ public abstract class UserServiceBaseImpl {
 	}
 	
 	public UserDaoImpl getDao() {
-//		return dao;
-		return new UserDaoImpl();
+		return dao;
 	}
 	
 	public void setDao(UserDaoImpl dao) {
